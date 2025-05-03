@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> <!-- Ensures page is responsive by scaling it properly on all devices -->
+  <meta name="description" content="Exclusive formal suits for weddings, graduations, and events. Free delivery."> <!-- A short summary of your webpage for search engines and social media.
+  -->
+  <meta name="keywords" content="formal suits, wedding suits, graduation outfits, men’s suits, women’s suits"> <!-- Optional metadata listing keywords for search engine optimization (SEO).
+  -->
+  <meta name="author" content="SutiYam"> <!-- Author or business -->
+  <meta name="robots" content="index, follow"> <!-- Search engine crawling -->
+  <title>SutiYam - Our Collection</title>
+  <link rel="stylesheet" href="ladies.css">
+  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" > <!-- Favicon added -->
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+  
+</head>
+<body>
+
+  <div class="container"> 
+    <div class="navbar">
+      <div class="logo">
+        <a href="Index.html"><img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo"></a> <!-- Logo with link -->
+        <p class="slogan">SutiYam — Wear Confidence</p> <!-- Brand slogan -->
+      </div>
+      <!-- Search Bar --> 
+      <div class="search-wrapper">
+        <div class="search-container">
+          <input class="search-input" type="text" id="searchBox" placeholder="Search products..." oninput="searchProducts()" autocomplete="off" >
+          <ul id="suggestionList" style="border:1px solid #ccc; display:block; position:absolute; background:white; z-index:1000; list-style:none; padding:0; margin:0; max-height:200px; overflow-y:auto;"></ul>
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        </div>
+      </div>      
+      <aside>
+        <!-- Shopping Cart -->
+          <!-- Cart Toggle Icon -->
+        <a href="Cart.html" target=""> <i class="fa fa-shopping-cart cart-toggle-icon" title="Shopping Cart" ></i></a>
+
+      </aside>
+  
+      <nav>
+        
+        <ul id="MenuItems">
+          
+          <li><a href="Index.html">Home</a></li>
+          <li><a href="OurCollection_Updated.html">Our Collection</a></li>
+          <!--- Future categories can be re-added -->
+          <li><a href="AboutUs.html">About Us</a></li>
+        </ul>
+      </nav>
+      <br>
+      <i class="fa-solid fa-bars menu-icon" aria-label="Menu" role="button" tabindex="0" onclick="menutoggle()"></i>
+
+
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <h1>Explore All Our Products</h1>
+        <p style="color: black;">
+          <strong>✅ Men's Wear | ✅ Women's Wear | ✅ Accessories</strong>
+        </p>
+        <br>
+        <div class="body-slogan-wrapper">
+          <h5 class="body-slogan">Carefully selected from trusted local outlets.</h5>
+        </div>
+        <a href="" class="btn">Explore Now &#8595;</a>
+      </div>
+      <div class="col-2">
+        <div class="image-container">
+          <div class="image">
+            <img style="height: 680px" src="img/US/Asa.jpg" alt="image-1">
+          </div>
+           
+          <!-- Add more images if necessary -->
+        </div>        
+        
+      </div>
+    </div>
+  </div>
+<!-- Categories -->
+<div class="categories">
+  <h2 class="titleCol">Categories</h2>
+  <div class="small-container">
+    <div class="row">
+
+      <!-- Ladies' Clothing -->
+      <div class="col-3">
+        
+          <img class="product-image" style="width: 240px; height: 370px;"
+            src="img/W3PC/IMG-20250429-WA0072.jpg" 
+            data-category="Ladies' Clothing" 
+            alt="Ladies 3-Piece Suit"
+            onclick='openGallery(this)' 
+        data-large="img/W3PC/IMG-20250429-WA0072.jpg">
+          <br>
+          <a href="#productImg3">
+          <h3 style="text-decoration: underline;">Ladies' Clothing</h3> 
+        </a>
+      </div>
+
+      <!-- Men's Accessories -->
+        <div class="col-3">
+          
+          <img src="img/IMG-20250206-WA0003.jpg" style="width: 220px; height: 240px;"
+          data-category="Men's Accessories" 
+          alt="Men's Accessories and Shoes"
+          onclick='openGallery(this)' 
+        data-large="img/IMG-20250206-WA0003.jpg">
+          <br>
+          <a href="#productImg">
+          <h3 style="text-decoration: underline;">Accessories</h3>  </a>
+        </div>
+
+      <!-- Men's Suits -->
+      <div class="col-3">
+        
+          <img src="img/Texido/IMG-20250429-WA0038.jpg" style="width: 240px; height: 370px;"
+          data-category="Men's Suits" 
+          alt="Men's Suits"
+          onclick='openGallery(this)' 
+        data-large="img/Texido/IMG-20250429-WA0038.jpg">
+          <br>
+          <a href="#productImg"> 
+          <h3 style="text-decoration: underline;">Men's Suits</h3>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Latest Products -->
+<div class="small-container">
+  <h2 class="titleCol">Latest Products</h2>
+  <div class="row">
+
+    <!-- Product 1 Double Breasted -->
+    <div class="col-4">
+      <img src="img/Double/IMG-20250123-WA0026.jpg" 
+        data-name="Double Breasted Suit"
+        alt="Double Breasted Suit"
+        title="View Now"
+        onclick='openGallery(this)' 
+        data-large="img/Double/IMG-20250123-WA0026.jpg"
+        data-thumbnails='["img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'>
+      <h4>Double Breasted Suit</h4>
+    
+      <div class="rating">
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5>R1 200</h5>
+      <a href="#productImg">Buy</a>
+    </div>
+     <!-- Product 2 Safari -->
+    <div class="col-4">
+      <img src="img/Safari/IMG-20250415-WA0205.jpg" 
+        data-name="Safari Suit" 
+        alt="Safari Suit"
+        title="View Now"
+        onclick='openGallery(this)' 
+        data-large="img/Safari/IMG-20250415-WA0205.jpg"
+        data-thumbnails='["img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'>
+      <h4>Safari Suit</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5>R1 300</h5>
+      <a href="#productImg6">Buy</a>
+    </div>
+
+    <!-- Product 3 Pink Three Women-->
+    <div class="col-4">
+      <img src="img/W3PC/IMG-20250123-WA0015.jpg" 
+        data-name="Three Piece Suit" 
+        alt="Pink Three Piece Suit"
+        title="View Now"
+        onclick='openGallery(this)' 
+        data-large="img/W3PC/IMG-20250123-WA0015.jpg"
+        data-thumbnails='["img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250123-WA0015.jpg"]'>
+      <h4>Pink Three Piece Suit</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-half-o"></i>
+      </div>
+      <h5>R1 200</h5>
+      <a href="#productImg">Buy</a>
+    </div>
+
+    <!-- Product 4 Scotch -->
+    <div class="col-4">
+      <img src="img/Scotch/IMG-20250126-WA0508.jpg" 
+        data-name="Three Piece Scotch Suit" 
+        alt="Three Piece Scotch Suit"
+        title="View Now"
+        onclick='openGallery(this)' 
+        data-large="img/Scotch/IMG-20250126-WA0508.jpg"
+        data-thumbnails='["img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0508.jpg"]'>
+      <h4>Three Piece Scotch Suit</h4>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i>
+      </div>
+      <h5>R1 500</h5>
+      <a href="#productImg7">Buy</a>
+    </div>
+
+  </div>
+
+  <!-- Featured Products -->
+  <h2 class="titleCol">Featured Products</h2>
+    <div class="sort-container" style="margin-bottom: 20px;">
+      <label for="sortSelect">Sort by Price:</label>
+      <select id="sortSelect" onchange="sortFeaturedProducts()">
+        <option value="default">Default</option>
+        <option value="lowToHigh">Price: Low to High</option>
+        <option value="highToLow">Price: High to Low</option>
+      </select>
+    </div>
+  
+  <div class="row" id="featuredProducts">
+
+    <!-- Featured: Three Piece Plain for Men -->
+    <div class="col-4" data-price="1350">
+      <img src="img/3PC/IMG-20250123-WA0016.jpg" data-name="Three Piece for Men" alt="Three Piece Plain Suit" id="productImg">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0338.jpg" alt="View 1" class="small-img" data-target="productImg"></div>
+        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0374.jpg" alt="View 2" class="small-img" data-target="productImg"></div>
+        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0453.jpg" alt="View 3" class="small-img" data-target="productImg"></div>
+        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0394.jpg" alt="View 4" class="small-img" data-target="productImg"></div>
+        <div class="small-img-col"><img src="img/3PC/IMG-20250123-WA0016.jpg" alt="View 5" class="small-img" data-target="productImg"></div>
+      </div>
+      <p>Three Piece Suit</p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Three Piece Plain Suit</h3>
+      <h5>R1 350</h5>
+      <div id="ProductDesc1" class="ProductDesc" style="display: none;">
+        <select id="size-1">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Three Piece Plain Suit', 1350, 'size-1')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Three Piece Plain Suit for men.</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc1"></i>
+    </div>
+
+    <!-- Featured: Two Piece Plain for Men -->
+    <div class="col-4" data-price="1200">
+      <img src="img/2PC/IMG-20250126-WA0488.jpg" data-name="Two Piece for Men" alt="Two Piece Plain Suit" id="productImg2">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/2PC/IMG-20250123-WA0006.jpg" alt="View 1" class="small-img" data-target="productImg2"></div>
+        <div class="small-img-col"><img src="img/2PC/IMG-20250123-WA0013.jpg" alt="View 2" class="small-img" data-target="productImg2"></div>
+        <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0443.jpg" alt="View 3" class="small-img" data-target="productImg2"></div>
+        <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0358.jpg" alt="View 4" class="small-img" data-target="productImg2"></div>
+        <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0488.jpg" alt="View 5" class="small-img" data-target="productImg2"></div>
+      </div>
+      <p>Two Piece Suit</p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Two Piece Plain Suit</h3>
+      <h5>R1 200</h5>
+      <div id="ProductDesc2" class="ProductDesc" style="display: none;">
+        <select id="size-2">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Two Piece Plain Suit', 1200, 'size-2')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Two Piece Plain Suit for men.</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc2" ></i>
+    </div>
+
+    <!-- Featured: Three Piece for Women -->
+    <div class="col-4" data-price="1200">
+      <img src="img/W3PC/IMG-20250123-WA0005.jpg" data-name="Three Piece for Women" alt="Ladies 3-Piece Suit" id="productImg3">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0015.jpg" alt="View 1" class="small-img" data-target="productImg3"></div>
+        <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0023.jpg" alt="View 2" class="small-img" data-target="productImg3"></div>
+        <div class="small-img-col"><img src="img/W3PC/IMG-20250126-WA0498.jpg" alt="View 3" class="small-img" data-target="productImg3"></div>
+        <div class="small-img-col"><img src="img/W3PC/IMG-20250126-WA0465.jpg" alt="View 4" class="small-img" data-target="productImg3"></div>
+        <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0005.jpg" alt="View 5" class="small-img" data-target="productImg3"></div>
+      </div>
+      <p>Three Piece Suit for Women</p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Ladies 3-Piece Suit</h3>
+      <h5>R1 200</h5>
+      <div id="ProductDesc3" class="product-desc" style="display: none;">
+        <select id="size-4">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Ladies 3-Piece Suit', 1200, 'size-4')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Ladies 3-Piece Suit</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc3"></i>
+    </div>
+
+    <!-- Featured: Double Breasted Suit -->
+    <div class="col-4" data-price="1200">
+      <img src="img/Double/IMG-20250123-WA0026.jpg" data-name="Double Breasted " alt="Double Breasted Suit" id="productImg4">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0008.jpg" alt="View 1" class="small-img" data-target="productImg4"></div>
+        <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0014.jpg" alt="View 2" class="small-img" data-target="productImg4"></div>
+        <div class="small-img-col"><img src="img/Double/IMG-20250126-WA0485.jpg" alt="View 3" class="small-img" data-target="productImg4"></div>
+        <div class="small-img-col"><img src="img/Double/IMG-20250126-WA0311.jpg" alt="View 4" class="small-img" data-target="productImg4"></div>
+        <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0026.jpg" alt="View 5" class="small-img" data-target="productImg4"></div>
+      </div>
+      <p>Double Breasted </p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Double Breasted Suit</h3>
+      <h5>R1 200</h5>
+      <div id="ProductDesc4" class="product-desc" style="display: none;">
+        <select id="size-5">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Double Breasted Suit', 1200, 'size-5')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Double Breasted Suit</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc4"></i>
+    </div>
+
+    <!-- Featured: Double Breasted Scotch Suit -->
+    <div class="col-4" data-price="1300">
+      <img src="img/Double-Sco/IMG-20250126-WA0303.jpg" data-name="Double Breasted Scotch" alt="Double Breasted Scotch Suit" id="productImg5">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0304.jpg" alt="View 1" class="small-img" data-target="productImg5"></div>
+        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0305.jpg" alt="View 2" class="small-img" data-target="productImg5"></div>
+        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0306.jpg" alt="View 3" class="small-img" data-target="productImg5"></div>
+        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0479.jpg" alt="View 4" class="small-img" data-target="productImg5"></div>
+        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0303.jpg" alt="View 5" class="small-img" data-target="productImg5"></div>
+      </div>
+      <p>Double Breasted Scotch</p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Double Breasted Scotch Suit</h3>
+      <h5>R1 300</h5>
+      <div id="ProductDesc5" class="product-desc" style="display: none;">
+        <select id="size-6">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Double Breasted Scotch Suit', 1300, 'size-6')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Double Breasted Scotch Suit</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc5"></i>
+    </div>
+
+    <!-- Featured: Safari Suit  -->
+    <div class="col-4" data-price="1300">
+      <img src="img/Safari/IMG-20250415-WA0205.jpg" data-name="Safari Suit" alt="Safari Suit" id="productImg6">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0135.jpg" alt="View 1" class="small-img" data-target="productImg6"></div>
+        <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0136.jpg" alt="View 2" class="small-img" data-target="productImg6"></div>
+        <div class="small-img-col"><img src="img/Safari/IMG-20250420-WA0207.jpg" alt="View 3" class="small-img" data-target="productImg6"></div>
+        <div class="small-img-col"><img src="img/Safari/IMG-20250420-WA0206.jpg" alt="View 4" class="small-img" data-target="productImg6"></div>
+        <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0205.jpg" alt="View 5" class="small-img" data-target="productImg6"></div>
+      </div>
+      <p>Safari Suit</p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Safari Suit</h3>
+      <h5>R1 300</h5>
+      <div id="ProductDesc6" class="product-desc" style="display: none;">
+        <select id="size-7">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Safari Suit', 1300, 'size-7')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Safari Suit</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc6"></i>
+    </div>
+
+    <!-- Featured: Three Piece Scotch Suit -->
+    <div class="col-4" data-price="1500">
+      <img src="img/Scotch/IMG-20250123-WA0009.jpg" data-name="Three Piece for Men" alt="Three Piece Scotch Suit" id="productImg7">
+      <div class="small-img-row">
+        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0354.jpg" alt="View 1" class="small-img" data-target="productImg7"></div>
+        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0433.jpg" alt="View 2" class="small-img" data-target="productImg7"></div>
+        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0452.jpg" alt="View 3" class="small-img" data-target="productImg7"></div>
+        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0508.jpg" alt="View 4" class="small-img" data-target="productImg7"></div>
+        <div class="small-img-col"><img src="img/Scotch/IMG-20250123-WA0009.jpg" alt="View 5" class="small-img" data-target="productImg7"></div>
+      </div>
+      <p>Three Piece Scotch Suit</p>
+      <div class="rating">
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star"></i><i class="fa fa-star"></i>
+        <i class="fa fa-star-o"></i>
+      </div>
+      <h3>Three Piece Scotch Suit</h3>
+      <h5>R1 500</h5>
+      <div id="ProductDesc7" class="product-desc" style="display: none;">
+        <select id="size-8">
+          <option>Select Size</option>
+          <option>26</option>
+          <option>28</option>
+          <option>30</option>
+          <option>32</option>
+          <option>34</option>
+          <option>36</option>
+          <option>38</option>
+          <option>40</option>
+        </select>
+        <input type="number" value="1">
+        <button class="add-to-cart" onclick="addToCart('Three Piece Scotch Suit', 1500, 'size-8')">Add to Cart</button>
+        <h4>Product Details <i class="fa fa-indent"></i></h4>
+        <p>A modern stylish Three Piece Scotch Suit</p>
+      </div>
+      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc7"></i>
+    </div>
+    </div>
+          <!-- Shared Fullscreen Overlay Gallery -->
+        <div id="gallery" class="fullscreen-gallery" onclick="closeGallery()">
+          <span class="close-btn" onclick="closeGallery(event)">&times;</span>
+          <img id="largeImage" src="" alt="Zoomed Image">
+          <div class="zoom-controls" onclick="event.stopPropagation();">
+            <button onclick="zoomImage('in')">+</button>
+            <button onclick="zoomImage('out')">−</button>
+          </div>
+
+          <div class="small-picture" onclick="event.stopPropagation();">
+            <!-- Thumbnails will be inserted dynamically -->
+          </div>
+        </div>
+    <!--
+      <div class="titleCol">
+        <a href="Accessories.html" id="access" class="btn">The Final Touch of Elegance &#8594;</a>
+      </div>
+    -->
+  </div>
+  
+
+   <!--  Testimonial  -->
+   <div class="testimonial">
+      <h2 class="titleCol">Customer Reviews..</h2>
+        <div class="small-container">
+          <div class="row">
+            <div class="col-3">
+              <i class="fa fa-quote-left"></i>
+              <p>
+                Visiting SutiYam was the best choice ever!!
+              </p>
+              <div class="rating">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star-o"></i>
+              </div>
+              <img src="img/IMG-20250126-eWA0488.jpg" alt="Yams">
+              <h3>Yams</h3>
+            </div>            
+        </div>
+
+      </div>
+    </div>
+
+    <!--  Footer  -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-center">
+          <div class="footer-logo-section">
+            <img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo" class="footer-logo">
+          </div>
+
+            <div class="footer-contact">
+            <span>Account</span>
+            <p><i class="fa-solid fa-circle-exclamation"></i> <a href="privacy-policy.html" target="_blank" >Privacy Policy</a></p>
+            <p><i class="fa-solid fa-truck"></i> <a href="delivery-policy.html" target="_blank" >Delivery Policy</a></p>
+            <p><i class="fa-solid fa-rotate-left"></i> <a href="returns_policy.html" target="_blank" >Returns & Refunds</a></p>
+          </div>
+    
+          <div class="footer-contact">
+            <span>Contact Us</span>
+            <p><i class="fa-solid fa-message"></i> <a href="https://whatsapp.com/" target="_blank">27 79 497 3132</a></p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:sutiyam.orders@gmail.com">sutiyam.orders@gmail.com</a></p>
+            <p><i class="fa-brands fa-facebook"></i> <a href="https://web.facebook.com/" target="_blank">Facebook</a></p>
+          </div>
+            <p>
+              SutiYam partners with selected fashion outlets and suppliers to bring you a curated collection of stylish, affordable formalwear. All items are inspected and quality-assured before delivery to ensure you receive nothing but the best.
+            </p>
+        </div>
+    
+            <!-- Footer Slogan -->
+          <div class="footer-slogan-wrapper">
+            <p class="footer-slogan">Elegance for Every Occasion ✨</p>
+          </div>
+          
+        <div class="footer-bottom">
+          <p>&copy; 2025 <strong>SutiYam</strong> – Smart clothing | <a href="Copyright-Sutiyam.html" target="_blank" >Privacy Policy</a></p>
+          <!-- Smooth scroll to the top section -->
+          <section class="back-start">
+            <a href="#top" class="beginning" id="backToTop" aria-label="Back to Top">
+              <span class="read-back">
+                <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+                Back to Top
+              </span>
+            </a>
+          </section>
+        </div>
+      </div>
+    </footer>
+
+    <!--  Script  -->
+    <script src="WeThrive.js"></script>
+</body>
+</html>

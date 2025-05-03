@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="ladies.css">
+  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg">
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="order-form-container">
+    <h2>Place Your Order</h2>
+    <form id="order-form" onsubmit="return sendOrderEmail(event)" data-netlify-recaptcha="true"
+  data-netlify="true">
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="tel" name="phone" placeholder="Phone Number" minlength="10" required>
+      <textarea name="address" placeholder="Shipping Address" required></textarea>
+      <textarea name="comment" placeholder="Extra Requests (optional)"></textarea>
+      <div data-netlify-recaptcha="true"></div>
+      <button type="submit" class="btn">Submit Order</button>
+      <a href="OurCollection_Updated.html" class="btn" style="text-align: center;">← Continue Shopping</a>
+    </form>
+  </div>
+
+  <script>
+    // Initialize EmailJS with your public key
+    emailjs.init("RrEnpMIji3v_TWeDK"); // public key
+
+    function sendOrderEmail(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("order-form");
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      if (!cartItems.length) {
+        alert("🛒 Your cart is empty. Please add items before submitting.");
+        return false;
+      }
+        
+      const orders = cartItems.map(item => ({
+        name: item.name,
+        size: item.size,
+        quantity: item.quantity,
+        price: (item.price * item.quantity).toFixed(2),
+        image_url: item.image || "https://sutiyam.online/img/placeholder.jpg"
+      }));
+
+      const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+      const orderId = "SY" + Date.now(); // Unique order ID
+
+      const formData = {
+          order_id: orderId,
+          user_name: form.name.value,
+          user_email: form.email.value,
+          user_phone: form.phone.value,
+          address: form.address.value,
+          comment: form.comment.value,
+          orders: orders,
+          total: total
+        };
+
+
+      // First send email to client
+    emailjs.send("service_isvy21j", "template_h7or7bh", formData)
+      .then(() => {
+        // Then send email to shop owner
+        return emailjs.send("service_isvy21j", "template_l9h47jk", formData);
+      })
+      .then(() => {
+        alert("Order sent successfully! You’ll receive confirmation shortly.");
+        localStorage.removeItem("cartItems");
+        form.reset();
+        window.location.href = "https://sutiyam.online/ourcollection_updated.html";
+      })
+      .catch(error => {
+        console.error("EmailJS Error:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+
+    return false;
+  }
+  </script>
+
+  <script src="WeThrive.js"></script>
+</body>
+</html>
