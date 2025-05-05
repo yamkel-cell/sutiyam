@@ -5,16 +5,16 @@ backend:
   auth_type: implicit
   app_id: Ov23lihUeX8y5I795EPw
 
-media_folder: "img"  # Where uploaded images are stored in your repo
-public_folder: "/img/uploads"  # Path to access images
+media_folder: "img"
+public_folder: "/img"
 
 collections:
   - name: "homepage"
     label: "Homepage Content"
     files:
-      - file: "index.html"
+      - file: "content/homepage.md"  # point to the correct markdown file
         label: "Main Page"
         name: "main_page"
         fields:
           - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Content", name: "body", widget: "text" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
