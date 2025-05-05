@@ -356,3 +356,12 @@ function changeImage(src) {
   document.getElementById("largeImage").src = src;
 }
 
+// ===== Load Homepage Content from Markdown ====
+fetch('/content/homepage.md')
+    .then(res => res.text())
+    .then(markdown => {
+      const parsed = window.matter(markdown);
+      // Inject the title and body content dynamically
+      document.getElementById('home-title').innerText = parsed.data.title;
+      document.getElementById('home-body').innerHTML = parsed.data.body.replace(/\n/g, "<br>");
+    });
