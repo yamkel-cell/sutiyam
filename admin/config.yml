@@ -6,7 +6,6 @@ backend:
   auth_endpoint: auth
   app_id: Ov23lihUeX8y5I795EPw
 
-
 media_folder: "img"
 public_folder: "/img"
 
@@ -14,9 +13,13 @@ collections:
   - name: "homepage"
     label: "Homepage Content"
     files:
-      - file: "content/homepage.md"  # point to the correct markdown file
+      - file: "content/homepage.md"
         label: "Main Page"
         name: "main_page"
         fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Content", name: "body", widget: "markdown" }
+          - label: "Page Title"
+            name: "title"
+            widget: "string"
+          - label: "Main Content"
+            name: "body"
+            widget: "markdown"
