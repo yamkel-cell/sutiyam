@@ -34,7 +34,6 @@
           </ul>
         </nav>
         <br>
-      <button onclick="netlifyIdentity.open()">Login</button>
       <i class="fa-solid fa-bars" alt="Menu" class="menu-icon" onclick="menutoggle()" ></i>
 
     </div>
@@ -166,22 +165,6 @@
       </div>
     </div>
   </footer>
-
-<!-- Add this in the <head> or before the closing </body> -->
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>
-  // Initialize Netlify Identity
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => {
-          document.location.href = "/admin/";
-        });
-      }
-    });
-    window.netlifyIdentity.init();
-  }
-</script>
 
 
 <!---  Menu Toggle Script  --->
