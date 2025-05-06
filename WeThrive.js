@@ -1,5 +1,5 @@
 // ========== MENU TOGGLE ==========
-/*var MenuItems = document.getElementById("MenuItems");
+var MenuItems = document.getElementById("MenuItems");
 
 if (MenuItems) {
   MenuItems.style.maxHeight = "0px";
@@ -378,4 +378,4 @@ fetch('/content/homepage.md')
       // Inject the title and body content dynamically
       document.getElementById('home-title').innerText = parsed.data.title;
       document.getElementById('home-body').innerHTML = parsed.data.body.replace(/\n/g, "<br>");
-    });*/
+    });
