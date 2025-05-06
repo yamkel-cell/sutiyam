@@ -1,6 +1,11 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: yamkel-cell/sutiyam
   branch: main
+  auth_type: implicit
+  app_id: <GITHUB-OAUTH-APP-ID>
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 
 media_folder: "img"
