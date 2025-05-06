@@ -3,7 +3,7 @@ backend:
   repo: yamkel-cell/sutiyam  
   branch: main 
   auth_endpoint:  
-  app_id: YOUR_GITHUB_OAUTH_APP_ID  
+  app_id: Ov23lihUeX8y5I795EPw  
 
 media_folder: "img"  # Folder where media files (images, etc.) are stored
 public_folder: "/img"  # Path to public images in your website
