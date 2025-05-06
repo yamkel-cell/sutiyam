@@ -2,7 +2,7 @@ backend:
   name: github
   repo: yamkel-cell/sutiyam
   branch: main
-  base_url: https://api.netlify.com
+  base_url: https://www.sutiyam.online
   auth_endpoint: auth
   app_id: Ov23lihUeX8y5I795EPw
 
