@@ -2,12 +2,15 @@ import { createBeginHandler, createCompleteHandler } from 'netlify-cms-oauth-pro
 
 const config = {
   provider: 'auth0',
-  clientId: '2Ud5AqjVGaxCs1SRjti4jg32AMeK0HNC',
-  clientSecret: 'Ag7OVGQKGjZwtv9GEuXKq5MFdZewBbTFAfLad94UnAMtr5Fi1tNnSfnTCR6eJaCe',
+  clientId: process.env.oauthClientID,
+  clientSecret: process.env.oauthClientSecret,
   authorizeUrl: 'https://dev-piuhjo7tbh61jome.us.auth0.com/authorize',
   accessTokenUrl: 'https://dev-piuhjo7tbh61jome.us.auth0.com/oauth/token',
   userUrl: 'https://dev-piuhjo7tbh61jome.us.auth0.com/userinfo',
+  origin: process.env.origin,
+  completeUrl: process.env.completeUrl,
 };
+
 
 export const begin = createBeginHandler(config);
 export const complete = createCompleteHandler(config);
