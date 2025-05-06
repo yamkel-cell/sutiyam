@@ -1,4 +1,4 @@
-const { handler } = require('netlify-cms-oauth-provider-node');
+const handler = require('netlify-cms-oauth-provider-node');
 
 exports.handler = handler({
   // These should match what you set in Auth0
