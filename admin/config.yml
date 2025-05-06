@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: yamkel-cell/sutiyam  
+  branch: main 
+  auth_endpoint:  
+  app_id: YOUR_GITHUB_OAUTH_APP_ID  
+
+media_folder: "img"  # Folder where media files (images, etc.) are stored
+public_folder: "/img"  # Path to public images in your website
+
+collections:
+  - name: "homepage"
+    label: "Homepage Content"
+    files:
+      - file: "content/homepage.md"  # Point to the markdown file to manage
+        label: "Main Page"
+        name: "main_page"
+        fields:
+          - { label: "Page Title", name: "title", widget: "string" }
+          - { label: "Main Content", name: "body", widget: "markdown" }
