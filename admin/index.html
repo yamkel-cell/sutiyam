@@ -3,8 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Content Manager</title>
-    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
   </head>
   <body>
+    <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      // Delay init until DOM is ready
+      window.addEventListener('DOMContentLoaded', function () {
+        if (!window.CMS) {
+          console.error('Decap CMS failed to load');
+          return;
+        }
+        // Optional: you can add custom widgets or previews here
+        window.CMS.init();
+      });
+    </script>
   </body>
 </html>
