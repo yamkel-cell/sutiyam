@@ -1,8 +1,0 @@
-[functions]
-  node_bundler = "esbuild"
-
-[build.environment]
-  origin = "https://www.sutiyam.online"
-  completeUrl = "https://www.sutiyam.online/.netlify/functions/auth/callback"
-  oauthClientID = "2Ud5AqjVGaxCs1SRjti4jg32AMeK0HNC"
-  oauthClientSecret = "Ag7OVGQKGjZwtv9GEuXKq5MFdZewBbTFAfLad94UnAMtr5Fi1tNnSfnTCR6eJaCe"
