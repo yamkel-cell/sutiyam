@@ -3,8 +3,8 @@ backend:
   repo: yamkel-cell/sutiyam       # GitHub repo
   branch: main
   auth_type: pkce                 # PKCE flow for Auth0
-  base_url: https://www.sutiyam.online   
-  auth_endpoint: /.netlify/functions/auth
+  base_url: https://dev-piuhjo7tbh61jome.us.auth0.com   
+  auth_endpoint: /authorize
 
 media_folder: "img"
 public_folder: "/img"
