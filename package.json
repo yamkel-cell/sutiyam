@@ -1,0 +1,8 @@
+{
+  "name": "sutiyam-cms",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "netlify-cms-oauth-provider-node": "^1.0.0"
+  }
+}
