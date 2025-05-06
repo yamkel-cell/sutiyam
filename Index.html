@@ -33,6 +33,7 @@
           </ul>
         </nav>
         <br>
+      <button onclick="netlifyIdentity.open()">Login</button>
       <i class="fa-solid fa-bars" alt="Menu" class="menu-icon" onclick="menutoggle()" ></i>
 
     </div>
@@ -45,6 +46,7 @@
       <div class="col-2">
         <h1 id="home-title">Loading title...</h1>
         <h3>🖤 Premium Casual Formal Wear for Every Occasion</h3>
+
         <br>
         <p id="home-body">Loading content...</p>
         <a href="OurCollection_Updated.html" class="btn">Explore Now &#8594;</a>
@@ -164,7 +166,21 @@
     </div>
   </footer>
 
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<!-- Add this in the <head> or before the closing </body> -->
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+  // Initialize Netlify Identity
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => {
+          document.location.href = "/admin/";
+        });
+      }
+    });
+    window.netlifyIdentity.init();
+  }
+</script>
 
 
 <!---  Menu Toggle Script  --->
