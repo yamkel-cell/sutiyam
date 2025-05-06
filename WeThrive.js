@@ -356,6 +356,20 @@ function changeImage(src) {
   document.getElementById("largeImage").src = src;
 }
 
+// ==== Initialize the Netlify Identity widget ====
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on('init', user => {
+      if (!user) {
+        window.netlifyIdentity.on('login', () => {
+          document.location.href = '/admin/';
+        });
+      }
+    });
+
+    window.netlifyIdentity.init();
+  }
+
+
 // ===== Load Homepage Content from Markdown ====
 fetch('/content/homepage.md')
     .then(res => res.text())
