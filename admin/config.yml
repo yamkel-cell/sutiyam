@@ -1,9 +1,10 @@
 backend:
   name: github
-  repo: yamkel-cell/sutiyam
+  repo: yamkel-cell/sutiyam       # GitHub repo
   branch: main
-  auth_type: implicit
-  app_id: 2Ud5AqjVGaxCs1SRjti4jg32AMeK0HNC
+  auth_type: pkce                 # PKCE flow for Auth0
+  base_url: https://www.sutiyam.online   
+  auth_endpoint: /.netlify/functions/auth
 
 media_folder: "img"
 public_folder: "/img"
