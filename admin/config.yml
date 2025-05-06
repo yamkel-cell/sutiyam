@@ -2,10 +2,9 @@ backend:
   name: github
   repo: yamkel-cell/sutiyam
   branch: main
-  auth_type: implicit
-  app_id: Ov23lihUeX8y5I795EPw
   base_url: https://api.netlify.com
   auth_endpoint: auth
+  app_id: Ov23lihUeX8y5I795EPw
 
 
 media_folder: "img"
