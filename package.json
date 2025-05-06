@@ -1,5 +1,5 @@
 {
-  "name": "sutiyam-cms",
+  "name": "sutiyam-cms-auth",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
