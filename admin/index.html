@@ -4,17 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Static CMS - Admin Panel</title>
+  
+  <!-- Load Decap CMS CSS -->
   <link rel="stylesheet" href="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.css">
+  
+  <!-- Load Decap CMS JS -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <div id="cms-container"></div>
+  <div id="cms-container"></div> <!-- The container for CMS -->
 
   <script>
-    // Initialize the CMS with the configuration file
-    DecapCMS.init({
-      config: '/admin/config.yml', // Path to the config file
-      selector: '#cms-container'   // The container for the CMS UI
+    // Ensure that Decap CMS is initialized once the page has loaded
+    window.addEventListener('load', function() {
+      if (typeof DecapCMS !== 'undefined') {  // Check if DecapCMS is available
+        DecapCMS.init({
+          config: '/admin/config.yml', // Path to your configuration file
+          selector: '#cms-container'   // The container for the CMS UI
+        });
+      } else {
+        console.error("Decap CMS library failed to load.");
+      }
     });
   </script>
 </body>
