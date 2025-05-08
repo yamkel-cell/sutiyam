@@ -1,20 +1,18 @@
 backend:
   name: github
-  repo: yamkel-cell/sutiyam  
-  branch: main 
-  auth_endpoint:  
-  app_id: Ov23lihUeX8y5I795EPw  
+  repo: your-username/your-repo-name
+  branch: main
+  base_url: https://your-auth-app.netlify.app  # We'll configure this below
 
-media_folder: "img"  # Folder where media files (images, etc.) are stored
-public_folder: "/img"  # Path to public images in your website
+media_folder: "img"
+public_folder: "/img"
 
 collections:
-  - name: "homepage"
-    label: "Homepage Content"
-    files:
-      - file: "content/homepage.md"  # Point to the markdown file to manage
-        label: "Main Page"
-        name: "main_page"
-        fields:
-          - { label: "Page Title", name: "title", widget: "string" }
-          - { label: "Main Content", name: "body", widget: "markdown" }
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
