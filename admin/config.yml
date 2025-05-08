@@ -2,17 +2,19 @@ backend:
   name: github
   repo: yamkel-cell/sutiyam
   branch: main
-  base_url: https://www.sutiyam.online
 
-media_folder: "img"
-public_folder: "/img"
+local_backend: true  # optional, for local testing
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
 
 collections:
-  - name: "blog"
-    label: "Blog"
-    folder: "blog"
+  - name: "products"
+    label: "Products"
+    folder: "content/products"
     create: true
     slug: "{{slug}}"
     fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "image", label: "Image", widget: "image" }
