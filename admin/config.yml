@@ -25,7 +25,6 @@ collections:
     label: "Homepage Content"
     folder: "content"
     create: false
-    slug: "{{slug}}"
     files:
     - file: "content/homepage.md"
       label: "Homepage"
