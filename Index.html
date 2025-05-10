@@ -172,8 +172,7 @@
       const titleEl = document.getElementById('home-title');
       const bodyEl = document.getElementById('home-body');
     
-      fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/homepage.md
-')
+      fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/homepage.md')
         .then(res => res.json())
         .then(data => {
           const markdown = atob(data.content);
