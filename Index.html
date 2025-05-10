@@ -166,6 +166,34 @@
     </div>
   </footer>
 
+<!--- Inject CMS Content into HTML Elements --->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+      const titleEl = document.getElementById('home-title');
+      const bodyEl = document.getElementById('home-body');
+    
+      fetch('https://api.github.com/repos/yamkel-cell/sutiyam/content/homepage.md')
+        .then(res => res.json())
+        .then(data => {
+          const markdown = atob(data.content);
+          const frontmatterMatch = markdown.match(/---([\s\S]*?)---/);
+    
+          if (frontmatterMatch) {
+            const yaml = frontmatterMatch[1];
+            const title = yaml.match(/title:\s*(.*)/)?.[1]?.trim();
+            const bodyMatch = yaml.match(/body:\s*>\s*([\s\S]*)/);
+            const body = bodyMatch ? bodyMatch[1].trim() : '';
+    
+            if (title) titleEl.textContent = title.replace(/['"]/g, '');
+            if (body) bodyEl.innerHTML = marked.parse(body);
+          }
+        })
+        .catch(err => {
+          console.error('Failed to load homepage content:', err);
+          titleEl.textContent = "Error loading title.";
+          bodyEl.textContent = "Error loading content.";
+        });
+    </script>
 
 <!---  Menu Toggle Script  --->
 <script>
