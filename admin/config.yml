@@ -18,3 +18,14 @@ collections:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "description", label: "Description", widget: "text" }
       - { name: "image", label: "Image", widget: "image" }
+      
+      # to homepage
+      
+  - name: "content_page"
+    label: "Content Page"
+    folder: "content"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "body", label: "Body", widget: "text" }
