@@ -195,6 +195,46 @@
         });
     </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
+
+    <script>
+    async function loadAllProducts() {
+      const container = document.querySelector('.row');
+    
+      // Fetch file list from GitHub API
+      const res = await fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/products');
+      const files = await res.json();
+    
+      for (let file of files) {
+        if (file.name.endsWith('.md')) {
+          const productRes = await fetch(file.download_url);
+          const md = await productRes.text();
+          const { data } = window.matter(md);
+    
+          const thumbnails = JSON.stringify(data.thumbnails || []);
+    
+          const productHTML = `
+            <div class="col-3">
+              <br>
+              <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
+                   src="${data.image}" 
+                   alt="${data.alt || data.title}" 
+                   title="Preview Now"
+                   onclick='openGallery(this)' 
+                   data-large="${data.image}"
+                   data-thumbnails='${thumbnails}'>
+              <h4>${data.title}</h4>
+            </div>
+          `;
+          container.insertAdjacentHTML('beforeend', productHTML);
+        }
+      }
+    }
+    
+    loadAllProducts();
+    </script>
+
+
 <!---  Menu Toggle Script  --->
 <script>
   var MenuItems = document.getElementById("MenuItems");
