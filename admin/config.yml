@@ -19,6 +19,22 @@ collections:
       - { name: "image", label: "Main Image", widget: "image" }
       - { name: "thumbnails", label: "Gallery Images", widget: "list", field: { name: "thumb", label: "Thumbnail", widget: "image" } }
       - { name: "alt", label: "Alt Text", widget: "string" }
+
+    # Collection products
+  - name: "products"
+    label: "Collect Products"
+    folder: "content/Collectio-products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "image", label: "Main Image", widget: "image" }
+      - { name: "alt", label: "Alt Text", widget: "string" }
+      - { name: "price", label: "Price", widget: "number" }
+      - { name: "sizes", label: "Sizes", widget: "list", default: ["28", "30", "32"] }
+      - { name: "thumbnails", label: "Thumbnail Images", widget: "list", field: {label: "Thumbnail", name: "thumb", widget: "image"} }
+      - { name: "rating", label: "Rating (0-5)", widget: "number", min: 0, max: 5, step: 1 }
+      - { name: "description", label: "Description", widget: "text" }
       
       # to homepage
       
