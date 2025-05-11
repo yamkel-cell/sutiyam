@@ -22,8 +22,8 @@ collections:
 
     # Collection products
   - name: "products"
-    label: "Collect Products"
-    folder: "content/Collectio-products"
+    label: "Collection Products"
+    folder: "content/collection-products"
     create: true
     slug: "{{slug}}"
     fields:
