@@ -3,7 +3,7 @@ name: Upload Images to Cloudinary
 on:
   push:
     paths:
-      - 'images/uploads/**/*.{jpg,jpeg,png,webp}'  # Adjust the path and file types as needed
+      - 'img/**/*.{jpg,jpeg,png,webp}'  # Watches all images in img/ and its subfolders
 
 jobs:
   upload:
@@ -19,4 +19,4 @@ jobs:
           cloud-name: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
           api-key: ${{ secrets.CLOUDINARY_API_KEY }}
           api-secret: ${{ secrets.CLOUDINARY_API_SECRET }}
-          images: "./images/uploads/**/*.jpg"
+          images: "./img/**/*.{jpg,jpeg,png,webp}"
