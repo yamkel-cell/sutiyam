@@ -21,7 +21,7 @@ collections:
       - { name: "alt", label: "Alt Text", widget: "string" }
 
     # Collection products
-  - name: "products"
+  - name: "collection"
     label: "Collection Products"
     folder: "content/collection-products"
     create: true
