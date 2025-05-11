@@ -1,0 +1,22 @@
+name: Upload Images to Cloudinary
+
+on:
+  push:
+    paths:
+      - 'images/uploads/**/*.{jpg,jpeg,png,webp}'  # Adjust the path and file types as needed
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Upload images to Cloudinary
+        uses: emmanuelgautier/cloudinary-upload-action@v2
+        with:
+          cloud-name: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
+          api-key: ${{ secrets.CLOUDINARY_API_KEY }}
+          api-secret: ${{ secrets.CLOUDINARY_API_SECRET }}
+          images: "./images/uploads/**/*.jpg"
