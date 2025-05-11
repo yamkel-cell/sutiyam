@@ -21,14 +21,13 @@ collections:
       
       # to homepage
       
-  - name: "Homepage"
+  - name: "homepage"
     label: "Homepage Content"
-    folder: "content"
-    create: false
+    delete: false
     files:
-    - file: "content/homepage.md"
-      label: "Homepage"
-      name: "homepage"
-      fields:
-      - { name: "title", label: "Title", widget: "string" }
-      - { name: "body", label: "Body", widget: "text" }
+      - file: "content/homepage.md"
+        label: "Homepage"
+        name: "homepage"
+        fields:
+          - { name: "title", label: "Title", widget: "string" }
+          - { name: "body", label: "Body", widget: "text" }
