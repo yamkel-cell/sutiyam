@@ -19,4 +19,4 @@ jobs:
           cloud-name: ${{ secrets.CLOUDINARY_CLOUD_NAME }}
           api-key: ${{ secrets.CLOUDINARY_API_KEY }}
           api-secret: ${{ secrets.CLOUDINARY_API_SECRET }}
-          images: "./img/**/*.{jpg,jpeg,png,webp}"
+          images: "./img/**/*.{jpg,JPG,jpeg,png,webp}"
