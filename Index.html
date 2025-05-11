@@ -176,17 +176,19 @@
         .then(res => res.json())
         .then(data => {
           const markdown = atob(data.content);
-          const frontmatterMatch = markdown.match(/---([\s\S]*?)---/);
+    
+          // Extract front matter
+          const frontmatterMatch = markdown.match(/^---\s*([\s\S]*?)\s*---/);
+          const bodyContent = markdown.replace(/^---[\s\S]*?---/, '').trim();
     
           if (frontmatterMatch) {
             const yaml = frontmatterMatch[1];
             const title = yaml.match(/title:\s*(.*)/)?.[1]?.trim();
-            const bodyMatch = yaml.match(/body:\s*>\s*([\s\S]*)/);
-            const body = bodyMatch ? bodyMatch[1].trim() : '';
-    
             if (title) titleEl.textContent = title.replace(/['"]/g, '');
-            if (body) bodyEl.innerHTML = marked.parse(body);
           }
+    
+          // Render markdown body
+          if (bodyContent) bodyEl.innerHTML = marked.parse(bodyContent);
         })
         .catch(err => {
           console.error('Failed to load homepage content:', err);
@@ -194,6 +196,7 @@
           bodyEl.textContent = "Error loading content.";
         });
     </script>
+
 
   <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
 
