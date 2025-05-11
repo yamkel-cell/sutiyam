@@ -18,6 +18,6 @@ thumbnails:
   - /images/uploads/2PC/IMG-20250126-WA0443.jpg
   - /images/uploads/2PC/IMG-20250126-WA0358.jpg
   - /images/uploads/2PC/IMG-20250126-WA0488.jpg
-rating: 4
+rating: 5
 description: A modern stylish Two Piece Plain Suit for men.
 ---
