@@ -140,7 +140,7 @@ Style for the entire page
 }
 
 body {
-  font-family: 'popins' sans-serif;
+  font-family: 'Open Sans', sans-serif;
   background-image: url('img\2PC/IMG-20250126-WA0516.jpg');
   background-size: cover; /* Cover the whole page */
   background-position: center; /* Center the image */
@@ -148,6 +148,12 @@ body {
   text-align:justify;
   background-attachment: fixed;
 }
+
+h1, h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.5px;
+}
+
 
 .logo img {
   width: 120px;
