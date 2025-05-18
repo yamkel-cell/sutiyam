@@ -48,3 +48,16 @@ collections:
         fields:
           - { name: "title", label: "Title", widget: "string" }
           - { name: "body", label: "Body", widget: "markdown" }
+
+      # Reviews
+  
+  - name: "reviews"
+    label: "Customer Reviews"
+    folder: "content/reviews"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: "name", label: "Customer Name", widget: "string" }
+      - { name: "message", label: "Review", widget: "text" }
+      - { name: "rating", label: "Rating (0-5)", widget: "number", min: 0, max: 5, step: 1 }
+      - { name: "image", label: "Customer Image", widget: "image", required: false }
