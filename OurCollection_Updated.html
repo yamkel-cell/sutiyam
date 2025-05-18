@@ -517,27 +517,12 @@
   
 
    <!--  Testimonial  -->
-   <div class="testimonial">
+    <div class="testimonial">
       <h2 class="titleCol">Customer Reviews..</h2>
-        <div class="small-container">
-          <div class="row">
-            <div class="col-3">
-              <i class="fa fa-quote-left"></i>
-              <p>
-                Visiting SutiYam was the best choice ever!!
-              </p>
-              <div class="rating">
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star"></i>
-                <i class="fa fa-star-o"></i>
-              </div>
-              <img src="img/IMG-20250126-eWA0488.jpg" alt="Yams">
-              <h3>Yams</h3>
-            </div>            
+      <div class="small-container">
+        <div class="row" id="reviews-container">
+          <!-- Reviews will be injected here by JS -->
         </div>
-
       </div>
     </div>
 
@@ -588,6 +573,53 @@
     </footer>
 
     <!--  Script  -->
+  <script>
+    // ===== Load Reviews Content from Markdown ====
+    async function fetchReviews() {
+    const reviewFolder = '/content/reviews/'; // where .md files are stored in repo
+    const reviewFiles = [
+      'asonele.md',
+      'yams.md',
+      // Add more review filenames here
+    ];
+
+    const container = document.getElementById('reviews-container');
+
+    for (const file of reviewFiles) {
+      const res = await fetch(`${reviewFolder}${file}`);
+      const text = await res.text();
+
+      // Extract frontmatter using regex
+      const frontmatter = /---\s*([\s\S]*?)\s*---/.exec(text);
+      if (!frontmatter) continue;
+
+      const data = Object.fromEntries(
+        frontmatter[1].split('\n').map(line => {
+          const [key, ...value] = line.split(':');
+          return [key.trim(), value.join(':').trim().replace(/^"|"$/g, '')];
+        })
+      );
+
+      // Create review element
+      const reviewEl = document.createElement('div');
+      reviewEl.classList.add('col-3');
+      reviewEl.innerHTML = `
+        <i class="fa fa-quote-left"></i>
+        <p>${data.message}</p>
+        <div class="rating">
+          ${[...Array(5)].map((_, i) =>
+            `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
+          ).join('')}
+        </div>
+        ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
+        <h3>${data.name}</h3>
+      `;
+      container.appendChild(reviewEl);
+    }
+  }
+
+  fetchReviews();
+  </script>
     <script src="WeThrive.js"></script>
 </body>
 </html>
