@@ -1,7 +1,8 @@
 ---
 name: Asonele
+message: Visiting SutiYam was the best choice ever!
 rating: 4
-image: /images/uploads/yam.jpg
+image: ""
 ---
 
 Visiting SutiYam was the best choice ever! 
