@@ -58,6 +58,6 @@ collections:
     slug: "{{slug}}"
     fields:
       - { name: "name", label: "Customer Name", widget: "string" }
-      - { name: "message", label: "Review", widget: "text" }
       - { name: "rating", label: "Rating (0-5)", widget: "number", min: 0, max: 5, step: 1 }
       - { name: "image", label: "Customer Image", widget: "image", required: false }
+      - { name: "body", label: "Review Message", widget: "markdown", required: true }
