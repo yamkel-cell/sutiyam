@@ -1,6 +1,5 @@
 /*
 
-  # SECURITY HEADERS
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   X-Content-Type-Options: nosniff
   X-Frame-Options: DENY
@@ -9,9 +8,5 @@
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Resource-Policy: same-origin
-
-  # CONTENT SECURITY POLICY (CSP)
-  Content-Security-Policy: script-src 'self' 'unsafe-inline' https://cdn.emailjs.com https://cdn.jsdelivr.net https://kit.fontawesome.com https://cdn.auth0.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self' https://kit.fontawesome.com; connect-src 'self' https://cdn.emailjs.com https://www.googletagmanager.com;
-
-  # PERFORMANCE / CACHING
+  Content-Security-Policy: script-src 'self' 'unsafe-inline' https://cdn.emailjs.com https://cdn.jsdelivr.net https://kit.fontawesome.com https://cdn.auth0.com https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://ka-f.fontawesome.com; img-src 'self' data:; font-src 'self' https://kit.fontawesome.com https://fonts.gstatic.com; connect-src 'self' https://cdn.emailjs.com https://www.googletagmanager.com https://ka-f.fontawesome.com
   Cache-Control: public, max-age=0, must-revalidate
