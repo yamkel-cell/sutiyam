@@ -576,49 +576,52 @@
   <script>
     // ===== Load Reviews Content from Markdown ====
     async function fetchReviews() {
-    const reviewFolder = '/content/reviews/'; // where .md files are stored in repo
-    const reviewFiles = [
-      'asonele.md',
-      'yams.md',
-      // Add more review filenames here
-    ];
+  const reviewFolder = '/content/reviews/';
+  const reviewFiles = [
+    'asonele.md',
+    'yams.md',
+    // Add more review filenames here
+  ];
 
-    const container = document.getElementById('reviews-container');
+  const container = document.getElementById('reviews-container');
 
-    for (const file of reviewFiles) {
-      const res = await fetch(`${reviewFolder}${file}`);
-      const text = await res.text();
+  for (const file of reviewFiles) {
+    const res = await fetch(`${reviewFolder}${file}`);
+    const text = await res.text();
 
-      // Extract frontmatter using regex
-      const frontmatter = /---\s*([\s\S]*?)\s*---/.exec(text);
-      if (!frontmatter) continue;
+    // Extract frontmatter and body
+    const match = /---\s*([\s\S]*?)\s*---\s*([\s\S]*)/.exec(text);
+    if (!match) continue;
 
-      const data = Object.fromEntries(
-        frontmatter[1].split('\n').map(line => {
-          const [key, ...value] = line.split(':');
-          return [key.trim(), value.join(':').trim().replace(/^"|"$/g, '')];
-        })
-      );
+    const frontmatter = match[1];
+    const body = match[2].trim(); // The actual review text
 
-      // Create review element
-      const reviewEl = document.createElement('div');
-      reviewEl.classList.add('col-3');
-      reviewEl.innerHTML = `
-        <i class="fa fa-quote-left"></i>
-        <p>${data.message}</p>
-        <div class="rating">
-          ${[...Array(5)].map((_, i) =>
-            `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
-          ).join('')}
-        </div>
-        ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
-        <h3>${data.name}</h3>
-      `;
-      container.appendChild(reviewEl);
-    }
+    const data = Object.fromEntries(
+      frontmatter.split('\n').map(line => {
+        const [key, ...value] = line.split(':');
+        return [key.trim(), value.join(':').trim().replace(/^"|"$/g, '')];
+      })
+    );
+
+    // Create review element
+    const reviewEl = document.createElement('div');
+    reviewEl.classList.add('col-3');
+    reviewEl.innerHTML = `
+      <i class="fa fa-quote-left"></i>
+      <p>${body}</p>
+      <div class="rating">
+        ${[...Array(5)].map((_, i) =>
+          `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
+        ).join('')}
+      </div>
+      ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
+      <h3>${data.name}</h3>
+    `;
+    container.appendChild(reviewEl);
   }
+}
 
-  fetchReviews();
+fetchReviews();
   </script>
     <script src="WeThrive.js"></script>
 </body>
