@@ -379,3 +379,49 @@ fetch('/content/homepage.md')
       document.getElementById('home-title').innerText = parsed.data.title;
       document.getElementById('home-body').innerHTML = parsed.data.body.replace(/\n/g, "<br>");
     });
+
+document.querySelectorAll('.col-4').forEach(product => {
+  // Rewrite main-img src
+  const img = product.querySelector('.main-img');
+  if (!img) return;
+
+  const rewriteUrl = (url, width = 600) => {
+    // Remove leading slash if present, to avoid double slashes
+    const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+    return `/.netlify/images?url=/${cleanUrl}&w=${width}&fit=cover`;
+  };
+
+  // Update src
+  const originalSrc = img.getAttribute('src');
+  if (originalSrc) img.setAttribute('src', rewriteUrl(originalSrc, 600));
+
+  // Update data-large with bigger size for gallery
+  const dataLarge = img.getAttribute('data-large');
+  if (dataLarge) img.setAttribute('data-large', rewriteUrl(dataLarge, 1000));
+
+  // Update data-color-images (JSON object)
+  const dataColorImages = img.getAttribute('data-color-images');
+  if (dataColorImages) {
+    try {
+      const colorImagesObj = JSON.parse(dataColorImages);
+      for (const color in colorImagesObj) {
+        colorImagesObj[color] = rewriteUrl(colorImagesObj[color], 600);
+      }
+      img.setAttribute('data-color-images', JSON.stringify(colorImagesObj));
+    } catch (e) {
+      console.warn('Invalid JSON in data-color-images', e);
+    }
+  }
+
+  // Update data-thumbnails (JSON array)
+  const dataThumbnails = img.getAttribute('data-thumbnails');
+  if (dataThumbnails) {
+    try {
+      const thumbnailsArr = JSON.parse(dataThumbnails);
+      const updatedThumbs = thumbnailsArr.map(url => rewriteUrl(url, 300));
+      img.setAttribute('data-thumbnails', JSON.stringify(updatedThumbs));
+    } catch (e) {
+      console.warn('Invalid JSON in data-thumbnails', e);
+    }
+  }
+});
