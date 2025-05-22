@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> <!-- Ensures your page is responsive by scaling it properly on all devices -->
+  <meta name="description" content="Exclusive formal suits for weddings, graduations, and events. Free delivery."> <!-- A short summary of your webpage for search engines and social media.
+  -->
+  <meta name="keywords" content="formal suits, wedding suits, graduation outfits, men’s suits, women’s suits"> <!-- Optional metadata listing keywords for search engine optimization (SEO).
+  -->
+  <meta name="author" content="SutiYam"> <!-- Author or business -->
+  <meta name="robots" content="index, follow"> <!-- Search engine crawling -->
+  <title>SutiYam - About Us</title>
+  <link rel="stylesheet" href="ladies.css">
+  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" > <!-- Favicon added -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="container"> 
+    <div class="navbar">
+      <div class="logo">
+        <a href="Index.html"><img src="img/SutiYam-Logo.0.jpg" width="120px" alt="SutiYam Logo"></a> <!-- Logo with link -->
+        <p class="slogan">SutiYam — Wear Confidence</p> <!-- Brand slogan -->
+      </div>
+        <nav>
+          <ul id="MenuItems">
+              <li><a href="Index.html">Home</a></li>
+              <li><a href="OurCollection.html">Our Collection</a></li>
+              <!--- Future categories can be re-added -->
+              <li><a href="AboutUs.html">About Us</a></li>
+              
+            </li>
+          </ul>
+        </nav>
+        <br>
+     <i class="fa-solid fa-bars menu-icon" role="button" tabindex="0" style="display: none;" onclick="menutoggle()"></i>
+    </div>
+    <hr class="hor">
+    <p style="text-align: center;">
+      <br>💎 We don’t just sell clothes. We sell confidence.
+    </p>
+    <hr class="hor">
+    <div class="row">
+      <div class="col-2">
+        <h2>Our Story – The SutiYam Journey</h2>
+        <h3>👑 Luxury. Confidence. Success.</h3>
+        <br>
+        <p>
+          <b> Who We Are:</b> SutiYam was founded on the belief that fashion should be elegant yet comfortable. <br>We sell for individuals who want to exude confidence effortlessly.
+        </p>
+        <br>
+        <p>
+          <b>Our Mission:</b> To redefine casual formal wear by blending timeless elegance with modern comfort.
+        </p>
+        <p>
+          <br><h4><b><i>Why Choose Us?</i></b></h4>
+          <ul class="list">
+            <li>Premium Quality</li>
+            <li>Affordable Luxury</li>
+          </ul>
+        </p>
+        <a href="OurCollection.html" class="btn">Explore Now &#8592;</a>
+      </div>
+      <div class="col-2">
+        <img style="padding-left: 40px; height: 680px" src="img/US/Asa.jpg" title="Elevate Your Style. Thrive in Confidence">
+      </div>
+    </div>
+  </div>
+  
+  <hr class="hor">
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-center">
+      <div class="footer-logo-section">
+        <img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo" class="footer-logo">
+      </div>
+
+        <div class="footer-contact">
+        <span>Account</span>
+        <p><i class="fa-solid fa-circle-exclamation"></i> <a href="privacy-policy.html" target="_blank" >Privacy Policy</a></p>
+        <p><i class="fa-solid fa-truck"></i> <a href="delivery-policy.html" target="_blank" >Delivery Policy</a></p>
+        <p><i class="fa-solid fa-rotate-left"></i> <a href="returns_policy.html" target="_blank" >Returns & Refunds</a></p>
+      </div>
+
+      <div class="footer-contact">
+        <span>Contact Us</span>
+        <p><i class="fa-solid fa-message"></i> <a href="https://wa.me/27794973132" target="_blank">27 79 497 3132</a></p>
+            <p><i class="fa-solid fa-envelope"></i> <a href="mailto:sutiyam.orders@gmail.com">sutiyam.orders@gmail.com</a></p>
+            <p><i class="fa-brands fa-facebook"></i> <a href="https://www.facebook.com/profile.php?id=61573784650219" target="_blank">Facebook</a></p>
+            <p><i class="fa-brands fa-instagram"></i> <a href="https://www.instagram.com/sutiyam2025" target="_blank">Instagram</a></p>
+          </div>
+        <p>
+          SutiYam partners with selected fashion outlets and suppliers to bring you a curated collection of stylish, affordable formalwear. All items are inspected and quality-assured before delivery to ensure you receive nothing but the best.
+        </p>
+    </div>
+    <div>
+
+    </div>
+
+        <!-- Footer Slogan -->
+      <div class="footer-slogan-wrapper">
+        <p class="footer-slogan">Elegance for Every Occasion ✨</p>
+      </div>
+      
+    <div class="footer-bottom">
+      <p>&copy; 2025 <strong>SutiYam</strong> – Smart clothing | All rights reserved</p>
+      <section class="back-start">
+        <a href="#top" class="beginning" id="backToTop" aria-label="Back to Top">
+          <span class="read-back">
+            <i class="fa-solid fa-arrow-up-from-bracket" ></i>
+            Back to Top
+          </span>
+        </a>
+      </section>
+    </div>
+  </div>
+</footer>
+
+<!---  Menu Toggle Script  --->
+<script>
+  var MenuItems = document.getElementById("MenuItems");
+
+  MenuItems.style.maxHeight = "0px";
+
+  function menutoggle() {
+    if(MenuItems.style.maxHeight == "0px"){
+      MenuItems.style.maxHeight = "150px";
+    }
+    else {
+      MenuItems.style.maxHeight = "0px";
+    }
+  }
+</script>
+<!-- Load Gray-Matter for Markdown/YAML parsing -->
+<script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
+<script src="WeThrive.js"></script>
+</body>
+</html>

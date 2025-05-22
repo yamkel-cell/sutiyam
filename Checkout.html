@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
+  <title>Checkout</title>
+  <link rel="stylesheet" href="ladies.css">
+  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+  <div class="order-form-container">
+    <h2>Place Your Order</h2>
+    <form id="order-form" onsubmit="return sendOrderEmail(event)" data-netlify="true">
+    <!-- Honeypot for spam detection -->
+    <input type="text" name="honeypot" style="display:none">
+
+    <!-- Security field -->
+    <input type="hidden" name="site_auth" value="sutiyamAUTH_Yams_Matthew_2025_TSHF">
+    
+    <input type="text" name="name" placeholder="Full Name" maxlength="50" required>
+    <input type="email" name="email" placeholder="Email Address" maxlength="80" required>
+    <input type="tel" name="phone" placeholder="Phone Number" minlength="10" maxlength="15" required>
+    
+    <textarea name="address" placeholder="Shipping Address" maxlength="300" required></textarea>
+    <textarea name="comment" placeholder="Extra Requests (optional)" maxlength="300"></textarea>
+
+    <!-- Netlify ReCAPTCHA -->
+    <div data-netlify-recaptcha="true"></div>
+    
+    <button type="submit">Place Order</button>
+  </form>
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div id="order-items"></div>
+      <div id="order-total"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Initialize EmailJS with your public key
+    emailjs.init("RrEnpMIji3v_TWeDK"); // public key
+
+    function sendOrderEmail(event) {
+      event.preventDefault();
+
+      const form = document.getElementById("order-form");
+      const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+      if (!cartItems.length) {
+        alert("🛒 Your cart is empty. Please add items before submitting.");
+        return false;
+      }
+      // Honeypot field to detect bots and silently stop them
+      // This field should be hidden from users but visible to bots
+      const honeypot = event.target.honeypot?.value;
+        if (honeypot) {
+          console.log("Bot detected. Stopping submission.");
+          return false;
+        }
+        
+      const orders = cartItems.map(item => ({
+        name: item.name,
+        size: item.size,
+        color: item.color || "N/A",
+        quantity: item.quantity,
+        price: (item.price * item.quantity).toFixed(2),
+        image_url: item.image?.startsWith("http")
+          ? item.image
+          : "https://www.sutiyam.online/" + item.image
+      }));
+
+      const total = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0).toFixed(2);
+      const orderId = "SY" + Date.now(); // Unique order ID
+
+      const sanitize = str => str.trim().replace(/[<>]/g, '');
+
+      const formData = {
+        order_id: orderId,
+        user_name: sanitize(form.name.value),
+        user_email: sanitize(form.email.value),
+        user_phone: sanitize(form.phone.value),
+        address: sanitize(form.address.value),
+        comment: sanitize(form.comment.value),
+        site_auth: sanitize(form.site_auth.value),
+        orders: orders,
+        total: total
+      };
+
+        // Validate form data
+      if (!Number.isFinite(item.price) || item.quantity <= 0) {
+          alert("Invalid cart item detected.");
+          return false;
+        }
+
+
+      // First send email to client
+    emailjs.send("service_isvy21j", "template_h7or7bh", formData)
+      .then(() => {
+        // Then send email to shop owner
+        return emailjs.send("service_isvy21j", "template_l9h47jk", formData);
+      })
+      .then(() => {
+        alert("Order sent successfully! You’ll receive confirmation shortly.");
+        localStorage.removeItem("cartItems");
+        form.reset();
+        window.location.href = "https://sutiyam.online/ourcollection_updated.html";
+      })
+      .catch(error => {
+        console.error("EmailJS Error:", error);
+        alert("Something went wrong. Please try again later.");
+      });
+
+    return false;
+  }
+
+  </script>
+
+  <script src="WeThrive.js"></script>
+</body>
+</html>
