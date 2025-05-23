@@ -852,11 +852,11 @@ nav ul li {
     max-width: 100px;
     max-height: 150px;
   }
-  .image {
+  .col-3 .image {
     flex-basis: 5%;
     margin: 0 auto;
-    width: 80px;
-    height: auto; 
+    width: 60px;
+    height: 80px; 
   }
   
 }
