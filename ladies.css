@@ -853,10 +853,10 @@ nav ul li {
     max-height: 150px;
   }
   .col-2 .image {
-    flex-basis: 5%;
+    flex-basis: 25%;
     margin: 0 auto;
-    width: 60px;
-    height: 80px; 
+    width: 80px;
+    height: auto; 
   }
   
 }
