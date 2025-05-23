@@ -853,9 +853,9 @@ nav ul li {
     max-height: 150px;
   }
   .col-2 .image {
-    flex-basis: 80%;
+    flex-basis: 100%;
     margin: 0 auto;
-    width: 120px;
+    width: auto;
     height: auto; 
   }
   
