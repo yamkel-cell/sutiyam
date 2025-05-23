@@ -854,7 +854,8 @@ nav ul li {
   }
   .col-2 .image {
     flex-basis: 100%;
-    margin: 0 auto;
+    margin-lift: 2px;
+    margin-right: 2px;
     width: auto;
     height: auto; 
     max-width: 200px;
