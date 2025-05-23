@@ -860,6 +860,10 @@ nav ul li {
     height: auto; 
     max-width: 200px;
   }
+
+  .col-2 h1 {
+  font-size: 16px;
+  }
   
 }
 
