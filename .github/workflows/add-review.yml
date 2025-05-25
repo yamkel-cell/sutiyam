@@ -1,0 +1,45 @@
+name: Add Customer Review
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Customer Name'
+        required: true
+      message:
+        description: 'Review Message'
+        required: true
+      rating:
+        description: 'Rating (0-5)'
+        required: true
+      image:
+        description: 'Image path (optional)'
+        required: false
+
+jobs:
+  add-review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Create markdown file
+        run: |
+          mkdir -p content/reviews
+          FILE="content/reviews/${{ github.event.inputs.name }}-review.md"
+          echo "---" > $FILE
+          echo "name: ${{ github.event.inputs.name }}" >> $FILE
+          echo "rating: ${{ github.event.inputs.rating }}" >> $FILE
+          echo "image: ${{ github.event.inputs.image }}" >> $FILE
+          echo "body: |" >> $FILE
+          echo "  ${{ github.event.inputs.message }}" | fold -s | sed 's/^/  /' >> $FILE
+          echo "---" >> $FILE
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add content/reviews/
+          git commit -m "Add review from ${{ github.event.inputs.name }}"
+          git push
