@@ -11,7 +11,8 @@ Style for the entire page
 
 .reviewBtn {
   display: inline-block;
-  background: sandybrown;
+  text-align: center;
+  background:moccasin;
   padding: 8px 16px;
   margin: 30px 0;
   border-radius: 8px;
