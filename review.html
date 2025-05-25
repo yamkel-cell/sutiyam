@@ -35,7 +35,7 @@
 
   <h1>Submit Your Review</h1>
 
-  <form id="review-form">
+  <form id="reviewForm" name="review" netlify netlify-honeypot="bot-field">
     <input type="text" name="name" placeholder="Your Name" required />
     <input type="number" name="rating" min="0" max="5" placeholder="Rating (0–5)" required />
     <textarea name="message" placeholder="Write your review here..." rows="6" required></textarea>
@@ -48,32 +48,32 @@
   <p id="responseMessage" style="text-align:center; margin-top:20px;"></p>
 
   <script>
-    document.getElementById('reviewForm').addEventListener('submit', async function (e) {
-      e.preventDefault();
-      const form = e.target;
+  document.getElementById('reviewForm').addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const form = e.target;
 
-      const data = {
-        name: form.name.value,
-        message: form.message.value,
-        rating: form.rating.value,
-        image: form.image.value
-      };
+    const data = {
+      name: form.name.value,
+      message: form.message.value,
+      rating: form.rating.value,
+      image: form.image.value
+    };
 
-      const res = await fetch('/.netlify/functions/submit-review', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      const responseMessage = document.getElementById('responseMessage');
-      if (res.ok) {
-        responseMessage.innerText = "Thank you! Your review has been submitted for approval.";
-        form.reset();
-      } else {
-        responseMessage.innerText = "There was a problem submitting your review.";
-      }
+    const res = await fetch('/.netlify/functions/submit-review', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     });
-  </script>
+
+    const responseMessage = document.getElementById('responseMessage');
+    if (res.ok) {
+      responseMessage.innerText = "Thank you! Your review has been submitted for approval.";
+      form.reset();
+    } else {
+      responseMessage.innerText = "There was a problem submitting your review.";
+    }
+  });
+</script>
 
 </body>
 </html>
