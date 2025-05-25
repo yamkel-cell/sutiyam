@@ -1,45 +1,54 @@
-name: Add Customer Review
-
+name: Add Review
 on:
   workflow_dispatch:
     inputs:
       name:
-        description: 'Customer Name'
         required: true
+        type: string
       message:
-        description: 'Review Message'
         required: true
+        type: string
       rating:
-        description: 'Rating (0-5)'
-        required: true
-      image:
-        description: 'Image path (optional)'
         required: false
+        type: string
+      image:
+        required: false
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
-  add-review:
+  add_review:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          persist-credentials: true
 
-      - name: Create markdown file
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Create new review markdown file
         run: |
           mkdir -p content/reviews
-          FILE="content/reviews/${{ github.event.inputs.name }}-review.md"
-          echo "---" > $FILE
-          echo "name: ${{ github.event.inputs.name }}" >> $FILE
-          echo "rating: ${{ github.event.inputs.rating }}" >> $FILE
-          echo "image: ${{ github.event.inputs.image }}" >> $FILE
-          echo "body: |" >> $FILE
-          echo "  ${{ github.event.inputs.message }}" | fold -s | sed 's/^/  /' >> $FILE
-          echo "---" >> $FILE
+          FILENAME="content/reviews/$(date +%s)-review.md"
+          echo "---" > $FILENAME
+          echo "name: ${{ github.event.inputs.name }}" >> $FILENAME
+          echo "message: ${{ github.event.inputs.message }}" >> $FILENAME
+          echo "rating: ${{ github.event.inputs.rating }}" >> $FILENAME
+          echo "image: ${{ github.event.inputs.image }}" >> $FILENAME
+          echo "---" >> $FILENAME
+          echo "Review by ${{ github.event.inputs.name }}" >> $FILENAME
 
       - name: Commit and push
         run: |
-          git config user.name "github-actions"
-          git config user.email "actions@github.com"
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
           git add content/reviews/
           git commit -m "Add review from ${{ github.event.inputs.name }}"
           git push
