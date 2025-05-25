@@ -1,7 +1,11 @@
 backend:
   name: github
-  repo: yamkel-cell/sutiyam
+  repo: yamkel-cell/sutiyam  # GitHub repo
   branch: main
+  base_url: https://api.netlify.com
+  site_domain: www.sutiyam.online
+  auth_endpoint: https://auth.netlify.com
+
 
 local_backend: true  # optional, for local testing
 
