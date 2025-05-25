@@ -1,15 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> <!-- Ensures page is responsive by scaling it properly on all devices -->
-  <meta name="description" content="Exclusive formal suits for weddings, graduations, and events. Free delivery."> <!-- A short summary of your webpage for search engines and social media.
-  -->
-  <meta name="keywords" content="formal suits, wedding suits, graduation outfits, men’s suits, women’s suits"> <!-- Optional metadata listing keywords for search engine optimization (SEO).
-  -->
-  <meta name="author" content="SutiYam"> <!-- Author or business -->
-  <meta name="robots" content="index, follow"> <!-- Search engine crawling -->
-  <title>SutiYam - Our Collection</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="description" content="Discover SutiYam: Formal suits for weddings, events, and more. Free delivery.">
+  <meta name="keywords" content="formal suits, tuxedos, men's suits, women's suits, accessories">
+  <meta name="author" content="SutiYam" /> <!-- Author or business -->
+  <meta name="robots" content="index, follow" /> <!-- Search engine crawling -->
+
+  <!-- SEO ENHANCEMENTS -->
+  <meta property="og:title" content="SutiYam – Elegant Suits for Any Occasion" />
+  <meta property="og:description" content="Explore premium suits for men and women. Weddings, graduations, evening events, and more." />
+  <meta property="og:image" content="https://www.sutiyam.online/img/SutiYam-Logo.0.jpg" />
+  <meta property="og:url" content="https://www.sutiyam.online/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.sutiyam.online/" />
+  
+  <title>SutiYam - Wear Smart with confident</title>
   <link rel="stylesheet" href="ladies.css">
   <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" > <!-- Favicon added -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
@@ -1289,6 +1296,57 @@
     </footer>
 
     <!--  Script  -->
+  <script>
+  async function fetchReviews() {
+  const reviewFolder = '/content/reviews/';
+  const reviewFiles = [
+    'yams.md',
+    'asonele.md',
+    // Add more file names here
+  ];
+
+  const container = document.getElementById('reviews-container');
+
+  for (const file of reviewFiles) {
+    const res = await fetch(`${reviewFolder}${file}`);
+    const text = await res.text();
+
+    const match = text.match(/---\s*([\s\S]*?)\s*---\s*([\s\S]*)/);
+    if (!match) continue;
+
+    const [_, front, body] = match;
+
+    const data = Object.fromEntries(
+      front.split('\n').filter(Boolean).map(line => {
+        const [key, ...value] = line.split(':');
+        return [key.trim(), value.join(':').trim()];
+      })
+    );
+
+    data.body = body.trim(); // Add review body from markdown
+
+    // Create review card
+    const reviewEl = document.createElement('div');
+    reviewEl.classList.add('col-3');
+    reviewEl.innerHTML = `
+      <i class="fa fa-quote-left"></i>
+      <p>${data.body}</p>
+      <div class="rating">
+        ${[...Array(5)].map((_, i) =>
+          `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
+        ).join('')}
+      </div>
+      ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
+      <h3>${data.name}</h3>
+    `;
+
+    container.appendChild(reviewEl);
+  }
+}
+
+fetchReviews();
+
+  </script>
       <!-- Load Gray-Matter for Markdown/YAML parsing -->
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
     <script src="WeThrive.js"></script>
