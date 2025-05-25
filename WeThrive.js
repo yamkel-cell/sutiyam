@@ -486,85 +486,93 @@ fetch('/content/homepage.md')
     });
 
 // ===== Load Reviews Content from Markdown ====
-    async function fetchReviews() {
-    const reviewFolder = '/content/reviews/'; // where .md files are stored in repo
-    const reviewFiles = [
-      'asonele.md',
-      'yams.md',
-      // Add more review filenames here
-    ];
+async function fetchReviews() {
+  const reviewFolder = '/content/reviews/';
+  const reviewFiles = ['asonele.md', 'yams.md']; // Add more if needed
 
-    const container = document.getElementById('reviews-container');
+  const container = document.getElementById('reviews-container');
+  if (!container) return;
 
-    for (const file of reviewFiles) {
+  for (const file of reviewFiles) {
+    try {
       const res = await fetch(`${reviewFolder}${file}`);
       const text = await res.text();
 
-      // Extract frontmatter using regex
-      const frontmatter = /---\s*([\s\S]*?)\s*---/.exec(text);
-      if (!frontmatter) continue;
+      const frontmatterMatch = /---\s*([\s\S]*?)\s*---/.exec(text);
+      if (!frontmatterMatch) continue;
 
       const data = Object.fromEntries(
-        frontmatter[1].split('\n').map(line => {
+        frontmatterMatch[1].split('\n').map(line => {
           const [key, ...value] = line.split(':');
           return [key.trim(), value.join(':').trim().replace(/^"|"$/g, '')];
         })
       );
 
-      // Create review element
-      const reviewEl = document.createElement('div');
-      reviewEl.classList.add('col-3');
-      reviewEl.innerHTML = `
-        <i class="fa fa-quote-left"></i>
-        <p>${data.message}</p>
-        <div class="rating">
-          ${[...Array(5)].map((_, i) =>
-            `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
-          ).join('')}
+      // Grab body (markdown part)
+      const bodyMarkdown = text.split('---')[2]?.trim() || '';
+      const reviewHTML = `
+        <div class="col-3">
+          <i class="fa fa-quote-left"></i>
+          <p>${marked.parse(bodyMarkdown)}</p>
+          <div class="rating">
+            ${[...Array(5)].map((_, i) =>
+              `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
+            ).join('')}
+          </div>
+          ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
+          <h3>${data.name}</h3>
         </div>
-        ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
-        <h3>${data.name}</h3>
       `;
-      container.appendChild(reviewEl);
+
+      container.insertAdjacentHTML('beforeend', reviewHTML);
+    } catch (err) {
+      console.error(`Failed to load ${file}:`, err);
     }
   }
+}
 
-  fetchReviews();
+fetchReviews();
 
-  async function loadAllProducts() {
-      const container = document.querySelector('.row');
-    
-      // Fetch file list from GitHub API
-      const res = await fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/products');
-      const files = await res.json();
-    
-      for (let file of files) {
-        if (file.name.endsWith('.md')) {
-          const productRes = await fetch(file.download_url);
-          const md = await productRes.text();
-          const { data } = window.matter(md);
-    
-          const thumbnails = JSON.stringify(data.thumbnails || []);
-    
-          const productHTML = `
-            <div class="col-3">
-              <br>
-              <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
-                   src="${data.image}" 
-                   alt="${data.alt || data.title}" 
-                   title="Preview Now"
-                   onclick='openGallery(this)' 
-                   data-large="${data.image}"
-                   data-thumbnails='${thumbnails}'>
-              <h4>${data.title}</h4>
-            </div>
-          `;
-          container.insertAdjacentHTML('beforeend', productHTML);
-        }
+// ===== Load All Products from Markdown ====
+async function loadAllProducts() {
+  const container = document.querySelector('.row');
+  if (!container) return;
+
+  try {
+    const res = await fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/products');
+    const files = await res.json();
+
+    for (let file of files) {
+      if (file.name.endsWith('.md')) {
+        const productRes = await fetch(file.download_url);
+        const md = await productRes.text();
+        const { data } = window.matter(md);
+
+        const thumbnails = JSON.stringify(data.thumbnails || []);
+
+        const productHTML = `
+          <div class="col-3">
+            <br>
+            <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
+                src="${data.image}" 
+                alt="${data.alt || data.title}" 
+                title="Preview Now"
+                onclick='openGallery(this)' 
+                data-large="${data.image}"
+                data-thumbnails='${thumbnails}'>
+            <h4>${data.title}</h4>
+          </div>
+        `;
+        container.insertAdjacentHTML('beforeend', productHTML);
       }
     }
-    
-    loadAllProducts();
+  } catch (err) {
+    console.error('Failed to load products:', err);
+  }
+}
+
+loadAllProducts();
+
 /*
   // convert all URLs to Netlify Image CDN format
 
