@@ -283,6 +283,16 @@
         </div>
       </div>
     </div>
+  <!-- Review Form -->
+        <form id="review-form">
+        <input type="text" name="name" placeholder="Your Name" required /><br />
+        <input type="number" name="rating" min="0" max="5" placeholder="Rating (0–5)" required /><br />
+        <textarea name="message" placeholder="Your Review" required></textarea><br />
+        <input type="file" name="image" accept="image/*" /><br />
+        <button type="submit">Submit Review</button>
+      </form>
+      <div id="response"></div>
+
     <!-- Shared Fullscreen Overlay Gallery -->
     <div id="gallery" class="fullscreen-gallery" onclick="closeGallery()">
       <span class="close-btn" onclick="closeGallery(event)">&times;</span>
