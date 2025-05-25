@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Your Review</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px;
+      max-width: 600px;
+      margin: auto;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    #response {
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Submit Your Review</h1>
+
+  <form id="review-form">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="number" name="rating" min="0" max="5" placeholder="Rating (0–5)" required />
+    <textarea name="message" placeholder="Write your review here..." rows="6" required></textarea>
+    <input type="file" name="image" accept="image/*" />
+    <button type="submit">Submit Review</button>
+  </form>
+
+  <div id="response"></div>
+
+  <script>
+    document.getElementById("review-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const name = form.name.value.trim();
+      const rating = form.rating.value.trim();
+      const message = form.message.value.trim();
+      const image = form.image.files[0];
+
+      const slug = name.toLowerCase().replace(/\s+/g, '-') + '-' + Date.now();
+      let imageUrl = '';
+
+      if (image) {
+        imageUrl = `/images/uploads/${image.name}`;
+      }
+
+      const markdown = `---\n` +
+        `name: ${name}\n` +
+        `rating: ${rating}\n` +
+        `image: ${imageUrl}\n` +
+        `body: >\n  ${message.replace(/\n/g, '\n  ')}\n` +
+        `---`;
+
+      const blob = new Blob([markdown], { type: "text/markdown;charset=utf-8" });
+      const a = document.createElement("a");
+      a.href = URL.createObjectURL(blob);
+      a.download = `${slug}.md`;
+      a.click();
+
+      document.getElementById("response").textContent =
+        "✅ Review file generated! Please upload it through CMS.";
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
