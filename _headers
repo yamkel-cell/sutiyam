@@ -5,8 +5,11 @@
   X-Frame-Options: DENY
   Referrer-Policy: no-referrer
   Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=()
+
+  # Cross-origin security headers
   Cross-Origin-Embedder-Policy: require-corp
   Cross-Origin-Opener-Policy: same-origin
-  Cross-Origin-Resource-Policy: same-origin
-  
+  Cross-Origin-Resource-Policy: same-site
+
+  # Cache policy
   Cache-Control: public, max-age=0, must-revalidate
