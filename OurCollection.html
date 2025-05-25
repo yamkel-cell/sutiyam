@@ -1298,27 +1298,73 @@
     <!--  Script  -->
   <script>
     async function fetchReviews() {
-  const res = await fetch('/data/reviews.json');
-  const reviews = await res.json();
+  const reviewFolder = '/content/reviews/'; // Adjust if needed
+  const reviewFiles = [
+    'asonele.md',
+    'yams.md',
+    // Add your review filenames here
+  ];
 
   const container = document.getElementById('reviews-container');
+  if (!container) {
+    console.warn('No #reviews-container found in DOM');
+    return;
+  }
 
-  reviews.forEach(data => {
-    const reviewEl = document.createElement('div');
-    reviewEl.classList.add('col-3');
-    reviewEl.innerHTML = `
-      <i class="fa fa-quote-left"></i>
-      <p>${data.body}</p>
-      <div class="rating">
-        ${[...Array(5)].map((_, i) =>
-          `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
-        ).join('')}
-      </div>
-      ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
-      <h3>${data.name}</h3>
-    `;
-    container.appendChild(reviewEl);
-  });
+  for (const file of reviewFiles) {
+    try {
+      const res = await fetch(reviewFolder + file);
+      if (!res.ok) {
+        console.warn(`Failed to fetch ${file}: ${res.status}`);
+        continue;
+      }
+      const text = await res.text();
+
+      // Extract frontmatter and body using regex
+      const frontmatterMatch = /^---\s*([\s\S]+?)\s*---/.exec(text);
+      if (!frontmatterMatch) {
+        console.warn(`No frontmatter in ${file}`);
+        continue;
+      }
+
+      const frontmatterRaw = frontmatterMatch[1];
+      // Parse frontmatter lines to object
+      const data = {};
+      frontmatterRaw.split('\n').forEach(line => {
+        const [key, ...vals] = line.split(':');
+        if (!key) return;
+        data[key.trim()] = vals.join(':').trim().replace(/^"|"$/g, '');
+      });
+
+      // Extract the markdown body after frontmatter
+      const body = text.slice(frontmatterMatch[0].length).trim();
+
+      // Use `body` as the review message if `message` not present in frontmatter
+      const reviewMessage = data.message || body || '(No review message)';
+
+      // Build rating stars (handle rating as integer)
+      const ratingNum = parseInt(data.rating) || 0;
+      const stars = [...Array(5)].map((_, i) =>
+        `<i class="fa fa-star${i < ratingNum ? '' : '-o'}"></i>`
+      ).join('');
+
+      // Create review element
+      const reviewEl = document.createElement('div');
+      reviewEl.classList.add('col-3');
+      reviewEl.innerHTML = `
+        <i class="fa fa-quote-left"></i>
+        <p>${reviewMessage}</p>
+        <div class="rating">${stars}</div>
+        ${data.image ? `<img src="${data.image}" alt="${data.name || 'Reviewer'}">` : ''}
+        <h3>${data.name || 'Anonymous'}</h3>
+      `;
+
+      container.appendChild(reviewEl);
+
+    } catch (err) {
+      console.error(`Error loading review ${file}:`, err);
+    }
+  }
 }
 
 fetchReviews();
