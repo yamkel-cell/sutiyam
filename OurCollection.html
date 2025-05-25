@@ -1296,6 +1296,34 @@
     </footer>
 
     <!--  Script  -->
+  <script>
+    async function fetchReviews() {
+  const res = await fetch('/data/reviews.json');
+  const reviews = await res.json();
+
+  const container = document.getElementById('reviews-container');
+
+  reviews.forEach(data => {
+    const reviewEl = document.createElement('div');
+    reviewEl.classList.add('col-3');
+    reviewEl.innerHTML = `
+      <i class="fa fa-quote-left"></i>
+      <p>${data.body}</p>
+      <div class="rating">
+        ${[...Array(5)].map((_, i) =>
+          `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
+        ).join('')}
+      </div>
+      ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
+      <h3>${data.name}</h3>
+    `;
+    container.appendChild(reviewEl);
+  });
+}
+
+fetchReviews();
+
+  </script>
  
       <!-- Load Gray-Matter for Markdown/YAML parsing -->
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
