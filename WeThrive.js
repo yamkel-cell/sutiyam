@@ -487,51 +487,77 @@ fetch('/content/homepage.md')
 
 // ===== Load Reviews Content from Markdown ====
 async function fetchReviews() {
-  const reviewFolder = '/content/reviews/';
-  const reviewFiles = ['asonele.md', 'yams.md']; // Add more if needed
+  const reviewFolder = '/content/reviews/'; // Adjust if needed
+  const reviewFiles = [
+    'asonele.md',
+    'yams.md',
+    // Add your review filenames here
+  ];
 
   const container = document.getElementById('reviews-container');
-  if (!container) return;
+  if (!container) {
+    console.warn('No #reviews-container found in DOM');
+    return;
+  }
 
   for (const file of reviewFiles) {
     try {
-      const res = await fetch(`${reviewFolder}${file}`);
+      const res = await fetch(reviewFolder + file);
+      if (!res.ok) {
+        console.warn(`Failed to fetch ${file}: ${res.status}`);
+        continue;
+      }
       const text = await res.text();
 
-      const frontmatterMatch = /---\s*([\s\S]*?)\s*---/.exec(text);
-      if (!frontmatterMatch) continue;
+      // Extract frontmatter and body using regex
+      const frontmatterMatch = /^---\s*([\s\S]+?)\s*---/.exec(text);
+      if (!frontmatterMatch) {
+        console.warn(`No frontmatter in ${file}`);
+        continue;
+      }
 
-      const data = Object.fromEntries(
-        frontmatterMatch[1].split('\n').map(line => {
-          const [key, ...value] = line.split(':');
-          return [key.trim(), value.join(':').trim().replace(/^"|"$/g, '')];
-        })
-      );
+      const frontmatterRaw = frontmatterMatch[1];
+      // Parse frontmatter lines to object
+      const data = {};
+      frontmatterRaw.split('\n').forEach(line => {
+        const [key, ...vals] = line.split(':');
+        if (!key) return;
+        data[key.trim()] = vals.join(':').trim().replace(/^"|"$/g, '');
+      });
 
-      // Grab body (markdown part)
-      const bodyMarkdown = text.split('---')[2]?.trim() || '';
-      const reviewHTML = `
-        <div class="col-3">
-          <i class="fa fa-quote-left"></i>
-          <p>${marked.parse(bodyMarkdown)}</p>
-          <div class="rating">
-            ${[...Array(5)].map((_, i) =>
-              `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
-            ).join('')}
-          </div>
-          ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
-          <h3>${data.name}</h3>
-        </div>
+      // Extract the markdown body after frontmatter
+      const body = text.slice(frontmatterMatch[0].length).trim();
+
+      // Use `body` as the review message if `message` not present in frontmatter
+      const reviewMessage = data.message || body || '(No review message)';
+
+      // Build rating stars (handle rating as integer)
+      const ratingNum = parseInt(data.rating) || 0;
+      const stars = [...Array(5)].map((_, i) =>
+        `<i class="fa fa-star${i < ratingNum ? '' : '-o'}"></i>`
+      ).join('');
+
+      // Create review element
+      const reviewEl = document.createElement('div');
+      reviewEl.classList.add('col-3');
+      reviewEl.innerHTML = `
+        <i class="fa fa-quote-left"></i>
+        <p>${reviewMessage}</p>
+        <div class="rating">${stars}</div>
+        ${data.image ? `<img src="${data.image}" alt="${data.name || 'Reviewer'}">` : ''}
+        <h3>${data.name || 'Anonymous'}</h3>
       `;
 
-      container.insertAdjacentHTML('beforeend', reviewHTML);
+      container.appendChild(reviewEl);
+
     } catch (err) {
-      console.error(`Failed to load ${file}:`, err);
+      console.error(`Error loading review ${file}:`, err);
     }
   }
 }
 
 fetchReviews();
+
 
 // ===== Load All Products from Markdown ====
 async function loadAllProducts() {
