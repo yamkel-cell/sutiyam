@@ -9,6 +9,18 @@ Style for the entire page
   box-sizing: border-box;
 }
 
+.reviewBtn {
+  display: inline-block;
+  background: sandybrown;
+  padding: 8px 16px;
+  margin: 30px 0;
+  border-radius: 8px;
+  transition: background 0.5s;
+}
+.reviewBtn:hover {
+  background: tan;
+}
+
 /* Make gallery fullscreen overlay */
 .images {
   cursor: pointer;
