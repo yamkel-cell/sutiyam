@@ -353,6 +353,45 @@
       </div>
     </div>
   </footer>
+  <script>
+    document.getElementById("review-form").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const name = form.name.value.trim();
+  const rating = form.rating.value.trim();
+  const message = form.message.value.trim();
+  const image = form.image.files[0];
+
+  // Get date-based slug
+  const slug = name.toLowerCase().replace(/\s+/g, '-') + '-' + Date.now();
+
+  let imageUrl = '';
+  if (image) {
+    // In production, you'd upload to Cloudinary or similar.
+    imageUrl = `/images/uploads/${image.name}`;
+  }
+
+  const markdown = `---
+name: ${name}
+rating: ${rating}
+image: ${imageUrl}
+body: >
+  ${message.replace(/\n/g, '\n  ')}
+---`;
+
+  // Now send markdown to your backend or GitHub via API
+  // Example: Save locally for testing
+  const blob = new Blob([markdown], { type: "text/plain;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = `${slug}.md`;
+  a.click();
+
+  document.getElementById("response").textContent = "Review prepared! Please send the file manually or use CMS.";
+});
+
+  </script>
   <!-- Load Gray-Matter for Markdown/YAML parsing -->
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
   <script src="WeThrive.js"></script>
