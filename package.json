@@ -1,13 +1,9 @@
 {
-  "name": "sutiyam-cms-auth",
+  "name": "sutiyam",
   "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "netlify-cms-oauth-provider-node": "^1.0.0"
-  }
-  "name": "sutiyam",
-  "version": "1.0.0",
-  "dependencies": {
+    "netlify-cms-oauth-provider-node": "^1.0.0",
     "node-fetch": "^2.6.11"
+  }
 }
-
