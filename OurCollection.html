@@ -1296,57 +1296,7 @@
     </footer>
 
     <!--  Script  -->
-  <script>
-  async function fetchReviews() {
-  const reviewFolder = '/content/reviews/';
-  const reviewFiles = [
-    'yams.md',
-    'asonele.md',
-    // Add more file names here
-  ];
-
-  const container = document.getElementById('reviews-container');
-
-  for (const file of reviewFiles) {
-    const res = await fetch(`${reviewFolder}${file}`);
-    const text = await res.text();
-
-    const match = text.match(/---\s*([\s\S]*?)\s*---\s*([\s\S]*)/);
-    if (!match) continue;
-
-    const [_, front, body] = match;
-
-    const data = Object.fromEntries(
-      front.split('\n').filter(Boolean).map(line => {
-        const [key, ...value] = line.split(':');
-        return [key.trim(), value.join(':').trim()];
-      })
-    );
-
-    data.body = body.trim(); // Add review body from markdown
-
-    // Create review card
-    const reviewEl = document.createElement('div');
-    reviewEl.classList.add('col-3');
-    reviewEl.innerHTML = `
-      <i class="fa fa-quote-left"></i>
-      <p>${data.body}</p>
-      <div class="rating">
-        ${[...Array(5)].map((_, i) =>
-          `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
-        ).join('')}
-      </div>
-      ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
-      <h3>${data.name}</h3>
-    `;
-
-    container.appendChild(reviewEl);
-  }
-}
-
-fetchReviews();
-
-  </script>
+ 
       <!-- Load Gray-Matter for Markdown/YAML parsing -->
 <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
     <script src="WeThrive.js"></script>
