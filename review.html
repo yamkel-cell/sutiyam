@@ -59,7 +59,7 @@
       image: form.image.value
     };
 
-    const res = await fetch('/.netlify/functions/submit-review', {
+    const res = await fetch('https://www.sutiyam.online/.netlify/functions/submit-review', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
