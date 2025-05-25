@@ -39,7 +39,7 @@ jobs:
           FILENAME="content/reviews/$(date +%s)-review.md"
           echo "---" > $FILENAME
           echo "name: ${{ github.event.inputs.name }}" >> $FILENAME
-          echo "message: ${{ github.event.inputs.message }}" >> $FILENAME
+          echo "body: ${{ github.event.inputs.message }}" >> $FILENAME
           echo "rating: ${{ github.event.inputs.rating }}" >> $FILENAME
           echo "image: ${{ github.event.inputs.image }}" >> $FILENAME
           echo "---" >> $FILENAME
