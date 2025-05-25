@@ -1,6 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: yamkel-cell/sutiyam
   branch: main
+
 
 local_backend: true  # optional, for local testing
 
