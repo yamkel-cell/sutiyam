@@ -282,8 +282,8 @@ p {
   flex-basis: 25%;
   padding: 30px;
   min-width: 180px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
   transition: transform 0.5s;
   
 }
