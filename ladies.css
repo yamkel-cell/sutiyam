@@ -232,7 +232,6 @@ p {
 .col-2 {
   flex-basis: 50%;
   min-width: 200px;
-  
 }
 
 .col-2 img {
@@ -265,7 +264,7 @@ p {
 .col-3 {
   flex-basis: 25%;
   min-width: 100px;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   padding: 10px 10px;
 }
 .col-3 img {
@@ -283,7 +282,8 @@ p {
   flex-basis: 25%;
   padding: 30px;
   min-width: 180px;
-  margin-bottom: 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   transition: transform 0.5s;
   
 }
