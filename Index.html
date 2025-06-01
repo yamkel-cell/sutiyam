@@ -1,63 +1,132 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes"> <!-- Ensures your page is responsive by scaling it properly on all devices -->
-  <meta name="description" content="Exclusive formal suits for weddings, graduations, and events. Free delivery."> <!-- A short summary of your webpage for search engines and social media.
-  -->
-  <meta name="keywords" content="formal suits, wedding suits, graduation outfits, men’s suits, women’s suits"> <!-- Optional metadata listing keywords for search engine optimization (SEO).
-  -->
-  <meta name="author" content="SutiYam"> <!-- Author or business -->
-  <meta name="robots" content="index, follow"> <!-- Search engine crawling -->
-  <title>SutiYam - Home</title>
-  <link rel="stylesheet" href="ladies.css">
-  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" > <!-- Favicon added -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>SutiYam | Formal Wear That Elevates Confidence</title>
 
+  <!-- SEO -->
+  <meta name="description" content="Discover SutiYam: Formal suits for weddings, events, and more. Free delivery." />
+  <meta name="keywords" content="formal suits, tuxedos, men's suits, women's suits, accessories" />
+  <meta name="author" content="SutiYam" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.sutiyam.online/" />
+
+  <!-- Open Graph (Facebook, LinkedIn) -->
+  <meta property="og:title" content="SutiYam – Elegant Suits for Any Occasion" />
+  <meta property="og:description" content="Explore premium suits for men and women. Weddings, graduations, and more." />
+  <meta property="og:image" content="https://www.sutiyam.online/img/SutiYam-Logo.0.jpg" />
+  <meta property="og:url" content="https://www.sutiyam.online/" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SutiYam – Elegant Suits for Any Occasion" />
+  <meta name="twitter:description" content="Explore premium suits for men and women. Weddings, graduations, and more." />
+  <meta name="twitter:image" content="https://www.sutiyam.online/img/SutiYam-Logo.0.jpg" />
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="ladies.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" />
+
+  <!-- Icons & Auth -->
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js" defer></script>
+
+  <!-- JSON-LD: Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "SutiYam",
+    "url": "https://www.sutiyam.online",
+    "logo": "https://www.sutiyam.online/img/SutiYam-Logo.0.jpg",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "telephone": "+27-79-497-3132",
+      "contactType": "Customer Service",
+      "areaServed": "ZA",
+      "availableLanguage": "en"
+    }],
+    "sameAs": [
+      "https://www.instagram.com/sutiyam2025",
+      "https://www.facebook.com/profile.php?id=61573784650219"
+    ]
+  }
+  </script>
+
+  <!-- JSON-LD: Website -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "url": "https://www.sutiyam.online",
+    "name": "SutiYam",
+    "inLanguage": "en",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.sutiyam.online/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
 </head>
+
 <body>
   <!-- Top Level - Menu -->
-  <div class="container"> 
-    <div class="navbar">
-      <div class="logo">
-        <a href="Index.html"><img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo"></a> <!-- Logo with link -->
-        <p class="slogan">SutiYam — Wear Confidence</p> <!-- Brand slogan -->
-      </div>
-        <nav>
-          <ul id="MenuItems">
-              <li><a href="Index.html">Home</a></li>
-              <li><a href="OurCollection.html">Our Collection</a></li>
-              <!--- Future categories can be re-added -->
-              <li><a href="AboutUs.html">About Us</a></li>
-            </li>
-          </ul>
-        </nav>
+  <header class="navbar">
+    <!-- Navigation and Logo -->
+    <div class="logo">
+      <a href="Index.html"><img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo" /></a>
+      <p class="slogan">SutiYam — Wear Confidence</p>
+    </div>
+    <!-- Menu Links -->
+    <nav>
+      <ul>
+        <li><a href="Index.html">Home</a></li>
+        <li><a href="OurCollection_Updated.html">Our Collection</a></li>
+        <li><a href="AboutUs.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
         <br>
       <i class="fa-solid fa-bars menu-icon" role="button" tabindex="0" style="display: none;" onclick="menutoggle()"></i>
-    </div>
+    
     <hr class="hor">
-    <p style="text-align: center;">
-      
-      <br><i class="fa fa-quote-left"></i> &nbsp;💡Dressing well is a form of good manners. - Tom Ford &nbsp;<i class="fa fa-quote-right"></i></p>
-    <hr class="hor">
+  <!---  Hero Section  --->
+  <main>
+    <section class="hero">
+      <div>
+        <h1>Own the Moment</h1>
+        <p>Premium Suits for Men and Women | Wedding • Graduation • Office • Special Events || Blend it to your Everyday style</p>
+      </div>
+    </section>
+    <hr class="hor"/>
+    <br/>
+    <hr class="hor"/>
+  <!---  Welcome Section  --->
+  <section class="container">
     <div class="row">
       <div class="col-2">
-        <h1 style="font-size: 28px; color: charcoal;">Welcome to SutiYam – Where Elegance Meets <br>Everyday Comfort!!</h1>
+        <h1>Welcome to SutiYam –<br> Where Elegance Meets <br>Everyday Comfort!!</h1>
         <h3>🖤 Premium Casual Formal Wear for Every Occasion</h3>
         <br>
         <p>
-          SutiYam brings you the perfect balance of sophistication and comfort. Whether for weddings,<br> graduations, or business casual events, our collection ensures you stand out effortlessly.
+          SutiYam brings you the perfect balance of sophistication and comfort.<br> Whether for weddings, graduations, or business casual events, <br>our collection ensures you stand out effortlessly.
         </p>
-        <a href="OurCollection.html" class="btn">Explore Now &#8594;</a>
+        <a href="OurCollection.html" class="btn">Shop Now</a>
       </div>
       <div class="col-2">
         <img class="image" src="img/US/Thab.jpg" style="height: 680px;" title="Elevate Your Style. Thrive in Confidence">
       </div>
     </div>
   </div>
+  </section>
+
+  <hr class="hor">
+  <!---  Featured Section  --->
+  <section class="small-container">
 <!--- Products --->
   <div class="categories">
     <h2 class="titleHome">Our Products</h2>
@@ -65,44 +134,45 @@
       <div class="row">
         <!-- Product 1 -->
         <div class="col-3">
+          <div class="product-card">
           <br>
-          <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
-              src="img/Scotch/Urban/IMG-20250415-WA0196.jpg" 
-              loading="lazy"
+          <!--<img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"-->
+             <img src="img/Scotch/Urban/IMG-20250415-WA0196.jpg" 
               alt="Three Piece" 
               title="Preview Now"
               onclick='openGallery(this)' 
               data-large="img/Scotch/Urban/IMG-20250415-WA0196.jpg"
               data-thumbnails='["img/Scotch/Urban/image_urban5.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250415-WA0196.jpg"]'>
           <h4>Three Piece Suit for Men</h4>
+          </div>
         </div>
 
         <!-- Product 2 -->
         <div class="col-3">
+          <div class="product-card">
           <br>
-          <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
-              src="img/2PC/IMG-20250123-WA0013.jpg" 
-              loading="lazy"
+          <img src="img/2PC/IMG-20250123-WA0013.jpg" 
               alt="Two Piece" 
               title="Preview Now"
               onclick='openGallery(this)' 
               data-large="img/2PC/IMG-20250123-WA0013.jpg"
               data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250126-WA0490.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250123-WA0013.jpg"]'>
           <h4>Two Piece Suit for Men</h4>
+          </div>
         </div>
 
         <!-- Product 3 -->
         <div class="col-3">
+          <div class="product-card">
           <br>
-          <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
-              src="img/W3PC/IMG-20250126-WA0464.jpg"
-              loading="lazy"
+          <img src="img/W3PC/IMG-20250126-WA0464.jpg" 
               alt="Three Piece for Women" 
               title="Preview Now"
               onclick='openGallery(this)' 
               data-large="img/W3PC/IMG-20250126-WA0464.jpg" 
               data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0464.jpg"]'>
           <h4>Ladies Three Piece Suit</h4>
+          </div>
         </div>
 
       </div>
@@ -123,7 +193,7 @@
 
     </div>
   </div>
-
+</section>
   <!-- Shared Fullscreen Overlay Gallery -->
   <div id="gallery" class="fullscreen-gallery" onclick="closeGallery()">
     
@@ -146,6 +216,7 @@
     </div>
   </div>
 
+  </main>
   <hr class="hor">
   <!---  Footer  --->
   

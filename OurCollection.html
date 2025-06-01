@@ -1,1242 +1,1307 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="description" content="Discover SutiYam: Formal suits for weddings, events, and more. Free delivery.">
-  <meta name="keywords" content="formal suits, tuxedos, men's suits, women's suits, accessories">
-  <meta name="author" content="SutiYam" /> <!-- Author or business -->
-  <meta name="robots" content="index, follow" /> <!-- Search engine crawling -->
+  <title>SutiYam | Our Collection – Suits for Every Occasion</title>
 
-  <!-- SEO ENHANCEMENTS -->
-  <meta property="og:title" content="SutiYam – Elegant Suits for Any Occasion" />
-  <meta property="og:description" content="Explore premium suits for men and women. Weddings, graduations, evening events, and more." />
+  <!-- SEO -->
+  <meta name="description" content="Explore SutiYam's curated collection of premium suits and accessories for men and women. Perfect for weddings, graduations, and formal events." />
+  <meta name="keywords" content="formal suits, wedding suits, men's suits, women's suits, SutiYam collection, accessories" />
+  <meta name="author" content="SutiYam" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.sutiyam.online/OurCollection.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Our Collection – SutiYam Suits for Every Occasion" />
+  <meta property="og:description" content="Shop elegant formalwear, including tuxedos, three-piece suits, and more. SutiYam delivers confidence and class." />
   <meta property="og:image" content="https://www.sutiyam.online/img/SutiYam-Logo.0.jpg" />
-  <meta property="og:url" content="https://www.sutiyam.online/" />
+  <meta property="og:url" content="https://www.sutiyam.online/OurCollection.html" />
+  <meta property="og:type" content="website" />
+
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <link rel="canonical" href="https://www.sutiyam.online/" />
-  
-  <title>SutiYam - Wear Smart with confident</title>
-  <link rel="stylesheet" href="ladies.css">
-  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" > <!-- Favicon added -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
-  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
-  
+  <meta name="twitter:title" content="SutiYam – Formal Wear Collection" />
+  <meta name="twitter:description" content="Discover suits for men and women tailored to elevate your style. Shop our collection today." />
+  <meta name="twitter:image" content="https://www.sutiyam.online/img/SutiYam-Logo.0.jpg" />
+
+  <!-- Styles & Fonts -->
+  <link rel="stylesheet" href="ladies.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg" />
+
+  <!-- JS & Icons -->
+  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous" defer></script>
+  <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js" defer></script>
+
+  <!-- JSON-LD: WebPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "SutiYam Collection",
+    "url": "https://www.sutiyam.online/OurCollection.html",
+    "inLanguage": "en",
+    "description": "View the latest selection of premium suits, tuxedos, and formal accessories for men and women from SutiYam.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "SutiYam",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.sutiyam.online/img/SutiYam-Logo.0.jpg"
+      }
+    }
+  }
+  </script>
 </head>
+
 <body>
-
-  <div class="container"> 
-    <div class="navbar">
-      <div class="logo">
-        <a href="Index.html"><img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo"></a> <!-- Logo with link -->
-        <p class="slogan">SutiYam — Wear Confidence</p> <!-- Brand slogan -->
-      </div>
-      <!-- Search Bar --> 
-      <div class="search-wrapper">
-        <div class="search-container">
-          <input class="search-input" type="text" id="searchBox" placeholder="Search products..." oninput="searchProducts()" autocomplete="off" >
-          <ul id="suggestionList" style="border:1px solid #ccc; display:block; position:absolute; background:white; z-index:1000; list-style:none; padding:0; margin:0; max-height:200px; overflow-y:auto;"></ul>
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+  <main>
+    <section class="container"> 
+      <div class="navbar">
+        <div class="logo">
+          <a href="Index.html"><img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo"></a> <!-- Logo with link -->
+          <p class="slogan">SutiYam — Wear Confidence</p> <!-- Brand slogan -->
         </div>
-      </div>      
-      <aside>
-        <!-- Shopping Cart -->
-          <!-- Cart Toggle Icon -->
-        <a href="Cart.html" target=""> <span id="cart-count">0<i class="fa fa-shopping-cart cart-toggle-icon" title="Shopping Cart" ></i></span>
-          </a>
-      </aside>
-  
-      <nav>
-        
-        <ul id="MenuItems">
+        <!-- Search Bar --> 
+        <div class="search-wrapper">
+          <div class="search-container">
+            <input class="search-input" type="text" id="searchBox" aria-label="Search products..." oninput="searchProducts()" autocomplete="off" >
+            <ul id="suggestionList" style="border:1px solid #ccc; display:block; position:absolute; background:white; z-index:1000; list-style:none; padding:0; margin:0; max-height:200px; overflow-y:auto;"></ul>
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </div>
+        </div>      
+        <aside>
+          <!-- Shopping Cart -->
+            <!-- Cart Toggle Icon -->
+          <a href="Cart.html" target=""> <span id="cart-count">0<i class="fa fa-shopping-cart cart-toggle-icon" title="Shopping Cart" ></i></span>
+            </a>
+        </aside>
+
+        <nav>
           
-          <li><a href="Index.html">Home</a></li>
-          <li><a href="OurCollection_Updated.html">Our Collection</a></li>
-          <!--- Future categories can be re-added -->
-          <li><a href="AboutUs.html">About Us</a></li>
-        </ul>
-      </nav>
-      <br>
-      <i class="fa-solid fa-bars menu-icon" role="button" tabindex="-1" style="display: none;" onclick="menutoggle()"></i>
-
-
-    </div>
-    <div class="row">
-      <div class="col-2">
-        <h1>Explore All Our Products</h1>
-        <p style="color: black;">
-          <strong> Men's Wear | Women's Wear | Accessories</strong>
-        </p>
+          <ul id="MenuItems">
+            
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="OurCollection_Updated.html">Our Collection</a></li>
+            <!--- Future categories can be re-added -->
+            <li><a href="AboutUs.html">About Us</a></li>
+          </ul>
+        </nav>
         <br>
-        <div class="body-slogan-wrapper">
-          <h5 class="body-slogan">Carefully selected from trusted local outlets.</h5>
+        <i class="fa-solid fa-bars menu-icon" role="button" tabindex="-1" style="display: none;" onclick="menutoggle()"></i>
+
+            <!-- SPECIAL ADVERTISEMENT START -->
+        <div class="special-ad" id="specialAd" style="background: #fce8e6; padding: 12px; border: 2px solid #e91e63; border-radius: 10px; margin: 12px 0; text-align: center;">
+          <h2 style="color: #c2185b; font-size: 20px;">🎉 Grand Opening Special! 🎉</h2>
+          <p style="font-size: 16px; color: #333;">
+            Get up to <strong>20% OFF</strong> your first order of premium suits at <strong>SutiYam</strong>!
+          </p>
+          <a href="#featuredProducts" target="_blank" class="btn" style="background-color: #e91e63; color: white; padding: 10px 20px; border-radius: 5px; margin-top: 10px; display: inline-block;">Shop Now</a>
         </div>
-        <a href="#featuredProducts" class="btn">Explore Now &#8595;</a>
+        <script>
+          // Auto-hide the special ad after 40 secs
+          setTimeout(function() {
+            var ad = document.getElementById('specialAd');
+            if (ad) {
+              ad.style.transition = 'opacity 40s';
+              ad.style.opacity = '0';
+              setTimeout(() => ad.style.display = 'none', 4000);
+            }
+          }, 40000); // 40 seconds
+        </script>
+        <!-- SPECIAL ADVERTISEMENT END -->
+
       </div>
-      <div class="col-2">
-        <div class="image-container">
-          <div class="image">
-            <img style="height: 680px" src="img/US/Asa.jpg" alt="image-1">
+      <div class="row">
+        <div class="col-2">
+          <h1>Explore All Our Products</h1>
+          <p style="color: black;">
+            <strong> Men's Wear | Women's Wear | Accessories</strong>
+          </p>
+          <br>
+          <div class="body-slogan-wrapper">
+            <h5 class="body-slogan">Carefully selected from trusted local outlets.</h5>
           </div>
-           
-          <!-- Add more images if necessary -->
-        </div>        
-        
-      </div>
-    </div>
-  </div>
-<!-- Categories -->
-<div class="categories">
-  <h2 class="titleCol">Categories</h2>
-  <div class="small-container">
-    <div class="row">
-
-      <!-- Ladies' Clothing -->
-      <div class="col-3">
-        
-          <img class="product-image" style="width: 240px; height: 370px;"
-            src="img/W3PC/IMG-20250429-WA0072.jpg" 
-            data-category="Ladies' Clothing"
-            loading="lazy"
-            alt="Ladies 3-Piece Suit"
-            onclick='openGallery(this)'
-            data-large="img/W3PC/IMG-20250429-WA0072.jpg">
-          <br>
-          <a href="#productImg3">
-          <h3 style="text-decoration: underline;">Ladies' Clothing</h3> 
-        </a>
-      </div>
-
-      <!-- Men's Accessories -->
-        <div class="col-3">
-          
-          <img src="img/accessary/IMG-20250206-WA0003.jpg" style="width: 220px; height: 240px;"
-          data-category="Men's Accessories" 
-          loading="lazy"
-          alt="Men's Accessories and Shoes"
-          onclick='openGallery(this)'
-          data-large="img/accessary/IMG-20250206-WA0003.jpg">
-          <br>
-          <a href="Accessories.html">
-          <h3 style="text-decoration: underline;">Accessories</h3>  </a>
+          <a href="#featuredProducts" class="btn">Explore Now &#8595;</a>
         </div>
-
-      <!-- Men's Suits -->
-      <div class="col-3">
-        
-          <img src="img/Texido/IMG-20250429-WA0038.jpg" style="width: 240px; height: 370px;"
-          data-category="Men's Suits" 
-          loading="lazy"
-          alt="Men's Tuxedo Suits"
-          onclick='openGallery(this)'
-          data-large="img/Texido/IMG-20250429-WA0038.jpg">
-          <br>
-          <a href="#productImg"> 
-          <h3 style="text-decoration: underline;">Men's Suits</h3>
-        </a>
+        <div class="col-2">
+          <div class="image-container">
+            <div class="image">
+              <img style="height: 680px" src="img/US/Asa.jpg" alt="image-1">
+            </div>
+            
+            <!-- Add more images if necessary -->
+          </div>        
+          
+        </div>
       </div>
+    </section>
 
-    </div>
-  </div>
-</div>
+        <!-- Categories -->
+    <section class="small-container">
+      <div class="categories">
+        <h2 class="titleCol">Categories</h2>
+        <div class="small-container">
+          <div class="row">
 
-<!-- Latest Products -->
-<div class="small-container">
-  <h2 class="titleCol">Latest Products</h2>
-  <div class="row">
+            <!-- Ladies' Clothing -->
+            <div class="col-3">
+              
+                <img class="product-image" style="width: 240px; height: 370px;"
+                  src="img/W3PC/IMG-20250429-WA0072.jpg" 
+                  data-category="Ladies' Clothing" 
+                  alt="Ladies 3-Piece Suit"
+                  onclick='openGallery(this)'
+                  data-large="img/W3PC/IMG-20250429-WA0072.jpg">
+                <br>
+                <a href="#productImg3">
+                <h3 style="text-decoration: underline;">Ladies' Clothing</h3> 
+              </a>
+            </div>
 
-    <!-- Product 1 Double Breasted -->
-    <div class="col-4">
-      <img src="img/Double/IMG-20250123-WA0026.jpg" 
-        data-name="Double Breasted Suit" 
-        loading="lazy"
-        alt="Double Breasted Suit"
-        title="View Now"
-        onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250123-WA0026.jpg"
-        data-thumbnails='["img/Double/IMG-20250429-WA0052.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250429-WA0048.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'>
-      <h4>Double Breasted Suit</h4>
+            <!-- Men's Accessories -->
+              <div class="col-3">
+                
+                <img src="img/accessary/IMG-20250206-WA0003.jpg" style="width: 220px; height: 240px;"
+                data-category="Men's Accessories" 
+                alt="Men's Accessories and Shoes"
+                onclick='openGallery(this)'
+                data-large="img/accessary/IMG-20250206-WA0003.jpg">
+                <br>
+                <a href="Accessories.html">
+                <h3 style="text-decoration: underline;">Accessories</h3>  </a>
+              </div>
+
+            <!-- Men's Suits -->
+              <div class="col-3">
+                
+                  <img src="img/Texido/IMG-20250429-WA0038.jpg" style="width: 240px; height: 370px;"
+                  data-category="Men's Suits" 
+                  alt="Men's Tuxedo Suits"
+                  onclick='openGallery(this)'
+                  data-large="img/Texido/IMG-20250429-WA0038.jpg">
+                  <br>
+                  <a href="#productImg"> 
+                  <h3 style="text-decoration: underline;">Men's Suits</h3>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+      <!-- Latest Products -->
+      <section class="small-container">
+        <h2 class="titleCol">Latest Products</h2>
+        <div class="row">
+          <!-- Product 1 Double Breasted -->
+          <div class="col-4">
+            <img src="img/Double/IMG-20250123-WA0026.jpg" 
+              data-name="Double Breasted Suit"
+              alt="Double Breasted Suit"
+              title="View Now"
+              onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250123-WA0026.jpg"
+              data-thumbnails='["img/Double/IMG-20250429-WA0052.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250429-WA0048.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'>
+            <h4>Double Breasted Suit</h4>
+          
+            <div class="rating" data-selected="0" data-product-id="safari-suit">
+              <i class="fa fa-star" data-rating="1"></i>
+              <i class="fa fa-star" data-rating="2"></i>
+              <i class="fa fa-star" data-rating="3"></i>
+              <i class="fa fa-star" data-rating="4"></i>
+              <i class="fa fa-star" data-rating="5"></i>
+            </div> <!-- Rating System not finalized yet -->
+
+            <h5><del>R1 200</del>  <span style="color:red">13% OFF</span></h5>
+            <a href="#productImg">Buy</a>
+          </div>
+
+          <!-- Product 2 Safari -->
+          <div class="col-4">
+            <img src="img/Safari/IMG-20250415-WA0205.jpg" 
+              data-name="Safari Suit" 
+              alt="Safari Suit"
+              title="View Now"
+              onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250415-WA0205.jpg"
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'>
+            <h4>Safari Suit</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h5><del>R1 300</del> <span style="color:red">20% OFF</span></h5>
+            <a href="#productImg6">Buy</a>
+          </div>
+
+          <!-- Product 3 Texido-->
+          <div class="col-4">
+            <img src="img/Texido/IMG-20250429-WA0038.jpg" 
+              data-name="Tuxedo" 
+              alt="Tuxedo"
+              title="View Now"
+              onclick='openGallery(this)' 
+              data-large="img/Texido/IMG-20250429-WA0038.jpg"
+              data-thumbnails='["img/Texido/IMG-20250429-WA0036.jpg", "img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250429-WA0055.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'>
+            <h4>Black Velvet 3-Piece Tuxedo Suit</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h5><del>R2 180</del> <span style="color:red">19% OFF</span></h5>
+            <a href="#productImg8">Buy</a>
+          </div>
+
+          <!-- Product 4 Scotch -->
+          <div class="col-4">
+            <img src="img/New_Img/New-B/IMG-20250429-WA0086.jpg" 
+              data-name="Three Piece Scotch Urban Suit" 
+              alt="Three Piece Scotch Urban Suit"
+              title="View Now"
+              onclick='openGallery(this)' 
+              data-large="img/New_Img/New-B/IMG-20250429-WA0086.jpg"
+              data-thumbnails='["img/New_Img/New-B/IMG-20250429-WA0085.jpg", "img/New_Img/New-A/IMG-20250429-WA0079.jpg", "img/New_Img/New-A/IMG-20250429-WA0075.jpg", "img/New_Img/New-C/IMG-20250429-WA0084.jpg", "img/New_Img/New-C/IMG-20250429-WA0080.jpg", "img/New_Img/New-B/IMG-20250429-WA0086.jpg"]'>
+            <h4>Three Piece Scotch Urban Suit</h4>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h5><del>R1 500</del> <span style="color:red">10% OFF</span></h5>
+            <a href="#productImg0">Buy</a>
+          </div>
+        </div>
+      <!-- Featured Products -->
+      <section class="sort-container" style="margin-bottom: 20px;">
+        <h2 class="titleCol">Featured Products</h2>
+        <label for="sortSelect">Sort by Price:</label>
+        <select id="sortSelect" onchange="sortFeaturedProducts()">
+          <option value="default">Default</option>
+          <option value="lowToHigh">Price: Low to High</option>
+          <option value="highToLow">Price: High to Low</option>
+        </select>
     
-      <div class="rating">
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h5>R1 200</h5>
-      <a href="#productImg">Buy</a>
-    </div>
-     <!-- Product 2 Safari -->
-    <div class="col-4">
-      <img src="img/Safari/IMG-20250415-WA0205.jpg" 
-        data-name="Safari Suit" 
-        loading="lazy"
-        alt="Safari Suit"
-        title="View Now"
-        onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250415-WA0205.jpg"
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'>
-      <h4>Safari Suit</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h5>R1 300</h5>
-      <a href="#productImg6">Buy</a>
-    </div>
-
-    <!-- Product 3 Texido-->
-    <div class="col-4">
-      <img src="img/Texido/IMG-20250429-WA0038.jpg" 
-        data-name="Tuxedo" 
-        loading="lazy"
-        alt="Tuxedo"
-        title="View Now"
-        onclick='openGallery(this)' 
-        data-large="img/Texido/IMG-20250429-WA0038.jpg"
-        data-thumbnails='["img/Texido/IMG-20250429-WA0036.jpg", "img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250429-WA0055.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'>
-      <h4>Black Velvet 3-Piece Tuxedo Suit</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h5>R2 180</h5>
-      <a href="#productImg8">Buy</a>
-    </div>
-
-    <!-- Product 4 Scotch -->
-    <div class="col-4">
-      <img src="img/New_Img/New-B/IMG-20250429-WA0086.jpg" 
-        data-name="Three Piece Scotch Urban Suit" 
-        loading="lazy"
-        alt="Three Piece Scotch Urban Suit"
-        title="View Now"
-        onclick='openGallery(this)' 
-        data-large="img/New_Img/New-B/IMG-20250429-WA0086.jpg"
-        data-thumbnails='["img/New_Img/New-B/IMG-20250429-WA0085.jpg", "img/New_Img/New-A/IMG-20250429-WA0079.jpg", "img/New_Img/New-A/IMG-20250429-WA0075.jpg", "img/New_Img/New-C/IMG-20250429-WA0084.jpg", "img/New_Img/New-C/IMG-20250429-WA0080.jpg", "img/New_Img/New-B/IMG-20250429-WA0086.jpg"]'>
-      <h4>Three Piece Scotch Urban Suit</h4>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h5>R1 500</h5>
-      <a href="#productImg0">Buy</a>
-    </div>
-
-  </div>
-
-  <!-- Featured Products -->
-  <h2 class="titleCol">Featured Products</h2>
-    <div class="sort-container" style="margin-bottom: 20px;">
-      <label for="sortSelect">Sort by Price:</label>
-      <select id="sortSelect" onchange="sortFeaturedProducts()">
-        <option value="default">Default</option>
-        <option value="lowToHigh">Price: Low to High</option>
-        <option value="highToLow">Price: High to Low</option>
-      </select>
-    </div>
-  
-  <div class="row" id="featuredProducts">
-
-    <!-- Featured: Three Piece Plain for Men -->
-    <div class="col-4" data-price="1350">
-      <img src="img/3PC/IMG-20250415-WA0013.jpg" data-name="Three Piece Plain Suit" loading="lazy" alt="Three Piece Plain Suit" id="productImg" onclick='openGallery(this)'
-        data-large="img/3PC/IMG-20250415-WA0013.jpg"
-        data-color-images='{
-            "Goldenrod": "img/3PC/IMG-20250126-WA0338.jpg",
-            "Green": "img/3PC/IMG-20250126-WA0374.jpg",
-            "Seagreen": "img/3PC/IMG-20250415-WA0013.jpg",
-            "Blue": "img/3PC/IMG-20250415-WA0006.jpg",
-            "Light blue": "img/3PC/IMG-20250415-WA0192.jpg",
-            "Navy": "img/3PC/IMG-20250126-WA0394.jpg",
-            "Black": "img/3PC/IMG-20250126-WA0393.jpg",
-            "Maroon": "img/3PC/IMG-20250126-WA0395.jpg"
-          }'
-        data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0338.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg" onclick='openGallery(this)' 
-        data-large="img/3PC/IMG-20250126-WA0338.jpg"
-        data-color-images='{
-          "Goldenrod": "img/3PC/IMG-20250126-WA0338.jpg"
-        }'
-        data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0374.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg" onclick='openGallery(this)' 
-        data-large="img/3PC/IMG-20250126-WA0374.jpg"
-        data-color-images='{
-            "Green": "img/3PC/IMG-20250126-WA0374.jpg"
-        }'
-        data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/3PC/IMG-20250415-WA0013.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg" onclick='openGallery(this)' 
-        data-large="img/3PC/IMG-20250415-WA0013.jpg"
-        data-color-images='{
-            "Seagreen": "img/3PC/IMG-20250415-WA0013.jpg"
-        }'
-        data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0394.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg" onclick='openGallery(this)' 
-        data-large="img/3PC/IMG-20250126-WA0394.jpg"
-        data-color-images='{
-            "Navy": "img/3PC/IMG-20250126-WA0394.jpg",
-            "Black": "img/3PC/IMG-20250126-WA0393.jpg",
-            "Maroon": "img/3PC/IMG-20250126-WA0395.jpg"
-        }'
-        data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/3PC/IMG-20250415-WA0006.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg" onclick='openGallery(this)' 
-        data-large="img/3PC/IMG-20250415-WA0006.jpg"
-        data-color-images='{
-            "Blue": "img/3PC/IMG-20250415-WA0006.jpg"
-        }'
-        data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
-
-      </div>
-      <p>Three Piece Suit</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <h3>Three Piece Plain Suit</h3>
-      <h5>R1 350</h5>
-      <div id="ProductDesc1" class="ProductDesc" style="display: none;">
-        <select id="size-1">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-1">
-          <option>Select Color</option>
-          <option>Seagreen</option>
-          <option>Blue</option>
-          <option>Goldenrod</option>
-          <option>Black</option>
-          <option>Green</option>
-          <option>Maroon</option>
-          <option>Navy</option>
-          <option>Light blue</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1350">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>A classic and stylish ensemble featuring a blazer, waistcoat, and trousers. Perfect for formal events or professional settings, this suit delivers a sharp, coordinated look with timeless elegance, it’s the modern gentleman’s go-to.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc1"></i>
-    </div>
-
-    <!-- Featured: Two Piece Plain for Men -->
-    <div class="col-4" data-price="1200">
-      <img src="img/2PC/IMG-20250126-WA0488.jpg" data-name="Two Piece Plain Suit" loading="lazy" alt="Two Piece Plain Suit" id="productImg2" onclick='openGallery(this)' 
-        data-large="img/2PC/IMG-20250126-WA0488.jpg"
-        data-color-images='{
-            "Tan": "img/2PC/IMG-20250126-WA0488.jpg",
-            "Navy": "img/2PC/IMG-20250123-WA0006.jpg",
-            "Light Camel": "img/2PC/IMG-20250123-WA0013.jpg",
-            "Grey": "img/2PC/IMG-20250126-WA0516.jpg",
-            "Maroon": "img/2PC/IMG-20250126-WA0358.jpg"
-          }'
-        data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/2PC/IMG-20250123-WA0006.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
-        data-large="img/2PC/IMG-20250123-WA0006.jpg"
-        data-color-images='{
-          "Navy": "img/2PC/IMG-20250123-WA0006.jpg"
-        }'
-        data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/2PC/IMG-20250123-WA0013.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
-        data-large="img/2PC/IMG-20250123-WA0013.jpg"
-        data-color-images='{
-            "Light Camel": "img/2PC/IMG-20250123-WA0013.jpg"
-          }'
-        data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0516.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
-        data-large="img/2PC/IMG-20250126-WA0516.jpg"
-        data-color-images='{
-            "Grey": "img/2PC/IMG-20250126-WA0516.jpg"
-          }'
-        data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0358.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
-        data-large="img/2PC/IMG-20250126-WA0358.jpg"
-        data-color-images='{
-            "Maroon": "img/2PC/IMG-20250126-WA0358.jpg"
-          }'
-        data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0488.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
-        data-large="img/2PC/IMG-20250126-WA0488.jpg"
-        data-color-images='{
-            "Tan": "img/2PC/IMG-20250126-WA0488.jpg"
-          }'
-        data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
-
-      </div>
-      <p>Two Piece Suit</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <h3>Two Piece Plain Suit</h3>
-      <h5>R1 200</h5>
-      <div id="ProductDesc2" class="ProductDesc" style="display: none;">
-        <select id="size-2">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-2">
-          <option>Select Color</option>
-          <option>Tan</option>
-          <option>Navy</option>
-          <option>Light Camel</option>
-          <option>Grey</option>
-          <option>Maroon</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" 
-        onclick="addToCartFromProduct(this)" 
-        data-price="1200" 
-        data-size-id="size-2">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Less is more. The Two Piece Plain Suit strips it down to the essentials with sharp tailoring and smooth finishes. Built for comfort and style, it’s a versatile piece that flows from the office to after-hours, giving young professionals a fresh take on classic suiting.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc2" ></i>
-    </div>
-
-    <!-- Featured: Three Piece for Women -->
-    <div class="col-4" data-price="1200">
-      <img src="img/W3PC/IMG-20250429-WA0058.jpg" data-name="Ladies 3-Piece Suit" loading="lazy" alt="Ladies 3-Piece Suit" id="productImg3" onclick='openGallery(this)' 
-        data-large="img/W3PC/IMG-20250429-WA0058.jpg"
-        data-color-images='{
-          "Soft Pink": "img/W3PC/IMG-20250123-WA0015.jpg",
-          "Light blue": "img/W3PC/IMG-20250123-WA0023.jpg",
-          "Navy blue": "img/W3PC/IMG-20250126-WA0498.jpg",
-          "Navy": "img/W3PC/IMG-20250126-WA0465.jpg",
-          "Red": "img/W3PC/IMG-20250123-WA0005.jpg",
-          "Bisque": "img/W3PC/IMG-20250429-WA0071.jpg",
-          "Darkslategrey": "img/W3PC/IMG-20250429-WA0062.jpg",
-          "Black": "img/W3PC/IMG-20250429-WA0058.jpg"
-        }'
-        data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0015.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
-        data-large="img/W3PC/IMG-20250123-WA0015.jpg"
-        data-color-images='{
-          "Soft Pink": "img/W3PC/IMG-20250123-WA0015.jpg"
-        }'
-        data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0023.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
-        data-large="img/W3PC/IMG-20250123-WA0023.jpg"
-        data-color-images='{
-          "Light blue": "img/W3PC/IMG-20250123-WA0023.jpg"
-        }'
-        data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/W3PC/IMG-20250126-WA0498.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
-        data-large="img/W3PC/IMG-20250126-WA0498.jpg"
-        data-color-images='{
-          "Navy blue": "img/W3PC/IMG-20250126-WA0498.jpg"
-        }'
-        data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/W3PC/IMG-20250126-WA0465.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
-        data-large="img/W3PC/IMG-20250126-WA0465.jpg"
-        data-color-images='{
-          "Navy": "img/W3PC/IMG-20250126-WA0465.jpg"
-        }'
-        data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0005.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
-        data-large="img/W3PC/IMG-20250123-WA0005.jpg"
-        data-color-images='{
-          "Red": "img/W3PC/IMG-20250123-WA0005.jpg"
-        }'
-        data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
-
-      </div>
-      <p>Three Piece Suit for Women</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star-o"></i>
-      </div>
-      <h3>Ladies 3-Piece Suit</h3>
-      <h5>R1 200</h5>
-      <div id="ProductDesc3" class="ProductDesc" style="display: none;">
-        <select id="size-4">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-4">
-          <option>Select Color</option>
-          <option>Soft pink</option>
-          <option>Light blue</option>
-          <option>Navy blue</option>
-          <option>Navy</option>
-          <option>Red</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" 
-        data-price="1200"
-        data-size-id="size-4">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Power meets poise. This Three Piece Plain Suit for ladies is bold, sleek, and designed for the modern woman who’s changing the game. Whether you're owning the boardroom or turning heads at brunch, it’s confidence in every stitch – femininity redefined with a luxe twist.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc3"></i>
-    </div>
-
-    <!-- Featured: Double Breasted Suit -->
-    <div class="col-4" data-price="1200">
-      <img src="img/Double/IMG-20250123-WA0026.jpg" data-name="Double Breasted Suit" loading="lazy" alt="Double Breasted Suit" id="productImg4" onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250123-WA0026.jpg"
-        data-color-images='{
-            "Chestnut Brown": "img/Double/IMG-20250123-WA0026.jpg",
-            "Deep Plum": "img/Double/IMG-20250123-WA0008.jpg",
-            "Light Brown": "img/Double/IMG-20250123-WA0014.jpg",
-            "Black": "img/Double/IMG-20250126-WA0485.jpg",
-            "Royal Blue": "img/Double/IMG-20250126-WA0311.jpg"
-          }'
-        data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0008.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250123-WA0008.jpg"
-        data-color-images='{
-          "Deep Plum": "img/Double/IMG-20250123-WA0008.jpg"
-        }'
-        data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0014.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250123-WA0014.jpg"
-        data-color-images='{
-          "Light Brown": "img/Double/IMG-20250123-WA0014.jpg"
-        }'
-        data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double/IMG-20250126-WA0485.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250126-WA0485.jpg"
-        data-color-images='{
-          "Black": "img/Double/IMG-20250126-WA0485.jpg"
-        }'
-        data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double/IMG-20250126-WA0311.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250126-WA0311.jpg"
-        data-color-images='{
-          "Royal Blue": "img/Double/IMG-20250126-WA0311.jpg"
-        }'
-        data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0026.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
-        data-large="img/Double/IMG-20250123-WA0026.jpg"
-        data-color-images='{
-          "Chestnut Brown": "img/Double/IMG-20250123-WA0026.jpg"
-        }'
-        data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
-
-      </div>
-      <p>Double Breasted </p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Double Breasted Suit</h3>
-      <h5>R1 200</h5>
-      <div id="ProductDesc4" class="ProductDesc" style="display: none;">
-        <select id="size-5">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-5">
-          <option>Select Color</option>
-          <option>Black</option>
-          <option>Deep Plum</option>
-          <option>Light Brown</option>
-          <option>Royal Blue</option>
-          <option>Chestnut Brown</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1200">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Old-school charm, new-school cool. The Double Breasted Suit blends vintage vibes with modern tailoring to give you a standout look that speaks success. Made for fashion-forward individuals who want structure without stiffness, this is luxury for the bold and ambitious.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc4"></i>
-    </div>
-
-    <!-- Featured: Double Breasted Scotch Suit -->
-    <div class="col-4" data-price="1300">
-      <img src="img/Double-Sco/IMG-20250126-WA0303.jpg" data-name="Double Breasted Scotch Suit" loading="lazy" alt="Double Breasted Scotch Suit" id="productImg5" onclick='openGallery(this)' 
-        data-large="img/Double-Sco/IMG-20250126-WA0303.jpg"
-        data-color-images='{
-            "Black": "img/Double-Sco/IMG-20250126-WA0304.jpg",
-            "Blue with a check pattern": "img/Double-Sco/IMG-20250126-WA0303.jpg",
-            "Light grey": "img/Double-Sco/IMG-20250126-WA0305.jpg",
-            "Blue with Stripes": "img/Double-Sco/IMG-20250126-WA0306.jpg",
-            "Forest Green with Burnt Orange": "img/Double-Sco/IMG-20250429-WA0028.jpg"
-          }'
-        data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0028.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0304.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
-        data-large="img/Double-Sco/IMG-20250126-WA0304.jpg"
-        data-color-images='{
-            "Black": "img/Double-Sco/IMG-20250126-WA0304.jpg"
-          }'
-        data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0028.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0305.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
-        data-large="img/Double-Sco/IMG-20250126-WA0305.jpg"
-        data-color-images='{
-            "Light grey": "img/Double-Sco/IMG-20250126-WA0305.jpg"
-          }'
-        data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0028.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0306.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
-        data-large="img/Double-Sco/IMG-20250126-WA0306.jpg"
-        data-color-images='{
-            "Blue with Stripes": "img/Double-Sco/IMG-20250126-WA0306.jpg"
-          }'
-        data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0028.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250429-WA0028.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
-        data-large="img/Double-Sco/IMG-20250429-WA0028.jpg"
-        data-color-images='{
-            "Forest Green with Burnt Orange": "img/Double-Sco/IMG-20250429-WA0028.jpg"
-          }'
-        data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0028.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0303.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
-        data-large="img/Double-Sco/IMG-20250126-WA0303.jpg"
-        data-color-images='{
-            "Blue with a check pattern": "img/Double-Sco/IMG-20250126-WA0303.jpg"
-          }'
-        data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0028.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
-
-      </div>
-      <p>Double Breasted Scotch</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Double Breasted Scotch Suit</h3>
-      <h5>R1 300</h5>
-      <div id="ProductDesc5" class="ProductDesc" style="display: none;">
-        <select id="size-6">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-6">
-          <option>Select Color</option>
-          <option>Light grey</option>
-          <option>Black</option>
-          <option>Blue with a check pattern</option>
-          <option>Blue with stripes</option>
-          <option>Forest Green with Burnt Orange</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1300">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Where heritage checks meet bold ambition. The Double Breasted Scotch Suit is for those rewriting the rules of elegance. With its strong shoulders and standout pattern, it’s perfect for fashion disruptors who aren’t afraid to dress loud and lead louder.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc5"></i>
-    </div>
-
-    <!-- Featured: Safari Suit  -->
-    <div class="col-4" data-price="1300">
-      <img src="img/Safari/IMG-20250415-WA0205.jpg" data-name="Safari Suit" loading="lazy" alt="Safari Suit" id="productImg6" onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250415-WA0205.jpg"
-        data-color-images='{
-            "Navy blue": "img/Safari/IMG-20250415-WA0205.jpg",
-            "Light-pink": "img/Safari/IMG-20250420-WA0206.jpg",
-            "Tan brown": "img/Safari/IMG-20250420-WA0207.jpg",
-            "Light grey": "img/Safari/IMG-20250415-WA0135.jpg",
-            "Khaki beige": "img/Safari/IMG-20250415-WA0136.jpg"
-          }'
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0135.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250415-WA0135.jpg"
-        data-color-images='{
-          "Light grey": "img/Safari/IMG-20250415-WA0135.jpg"
-        }'
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0136.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250415-WA0136.jpg"
-        data-color-images='{
-          "Khaki beige": "img/Safari/IMG-20250415-WA0136.jpg"
-        }'
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Safari/IMG-20250420-WA0207.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250420-WA0207.jpg"
-        data-color-images='{
-          "Tan brown": "img/Safari/IMG-20250420-WA0207.jpg"
-        }'
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Safari/IMG-20250420-WA0206.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250420-WA0206.jpg"
-        data-color-images='{
-          "Light-pink": "img/Safari/IMG-20250420-WA0206.jpg"
-        }'
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0205.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
-        data-large="img/Safari/IMG-20250415-WA0205.jpg"
-        data-color-images='{
-          "Navy blue": "img/Safari/IMG-20250415-WA0205.jpg"
-        }'
-        data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
-
-      </div>
-      <p>Safari Suit</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Safari Suit</h3>
-      <h5>R1 300</h5>
-      <div id="ProductDesc6" class="ProductDesc" style="display: none;">
-        <select id="size-7">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-7">
-          <option>Select Color</option>
-          <option>Light grey</option>
-          <option>Khaki beige</option>
-          <option>Tan brown</option>
-          <option>Navy blue</option>
-          <option>Light-pink</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1300">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Classic, cool, and continentally inspired. The Safari Suit is a relaxed-yet-refined outfit built for movement and presence. With utility details and clean lines, it’s perfect for creatives, travelers, and thinkers reimagining what formality looks like in warm climates.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc6"></i>
-    </div>
-
-    <!-- Featured: Three Piece Scotch Suit -->
-    <div class="col-4" data-price="1500">
-      <img src="img/Scotch/IMG-20250123-WA0009.jpg" data-name="Three Piece Scotch Regal Suit" loading="lazy" alt="Three Piece Scotch Regal Suit" id="productImg7" onclick='openGallery(this)' 
-        data-large="img/Scotch/IMG-20250123-WA0009.jpg"
-        data-color-images='{
-            "Blue checkered": "img/Scotch/IMG-20250126-WA0354.jpg",
-            "Chocolate brown": "img/Scotch/IMG-20250126-WA0433.jpg",
-            "Grey": "img/Scotch/IMG-20250126-WA0452.jpg",
-            "Navy blue with subtle stripes": "img/Scotch/IMG-20250126-WA0508.jpg",
-            "Navy blue": "img/Scotch/IMG-20250123-WA0009.jpg"
-          }'
-        data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0354.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
-        data-large="img/Scotch/IMG-20250126-WA0354.jpg"
-        data-color-images='{
-          "Blue checkered": "img/Scotch/IMG-20250126-WA0354.jpg"
-        }'
-        data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0433.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
-        data-large="img/Scotch/IMG-20250126-WA0433.jpg"
-        data-color-images='{
-          "Chocolate brown": "img/Scotch/IMG-20250126-WA0433.jpg"
-        }'
-        data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0452.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
-        data-large="img/Scotch/IMG-20250126-WA0452.jpg"
-        data-color-images='{
-          "Grey": "img/Scotch/IMG-20250126-WA0452.jpg"
-        }'
-        data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0508.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
-        data-large="img/Scotch/IMG-20250126-WA0508.jpg"
-        data-color-images='{
-          "Navy blue with subtle stripes": "img/Scotch/IMG-20250126-WA0508.jpg"
-        }'
-        data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/IMG-20250123-WA0009.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
-        data-large="img/Scotch/IMG-20250123-WA0009.jpg"
-        data-color-images='{
-          "Navy blue": "img/Scotch/IMG-20250123-WA0009.jpg"
-        }'
-        data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
-
-      </div>
-      <p>Three Piece Scotch Regal Suit</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Three Piece Scotch Regal Suit</h3>
-      <h5>R1 500</h5>
-      <div id="ProductDesc7" class="ProductDesc" style="display: none;">
-        <select id="size-8">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-8">
-          <option>Select Color</option>
-          <option>Blue checkered</option>
-          <option>Grey</option>
-          <option>Navy blue with subtle stripes</option>
-          <option>Navy blue</option>
-          <option>Chocolate brown</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1500">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Dress like royalty, move like a rebel. The Three Piece Scotch Regal Suit turns heads with its rich fabric, layered fit, and undeniable attitude. It’s the look for dream chasers, boss minds, and those building their own legacy in style.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc7"></i>
-    </div>
-
-    <!-- Featured: Three Piece Scotch Urban Suit -->
-    <div class="col-4" data-price="1500">
-      <img src="img/Scotch/Urban/IMG-20250429-WA0079.jpg" data-name="Three Piece Scotch Urban Suit" loading="lazy" alt="Three Piece Scotch Urban Suit" id="productImg0" onclick='openGallery(this)' 
-        data-large="img/Scotch/Urban/IMG-20250429-WA0079.jpg"
-        data-color-images='{
-            "Charcoal grey": "img/Scotch/Urban/IMG-20250429-WA0079.jpg",
-            "Olive green": "img/Scotch/Urban/image_urban6.jpg",
-            "Brownish tan": "img/Scotch/Urban/image_urban7.jpg",
-            "Deep navy blue": "img/Scotch/Urban/IMG-20250429-WA0084.jpg",
-            "Soft mint green": "img/Scotch/Urban/image_urban5.jpg"
-          }'
-        data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Scotch/Urban/image_urban5.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg0" onclick='openGallery(this)'
-          data-large="img/Scotch/Urban/image_urban5.jpg"
-          data-color-images='{
-            "Soft mint green": "img/Scotch/Urban/image_urban5.jpg"
-          }'
-          data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/Urban/image_urban6.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg0" onclick='openGallery(this)'
-          data-large="img/Scotch/Urban/image_urban6.jpg"
-          data-color-images='{
-            "Olive green": "img/Scotch/Urban/image_urban6.jpg"
-          }'
-          data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/Urban/image_urban7.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg0" onclick='openGallery(this)'
-          data-large="img/Scotch/Urban/image_urban7.jpg"
-          data-color-images='{
-            "Brownish tan": "img/Scotch/Urban/image_urban7.jpg"
-          }'
-          data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/Urban/IMG-20250429-WA0084.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg0" onclick='openGallery(this)'
-          data-large="img/Scotch/Urban/IMG-20250429-WA0084.jpg"
-          data-color-images='{
-            "Deep navy blue": "img/Scotch/Urban/IMG-20250429-WA0084.jpg"
-          }'
-          data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Scotch/Urban/IMG-20250429-WA0079.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg0" onclick='openGallery(this)'
-          data-large="img/Scotch/Urban/IMG-20250429-WA0079.jpg"
-          data-color-images='{
-            "Charcoal grey": "img/Scotch/Urban/IMG-20250429-WA0079.jpg"
-          }'
-          data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
-
-      </div>
-      <p>Three Piece Scotch Urban Suit</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Three Piece Scotch Urban Suit</h3>
-      <h5>R1 500</h5>
-      <div id="ProductDesc0" class="ProductDesc" style="display: none;">
-        <select id="size-0">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-0">
-          <option>Select Color</option>
-          <option>Olive green</option>
-          <option>Brownish tan</option>
-          <option>Deep navy blue</option>
-          <option>Charcoal grey</option>
-          <option>Soft mint green</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1500">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Clean cuts. City roots. The Three Piece Scotch Urban Suit is tailored for the modern hustler—sharp, fresh, and street-luxe. Made for fast moves and fresh moments, it brings bold structure to everyday ambition.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc0"></i>
-    </div>
-
-    <!-- Featured: Standard Tuxedo -->
-    <div class="col-4" data-price="1640">
-      <img src="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg" data-name="Standard Tuxedo" loading="lazy" alt="Standard Tuxedo" id="productImg10" onclick='openGallery(this)' 
-        data-large="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg"
-        data-color-images='{
-            "Black light gold": "img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg",
-            "Green": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg",
-            "Black grey": "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg",
-            "Light Champagne": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg",
-            "Navy": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"
-          }'
-        data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg10" onclick='openGallery(this)'   
-          data-large="img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg"
-          data-color-images='{
-            "Green": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg"
-          }'
-          data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
-          data-large="img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg"
-          data-color-images='{
-            "Black grey": "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg"
-          }'
-          data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
-          data-large="img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg"
-          data-color-images='{
-            "Light Champagne": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg"
-          }'
-          data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
-          data-large="img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"
-          data-color-images='{
-            "Navy": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"
-          }'
-          data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
-          data-large="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg"
-          data-color-images='{
-            "Black light gold": "img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg"
-          }'
-          data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0061.jpg"]'></div>
-
-      </div>
-      <p>Tuxedo</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Standard Tuxedo</h3>
-      <h5>R1 640</h5>
-      <div id="ProductDesc10" class="ProductDesc" style="display: none;">
-        <select id="size-11">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-11">
-          <option>Select Color</option>
-          <option>Black light gold</option>
-          <option>Green</option>
-          <option>Navy</option>
-          <option>Black grey</option>
-          <option>Light Champagne</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1640">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p><strong>A sleek and refined Tuxedo suit designed for the modern gentleman.</strong> <br>Classic black-tie, reloaded. Our Tuxedo breaks free from the ballroom and lands right on the pulse of youth culture. Luxe, clean, and fearless—this is for red carpets, rooftop parties, and moments that deserve a little extra shine.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc10"></i>
-    </div>
-
-    <!-- Featured: Premium Tuxedo -->
-    <div class="col-4" data-price="2180">
-      <img src="img/Texido/IMG-20250429-WA0038.jpg" data-name="Premium Tuxedo" loading="lazy" alt="Premium Tuxedo" id="productImg8" onclick='openGallery(this)' 
-        data-large="img/Texido/IMG-20250429-WA0038.jpg"
-        data-color-images='{
-            "Floralblack": "img/Texido/IMG-20250429-WA0038.jpg",
-            "Floralgreen": "img/Texido/IMG-20250429-WA0020.jpg",
-            "White": "img/Texido/IMG-20250112-WA0041.jpg",
-            "Floralblue": "img/Texido/IMG-20250112-WA0039.jpg",
-            "Black": "img/Texido/IMG-20250112-WA0069.jpg"
-          }'
-        data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Texido/IMG-20250429-WA0020.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg8" onclick='openGallery(this)'   
-          data-large="img/Texido/IMG-20250429-WA0020.jpg"
-          data-color-images='{
-            "Floralgreen": "img/Texido/IMG-20250429-WA0020.jpg"
-          }'
-          data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/IMG-20250112-WA0041.jpg" loading="lazy" alt="View 2" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
-          data-large="img/Texido/IMG-20250112-WA0041.jpg"
-          data-color-images='{
-            "White": "img/Texido/IMG-20250112-WA0041.jpg"
-          }'
-          data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/IMG-20250112-WA0039.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
-          data-large="img/Texido/IMG-20250112-WA0039.jpg"
-          data-color-images='{
-            "Floralblue": "img/Texido/IMG-20250112-WA0039.jpg"
-          }'
-          data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/IMG-20250112-WA0069.jpg" loading="lazy" alt="View 4" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
-          data-large="img/Texido/IMG-20250112-WA0069.jpg"
-          data-color-images='{
-            "Black": "img/Texido/IMG-20250112-WA0069.jpg"
-          }'
-          data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
-
-        <div class="small-img-col"><img src="img/Texido/IMG-20250429-WA0038.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
-          data-large="img/Texido/IMG-20250429-WA0038.jpg"
-          data-color-images='{
-            "Floralblack": "img/Texido/IMG-20250429-WA0038.jpg"
-          }'
-          data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
-
-      </div>
-      <p>Tuxedo</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Premium Tuxedo</h3>
-      <h5>R2 180</h5>
-      <div id="ProductDesc8" class="ProductDesc" style="display: none;">
-        <select id="size-9">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-9">
-          <option>Select Color</option>
-          <option>Floralblack</option>
-          <option>Floralgreen</option>
-          <option>White</option>
-          <option>Floralblue</option>
-          <option>Black</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="2180">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Elevate your presence with our Premium Tuxedo collection—crafted for those who command attention. Featuring rich velvet textures, royal detailing, and signature accents like gold chains and crown lapel pins, these tuxedos redefine luxury. Ideal for grand entrances and unforgettable occasions.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc8"></i>
-    </div>
-
-    <!-- Featured: Chinese Collar Suit -->
-    <div class="col-4" data-price="1750">
-      <img class="main-img" src="img/Chinnese-Col/IMG-20250429-WA0054.jpg" data-name="Chinese Collar Suit" loading="lazy" alt="Chinese Collar Suit" id="productImg9" onclick='openGallery(this)'
-        data-large="img/Chinnese-Col/IMG-20250429-WA0054.jpg"
-        data-color-images='{
-            "Grey": "img/Chinnese-Col/IMG-20250429-WA0054.jpg",
-            "Charcoal black": "img/Chinnese-Col/IMG-20250429-WA0046.jpg",
-            "Navy blue": "img/Chinnese-Col/IMG-20250429-WA0073.jpg"
-          }'
-        data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'>
-
-      <div class="small-img-row">
-        <div class="small-img-col"><img src="img/Chinnese-Col/IMG-20250429-WA0046.jpg" loading="lazy" alt="View 1" class="small-img" data-target="productImg9" onclick='openGallery(this)'
-          data-large="img/Chinnese-Col/IMG-20250429-WA0046.jpg"
-          data-color-images='{
-            "Charcoal black": "img/Chinnese-Col/IMG-20250429-WA0046.jpg"
-          }'
-          data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'></div>
-        
-        <div class="small-img-col"><img src="img/Chinnese-Col/IMG-20250429-WA0073.jpg" loading="lazy" alt="View 3" class="small-img" data-target="productImg9" onclick='openGallery(this)'   
-          data-large="img/Chinnese-Col/IMG-20250429-WA0073.jpg"
-          data-color-images='{
-            "Navy blue": "img/Chinnese-Col/IMG-20250429-WA0073.jpg"
-          }'
-          data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'></div>
-        
-        <div class="small-img-col"><img src="img/Chinnese-Col/IMG-20250429-WA0054.jpg" loading="lazy" alt="View 5" class="small-img" data-target="productImg9" onclick='openGallery(this)' 
-          data-large="img/Chinnese-Col/IMG-20250429-WA0054.jpg"
-          data-color-images='{
-            "Grey": "img/Chinnese-Col/IMG-20250429-WA0054.jpg"
-          }'
-          data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'></div>
-
-      </div>
-      <p>Chinese Collar Suit</p>
-      <div class="rating">
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i><i class="fa fa-star"></i>
-        <i class="fa fa-star"></i>
-      </div>
-      <h3>Chinese Collar Suit</h3>
-      <h5>R1 750</h5>
-      <div id="ProductDesc9" class="ProductDesc" style="display: none;">
-        <select id="size-10">
-          <option>Select Size</option>
-          <option>26</option>
-          <option>28</option>
-          <option>30</option>
-          <option>32</option>
-          <option>34</option>
-          <option>36</option>
-          <option>38</option>
-          <option>40</option>
-        </select>
-        <select id="color-10">
-          <option>Select Color</option>
-          <option>Charcoal black</option>
-          <option>Navy blue</option>
-          <option>Grey</option>
-        </select>
-        <input type="number" value="1">
-        <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1750">Add to Cart</button>
-        <h4>Product Details <i class="fa fa-indent"></i></h4>
-        <p>Minimalist by design, powerful by presence. The Chinese Collar Suit is a statement of calm strength. With its sleek, collarless cut, it’s the go-to for the bold and creative—modern elegance with cultural edge.</p>
-      </div>
-      <i class="fa-solid fa-bars menu-icon toggle-btn" data-target="ProductDesc9"></i>
-    </div>
-    </div>
-          <!-- Shared Fullscreen Overlay Gallery -->
-        <div id="gallery" class="fullscreen-gallery" onclick="closeGallery()">
-          
-          <span class="close-btn" onclick="closeGallery(event)">&times;</span>
-          <img id="largeImage" src="" alt="Zoomed Image">
-          
-          <div class="zoom-controls" onclick="event.stopPropagation();">
-            <button onclick="zoomImage('in')">+</button>
-            <button onclick="zoomImage('out')">−</button>
-            <!-- Color selector -->
-              <select id="galleryColorSelect" style="margin-top: 10px;">
-                <option value="">Select Color</option>
+        <div class="row" id="featuredProducts">
+
+          <!-- Featured: Three Piece Plain for Men -->
+          <div class="col-4" data-price="1161">
+            <img src="img/3PC/IMG-20250415-WA0013.jpg" data-name="Three Piece Plain Suit" alt="Three Piece Plain Suit" id="productImg" onclick='openGallery(this)'
+              data-large="img/3PC/IMG-20250415-WA0013.jpg"
+              data-color-images='{
+                  "Goldenrod": "img/3PC/IMG-20250126-WA0338.jpg",
+                  "Green": "img/3PC/IMG-20250126-WA0374.jpg",
+                  "Seagreen": "img/3PC/IMG-20250415-WA0013.jpg",
+                  "Blue": "img/3PC/IMG-20250415-WA0006.jpg",
+                  "Light blue": "img/3PC/IMG-20250415-WA0192.jpg",
+                  "Navy": "img/3PC/IMG-20250126-WA0394.jpg",
+                  "Black": "img/3PC/IMG-20250126-WA0393.jpg",
+                  "Maroon": "img/3PC/IMG-20250126-WA0395.jpg"
+                }'
+              data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0338.jpg" alt="Goldenrod Suit" class="small-img" data-target="productImg" onclick='openGallery(this)' 
+              data-large="img/3PC/IMG-20250126-WA0338.jpg"
+              data-color-images='{
+                "Goldenrod": "img/3PC/IMG-20250126-WA0338.jpg"
+              }'
+              data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0374.jpg" alt="Green Suit" class="small-img" data-target="productImg" onclick='openGallery(this)' 
+              data-large="img/3PC/IMG-20250126-WA0374.jpg"
+              data-color-images='{
+                  "Green": "img/3PC/IMG-20250126-WA0374.jpg"
+              }'
+              data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/3PC/IMG-20250415-WA0013.jpg" alt="Seagreen Suit" class="small-img" data-target="productImg" onclick='openGallery(this)' 
+              data-large="img/3PC/IMG-20250415-WA0013.jpg"
+              data-color-images='{
+                  "Seagreen": "img/3PC/IMG-20250415-WA0013.jpg"
+              }'
+              data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/3PC/IMG-20250126-WA0394.jpg" alt="Navy Suit" class="small-img" data-target="productImg" onclick='openGallery(this)' 
+              data-large="img/3PC/IMG-20250126-WA0394.jpg"
+              data-color-images='{
+                  "Navy": "img/3PC/IMG-20250126-WA0394.jpg",
+                  "Black": "img/3PC/IMG-20250126-WA0393.jpg",
+                  "Maroon": "img/3PC/IMG-20250126-WA0395.jpg"
+              }'
+              data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/3PC/IMG-20250415-WA0006.jpg" alt="Blue Suit" class="small-img" data-target="productImg" onclick='openGallery(this)' 
+              data-large="img/3PC/IMG-20250415-WA0006.jpg"
+              data-color-images='{
+                  "Blue": "img/3PC/IMG-20250415-WA0006.jpg"
+              }'
+              data-thumbnails='["img/3PC/IMG-20250126-WA0338.jpg", "img/3PC/IMG-20250126-WA0374.jpg", "img/3PC/IMG-20250415-WA0013.jpg", "img/3PC/IMG-20250415-WA0192.jpg", "img/3PC/IMG-20250415-WA0006.jpg"]'></div>
+
+            </div>
+            <p>Three Piece Suit</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <h3>Three Piece Plain Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 350</del> <span style="color:red">14% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 161</strong></h5>
+            <details id="ProductDesc1" class="ProductDesc" >
+              <select id="size-1">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
               </select>
+              <select id="color-1">
+                <option>Select Color</option>
+                <option>Seagreen</option>
+                <option>Blue</option>
+                <option>Goldenrod</option>
+                <option>Black</option>
+                <option>Green</option>
+                <option>Maroon</option>
+                <option>Navy</option>
+                <option>Light blue</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1161">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>A classic and stylish ensemble featuring a blazer, waistcoat, and trousers. Perfect for formal events or professional settings, this suit delivers a sharp, coordinated look with timeless elegance, it’s the modern gentleman’s go-to.</p>
+            </details>
           </div>
           
-          <div class="small-picture" onclick="event.stopPropagation();">
-            <!-- Thumbnails will be inserted dynamically -->
-             
+          <!-- Featured: Two Piece Plain for Men -->
+          <div class="col-4" data-price="1056">
+            <img src="img/2PC/IMG-20250126-WA0488.jpg" data-name="Two Piece Plain Suit" alt="Two Piece Plain Suit" id="productImg2" onclick='openGallery(this)' 
+              data-large="img/2PC/IMG-20250126-WA0488.jpg"
+              data-color-images='{
+                  "Tan": "img/2PC/IMG-20250126-WA0488.jpg",
+                  "Navy": "img/2PC/IMG-20250123-WA0006.jpg",
+                  "Light Camel": "img/2PC/IMG-20250123-WA0013.jpg",
+                  "Grey": "img/2PC/IMG-20250126-WA0516.jpg",
+                  "Maroon": "img/2PC/IMG-20250126-WA0358.jpg"
+                }'
+              data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'>
 
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/2PC/IMG-20250123-WA0006.jpg" alt="Navy Suit" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
+              data-large="img/2PC/IMG-20250123-WA0006.jpg"
+              data-color-images='{
+                "Navy": "img/2PC/IMG-20250123-WA0006.jpg"
+              }'
+              data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/2PC/IMG-20250123-WA0013.jpg" alt="Light Camel Suit" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
+              data-large="img/2PC/IMG-20250123-WA0013.jpg"
+              data-color-images='{
+                  "Light Camel": "img/2PC/IMG-20250123-WA0013.jpg"
+                }'
+              data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0516.jpg" alt="Grey Suit" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
+              data-large="img/2PC/IMG-20250126-WA0516.jpg"
+              data-color-images='{
+                  "Grey": "img/2PC/IMG-20250126-WA0516.jpg"
+                }'
+              data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0358.jpg" alt="Maroon Suit" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
+              data-large="img/2PC/IMG-20250126-WA0358.jpg"
+              data-color-images='{
+                  "Maroon": "img/2PC/IMG-20250126-WA0358.jpg"
+                }'
+              data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/2PC/IMG-20250126-WA0488.jpg" alt="Tan Suit" class="small-img" data-target="productImg2" onclick='openGallery(this)' 
+              data-large="img/2PC/IMG-20250126-WA0488.jpg"
+              data-color-images='{
+                  "Tan": "img/2PC/IMG-20250126-WA0488.jpg"
+                }'
+              data-thumbnails='["img/2PC/IMG-20250123-WA0006.jpg", "img/2PC/IMG-20250123-WA0013.jpg", "img/2PC/IMG-20250126-WA0516.jpg", "img/2PC/IMG-20250126-WA0358.jpg", "img/2PC/IMG-20250126-WA0488.jpg"]'></div>
+
+            </div>
+            <p>Two Piece Suit</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <h3>Two Piece Plain Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 200</del> <span style="color:red">12% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 056</strong></h5>
+            <details id="ProductDesc2" class="ProductDesc" >
+              <select id="size-2">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-2">
+                <option>Select Color</option>
+                <option>Tan</option>
+                <option>Navy</option>
+                <option>Light Camel</option>
+                <option>Grey</option>
+                <option>Maroon</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" 
+              onclick="addToCartFromProduct(this)" 
+              data-price="1056" 
+              data-size-id="size-2">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Less is more. The Two Piece Plain Suit strips it down to the essentials with sharp tailoring and smooth finishes. Built for comfort and style, it’s a versatile piece that flows from the office to after-hours, giving young professionals a fresh take on classic suiting.</p>
+            </details>
           </div>
-        </div>
-        <!-- GALLERY MODAL -->
-        <div id="galleryModal" class="modal" style="display: none;">
-          <span class="close" onclick="closeGallery()">&times;</span>
 
-          <div class="modal-content">
-            <img id="galleryMainImage" src="" alt="Gallery Image">
+          <!-- Featured: Three Piece for Women -->
+          <div class="col-4" data-price="1020">
+            <img src="img/W3PC/IMG-20250429-WA0058.jpg" data-name="Ladies 3-Piece Suit" alt="Ladies 3-Piece Suit" id="productImg3" onclick='openGallery(this)' 
+              data-large="img/W3PC/IMG-20250429-WA0058.jpg"
+              data-color-images='{
+                "Soft Pink": "img/W3PC/IMG-20250123-WA0015.jpg",
+                "Light blue": "img/W3PC/IMG-20250123-WA0023.jpg",
+                "Navy blue": "img/W3PC/IMG-20250126-WA0498.jpg",
+                "Navy": "img/W3PC/IMG-20250126-WA0465.jpg",
+                "Red": "img/W3PC/IMG-20250123-WA0005.jpg",
+                "Bisque": "img/W3PC/IMG-20250429-WA0071.jpg",
+                "Darkslategrey": "img/W3PC/IMG-20250429-WA0062.jpg",
+                "Black": "img/W3PC/IMG-20250429-WA0058.jpg"
+              }'
+              data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'>
 
-            <div id="galleryThumbnails" class="thumbnail-bar"></div>
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0015.jpg" alt="Soft Pink" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
+              data-large="img/W3PC/IMG-20250123-WA0015.jpg"
+              data-color-images='{
+                "Soft Pink": "img/W3PC/IMG-20250123-WA0015.jpg"
+              }'
+              data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
 
-            <!-- Color selector -->
-            <select id="galleryColorSelect">
-              <option>Select Color</option>
-              <option value="Black">Black</option>
-              <option value="Blue">Blue</option>
-              <option value="Brown">Brown</option>
-              <option value="Gray">Gray</option>
-            </select>
+              <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0023.jpg" alt="Light blue" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
+              data-large="img/W3PC/IMG-20250123-WA0023.jpg"
+              data-color-images='{
+                "Light blue": "img/W3PC/IMG-20250123-WA0023.jpg"
+              }'
+              data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/W3PC/IMG-20250126-WA0498.jpg" alt="Navy blue" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
+              data-large="img/W3PC/IMG-20250126-WA0498.jpg"
+              data-color-images='{
+                "Navy blue": "img/W3PC/IMG-20250126-WA0498.jpg"
+              }'
+              data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/W3PC/IMG-20250126-WA0465.jpg" alt="Navy" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
+              data-large="img/W3PC/IMG-20250126-WA0465.jpg"
+              data-color-images='{
+                "Navy": "img/W3PC/IMG-20250126-WA0465.jpg"
+              }'
+              data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/W3PC/IMG-20250123-WA0005.jpg" alt="Red Suit for Women" class="small-img" data-target="productImg3" onclick='openGallery(this)' 
+              data-large="img/W3PC/IMG-20250123-WA0005.jpg"
+              data-color-images='{
+                "Red": "img/W3PC/IMG-20250123-WA0005.jpg"
+              }'
+              data-thumbnails='["img/W3PC/IMG-20250123-WA0015.jpg", "img/W3PC/IMG-20250123-WA0023.jpg", "img/W3PC/IMG-20250126-WA0498.jpg", "img/W3PC/IMG-20250126-WA0465.jpg", "img/W3PC/IMG-20250123-WA0005.jpg"]'></div>
+
+            </div>
+            <p>Three Piece Suit for Women</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <h3>Ladies 3-Piece Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 200</del> <span style="color:red">15% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 020</strong></h5>
+            <details id="ProductDesc3" class="ProductDesc" >
+              <select id="size-4">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-4">
+                <option>Select Color</option>
+                <option>Soft pink</option>
+                <option>Light blue</option>
+                <option>Navy blue</option>
+                <option>Navy</option>
+                <option>Red</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" 
+              data-price="1020"
+              data-size-id="size-4">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Power meets poise. This Three Piece Plain Suit for ladies is bold, sleek, and designed for the modern woman who’s changing the game. Whether you're owning the boardroom or turning heads at brunch, it’s confidence in every stitch – femininity redefined with a luxe twist.</p>
+            </details>
           </div>
-        </div>
 
-    
-      <div class="titleCol">
-        <a href="Accessories.html" id="access" class="btn">The Final Touch of Elegance &#8594;</a>
+          <!-- Featured: Double Breasted Suit -->
+          <div class="col-4" data-price="1044">
+            <img src="img/Double/IMG-20250123-WA0026.jpg" data-name="Double Breasted Suit" alt="Double Breasted Suit" id="productImg4" onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250123-WA0026.jpg"
+              data-color-images='{
+                  "Chestnut Brown": "img/Double/IMG-20250123-WA0026.jpg",
+                  "Deep Plum": "img/Double/IMG-20250123-WA0008.jpg",
+                  "Light Brown": "img/Double/IMG-20250123-WA0014.jpg",
+                  "Black": "img/Double/IMG-20250126-WA0485.jpg",
+                  "Royal Blue": "img/Double/IMG-20250126-WA0311.jpg"
+                }'
+              data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0008.jpg" alt="Deep Plum" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250123-WA0008.jpg"
+              data-color-images='{
+                "Deep Plum": "img/Double/IMG-20250123-WA0008.jpg"
+              }'
+              data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0014.jpg" alt="Light Brown" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250123-WA0014.jpg"
+              data-color-images='{
+                "Light Brown": "img/Double/IMG-20250123-WA0014.jpg"
+              }'
+              data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double/IMG-20250126-WA0485.jpg" alt="Black Suit" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250126-WA0485.jpg"
+              data-color-images='{
+                "Black": "img/Double/IMG-20250126-WA0485.jpg"
+              }'
+              data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double/IMG-20250126-WA0311.jpg" alt="Royal Blue Suit" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250126-WA0311.jpg"
+              data-color-images='{
+                "Royal Blue": "img/Double/IMG-20250126-WA0311.jpg"
+              }'
+              data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double/IMG-20250123-WA0026.jpg" alt="Chestnut Brown Suit" class="small-img" data-target="productImg4" onclick='openGallery(this)' 
+              data-large="img/Double/IMG-20250123-WA0026.jpg"
+              data-color-images='{
+                "Chestnut Brown": "img/Double/IMG-20250123-WA0026.jpg"
+              }'
+              data-thumbnails='["img/Double/IMG-20250123-WA0008.jpg", "img/Double/IMG-20250123-WA0014.jpg", "img/Double/IMG-20250126-WA0485.jpg", "img/Double/IMG-20250126-WA0311.jpg", "img/Double/IMG-20250123-WA0026.jpg"]'></div>
+
+            </div>
+            <p>Double Breasted </p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Double Breasted Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 200</del> <span style="color:red">13% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 044</strong></h5>
+            <details id="ProductDesc4" class="ProductDesc" >
+              <select id="size-5">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-5">
+                <option>Select Color</option>
+                <option>Black</option>
+                <option>Deep Plum</option>
+                <option>Light Brown</option>
+                <option>Royal Blue</option>
+                <option>Chestnut Brown</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1044">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Old-school charm, new-school cool. The Double Breasted Suit blends vintage vibes with modern tailoring to give you a standout look that speaks success. Made for fashion-forward individuals who want structure without stiffness, this is luxury for the bold and ambitious.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Double Breasted Scotch Suit -->
+          <div class="col-4" data-price="1105">
+            <img src="img/Double-Sco/IMG-20250126-WA0303.jpg" data-name="Double Breasted Scotch Suit" alt="Double Breasted Scotch Suit" id="productImg5" onclick='openGallery(this)' 
+              data-large="img/Double-Sco/IMG-20250126-WA0303.jpg"
+              data-color-images='{
+                  "Black": "img/Double-Sco/IMG-20250126-WA0304.jpg",
+                  "Blue with a check pattern": "img/Double-Sco/IMG-20250126-WA0303.jpg",
+                  "Light grey": "img/Double-Sco/IMG-20250126-WA0305.jpg",
+                  "Blue with Stripes": "img/Double-Sco/IMG-20250126-WA0306.jpg",
+                  "Forest Green with Burnt Orange": "img/Double-Sco/IMG-20250429-WA0027.jpg"
+                }'
+              data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0027.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0304.jpg" alt="Double Breasted Black Suit" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
+              data-large="img/Double-Sco/IMG-20250126-WA0304.jpg"
+              data-color-images='{
+                  "Black": "img/Double-Sco/IMG-20250126-WA0304.jpg"
+                }'
+              data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0027.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0305.jpg" alt="Double Breasted Light grey" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
+              data-large="img/Double-Sco/IMG-20250126-WA0305.jpg"
+              data-color-images='{
+                  "Light grey": "img/Double-Sco/IMG-20250126-WA0305.jpg"
+                }'
+              data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0027.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0306.jpg" alt="Double Breasted blue Suit" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
+              data-large="img/Double-Sco/IMG-20250126-WA0306.jpg"
+              data-color-images='{
+                  "Blue with Stripes": "img/Double-Sco/IMG-20250126-WA0306.jpg"
+                }'
+              data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0027.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double-Sco/IMG-20250429-WA0027.jpg" alt="Double Breasted Forest green Suit" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
+              data-large="img/Double-Sco/IMG-20250429-WA0027.jpg"
+              data-color-images='{
+                  "Forest Green with Burnt Orange": "img/Double-Sco/IMG-20250429-WA0027.jpg"
+                }'
+              data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0027.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Double-Sco/IMG-20250126-WA0303.jpg" alt="Double Breasted blue with check pattern" class="small-img" data-target="productImg5" onclick='openGallery(this)' 
+              data-large="img/Double-Sco/IMG-20250126-WA0303.jpg"
+              data-color-images='{
+                  "Blue with a check pattern": "img/Double-Sco/IMG-20250126-WA0303.jpg"
+                }'
+              data-thumbnails='["img/Double-Sco/IMG-20250126-WA0304.jpg", "img/Double-Sco/IMG-20250126-WA0305.jpg", "img/Double-Sco/IMG-20250126-WA0306.jpg", "img/Double-Sco/IMG-20250429-WA0027.jpg", "img/Double-Sco/IMG-20250126-WA0303.jpg"]'></div>
+
+            </div>
+            <p>Double Breasted Scotch</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Double Breasted Scotch Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 300</del> <span style="color:red">15% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 105</strong></h5>
+            <details id="ProductDesc5" class="ProductDesc" >
+              <select id="size-6">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-6">
+                <option>Select Color</option>
+                <option>Light grey</option>
+                <option>Black</option>
+                <option>Blue with a check pattern</option>
+                <option>Blue with stripes</option>
+                <option>Forest Green with Burnt Orange</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1105">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Where heritage checks meet bold ambition. The Double Breasted Scotch Suit is for those rewriting the rules of elegance. With its strong shoulders and standout pattern, it’s perfect for fashion disruptors who aren’t afraid to dress loud and lead louder.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Safari Suit  -->
+          <div class="col-4" data-price="1040">
+            <img src="img/Safari/IMG-20250415-WA0205.jpg" data-name="Safari Suit" alt="Safari Suit" id="productImg6" onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250415-WA0205.jpg"
+              data-color-images='{
+                  "Navy blue": "img/Safari/IMG-20250415-WA0205.jpg",
+                  "Light-pink": "img/Safari/IMG-20250420-WA0206.jpg",
+                  "Tan brown": "img/Safari/IMG-20250420-WA0207.jpg",
+                  "Light grey": "img/Safari/IMG-20250415-WA0135.jpg",
+                  "Khaki beige": "img/Safari/IMG-20250415-WA0136.jpg"
+                }'
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0135.jpg" alt="Safari Light grey Suit" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250415-WA0135.jpg"
+              data-color-images='{
+                "Light grey": "img/Safari/IMG-20250415-WA0135.jpg"
+              }'
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0136.jpg" alt="Safari Khaki Suit" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250415-WA0136.jpg"
+              data-color-images='{
+                "Khaki beige": "img/Safari/IMG-20250415-WA0136.jpg"
+              }'
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Safari/IMG-20250420-WA0207.jpg" alt="Safari Tan brown Suit" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250420-WA0207.jpg"
+              data-color-images='{
+                "Tan brown": "img/Safari/IMG-20250420-WA0207.jpg"
+              }'
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Safari/IMG-20250420-WA0206.jpg" alt="Safari Light pink Suit" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250420-WA0206.jpg"
+              data-color-images='{
+                "Light-pink": "img/Safari/IMG-20250420-WA0206.jpg"
+              }'
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Safari/IMG-20250415-WA0205.jpg" alt="Safari Navy blue Suit" class="small-img" data-target="productImg6" onclick='openGallery(this)' 
+              data-large="img/Safari/IMG-20250415-WA0205.jpg"
+              data-color-images='{
+                "Navy blue": "img/Safari/IMG-20250415-WA0205.jpg"
+              }'
+              data-thumbnails='["img/Safari/IMG-20250415-WA0135.jpg", "img/Safari/IMG-20250415-WA0136.jpg", "img/Safari/IMG-20250420-WA0207.jpg", "img/Safari/IMG-20250420-WA0206.jpg", "img/Safari/IMG-20250415-WA0205.jpg"]'></div>
+
+            </div>
+            <p>Safari Suit</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Safari Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 300</del> <span style="color:red">20% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 040</strong></h5>
+            <details id="ProductDesc6" class="ProductDesc" >
+              <select id="size-7">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-7">
+                <option>Select Color</option>
+                <option>Light grey</option>
+                <option>Khaki beige</option>
+                <option>Tan brown</option>
+                <option>Navy blue</option>
+                <option>Light-pink</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1040">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Classic, cool, and continentally inspired. The Safari Suit is a relaxed-yet-refined outfit built for movement and presence. With utility details and clean lines, it’s perfect for creatives, travelers, and thinkers reimagining what formality looks like in warm climates.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Three Piece Scotch Suit -->
+          <div class="col-4" data-price="1275">
+            <img src="img/Scotch/IMG-20250123-WA0009.jpg" data-name="Three Piece Scotch Regal Suit" alt="Three Piece Scotch Regal Suit" id="productImg7" onclick='openGallery(this)' 
+              data-large="img/Scotch/IMG-20250123-WA0009.jpg"
+              data-color-images='{
+                  "Blue checkered": "img/Scotch/IMG-20250126-WA0354.jpg",
+                  "Chocolate brown": "img/Scotch/IMG-20250126-WA0433.jpg",
+                  "Grey": "img/Scotch/IMG-20250126-WA0452.jpg",
+                  "Navy blue with subtle stripes": "img/Scotch/IMG-20250126-WA0508.jpg",
+                  "Navy blue": "img/Scotch/IMG-20250123-WA0009.jpg"
+                }'
+              data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0354.jpg" alt="Scotch Regal blue Suit" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
+              data-large="img/Scotch/IMG-20250126-WA0354.jpg"
+              data-color-images='{
+                "Blue checkered": "img/Scotch/IMG-20250126-WA0354.jpg"
+              }'
+              data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0433.jpg" alt="Scotch Regal Chocolate brown Suit" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
+              data-large="img/Scotch/IMG-20250126-WA0433.jpg"
+              data-color-images='{
+                "Chocolate brown": "img/Scotch/IMG-20250126-WA0433.jpg"
+              }'
+              data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0452.jpg" alt="Scotch Regal grey Suit" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
+              data-large="img/Scotch/IMG-20250126-WA0452.jpg"
+              data-color-images='{
+                "Grey": "img/Scotch/IMG-20250126-WA0452.jpg"
+              }'
+              data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/IMG-20250126-WA0508.jpg" alt="Scotch Regal navy blue Suit" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
+              data-large="img/Scotch/IMG-20250126-WA0508.jpg"
+              data-color-images='{
+                "Navy blue with subtle stripes": "img/Scotch/IMG-20250126-WA0508.jpg"
+              }'
+              data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/IMG-20250123-WA0009.jpg" alt="Scotch Regal Navy  Suit" class="small-img" data-target="productImg7" onclick='openGallery(this)' 
+              data-large="img/Scotch/IMG-20250123-WA0009.jpg"
+              data-color-images='{
+                "Navy blue": "img/Scotch/IMG-20250123-WA0009.jpg"
+              }'
+              data-thumbnails='["img/Scotch/IMG-20250126-WA0354.jpg", "img/Scotch/IMG-20250126-WA0433.jpg", "img/Scotch/IMG-20250126-WA0452.jpg", "img/Scotch/IMG-20250126-WA0508.jpg", "img/Scotch/IMG-20250123-WA0009.jpg"]'></div>
+
+            </div>
+            <p>Three Piece Scotch Regal Suit</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Three Piece Scotch Regal Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 500</del> <span style="color:red">15% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 275</strong></h5>
+            <details id="ProductDesc7" class="ProductDesc" >
+              <select id="size-8">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-8">
+                <option>Select Color</option>
+                <option>Blue checkered</option>
+                <option>Grey</option>
+                <option>Navy blue with subtle stripes</option>
+                <option>Navy blue</option>
+                <option>Chocolate brown</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1275">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Dress like royalty, move like a rebel. The Three Piece Scotch Regal Suit turns heads with its rich fabric, layered fit, and undeniable attitude. It’s the look for dream chasers, boss minds, and those building their own legacy in style.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Three Piece Scotch Urban Suit -->
+          <div class="col-4" data-price="1350">
+            <img src="img/Scotch/Urban/IMG-20250429-WA0079.jpg" data-name="Three Piece Scotch Urban Suit" alt="Three Piece Scotch Urban Suit" id="productImg0" onclick='openGallery(this)' 
+              data-large="img/Scotch/Urban/IMG-20250429-WA0079.jpg"
+              data-color-images='{
+                  "Charcoal grey": "img/Scotch/Urban/IMG-20250429-WA0079.jpg",
+                  "Olive green": "img/Scotch/Urban/image_urban6.jpg",
+                  "Brownish tan": "img/Scotch/Urban/image_urban7.jpg",
+                  "Deep navy blue": "img/Scotch/Urban/IMG-20250429-WA0084.jpg",
+                  "Soft mint green": "img/Scotch/Urban/image_urban5.jpg"
+                }'
+              data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Scotch/Urban/image_urban5.jpg" alt="Scotch Urban Soft mint green Suit" class="small-img" data-target="productImg0" onclick='openGallery(this)'
+                data-large="img/Scotch/Urban/image_urban5.jpg"
+                data-color-images='{
+                  "Soft mint green": "img/Scotch/Urban/image_urban5.jpg"
+                }'
+                data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/Urban/image_urban6.jpg" alt="Scotch Urban Olive green Suit" class="small-img" data-target="productImg0" onclick='openGallery(this)'
+                data-large="img/Scotch/Urban/image_urban6.jpg"
+                data-color-images='{
+                  "Olive green": "img/Scotch/Urban/image_urban6.jpg"
+                }'
+                data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/Urban/image_urban7.jpg" alt="Scotch Urban Brownish tan Suit" class="small-img" data-target="productImg0" onclick='openGallery(this)'
+                data-large="img/Scotch/Urban/image_urban7.jpg"
+                data-color-images='{
+                  "Brownish tan": "img/Scotch/Urban/image_urban7.jpg"
+                }'
+                data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/Urban/IMG-20250429-WA0084.jpg" alt="Scotch Urban Deep navy blue Suit" class="small-img" data-target="productImg0" onclick='openGallery(this)'
+                data-large="img/Scotch/Urban/IMG-20250429-WA0084.jpg"
+                data-color-images='{
+                  "Deep navy blue": "img/Scotch/Urban/IMG-20250429-WA0084.jpg"
+                }'
+                data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Scotch/Urban/IMG-20250429-WA0079.jpg" alt="Scotch Urban Charcoal grey Suit" class="small-img" data-target="productImg0" onclick='openGallery(this)'
+                data-large="img/Scotch/Urban/IMG-20250429-WA0079.jpg"
+                data-color-images='{
+                  "Charcoal grey": "img/Scotch/Urban/IMG-20250429-WA0079.jpg"
+                }'
+                data-thumbnails='["img/Scotch/Urban/IMG-20250429-WA0079.jpg", "img/Scotch/Urban/image_urban6.jpg", "img/Scotch/Urban/image_urban7.jpg", "img/Scotch/Urban/IMG-20250429-WA0084.jpg", "img/Scotch/Urban/image_urban5.jpg"]'></div>
+
+            </div>
+            <p>Three Piece Scotch Urban Suit</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Three Piece Scotch Urban Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 500</del> <span style="color:red">10% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 350</strong></h5>
+            <details id="ProductDesc0" class="ProductDesc" >
+              <select id="size-0">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-0">
+                <option>Select Color</option>
+                <option>Olive green</option>
+                <option>Brownish tan</option>
+                <option>Deep navy blue</option>
+                <option>Charcoal grey</option>
+                <option>Soft mint green</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1350">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Clean cuts. City roots. The Three Piece Scotch Urban Suit is tailored for the modern hustler—sharp, fresh, and street-luxe. Made for fast moves and fresh moments, it brings bold structure to everyday ambition.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Standard Tuxedo -->
+          <div class="col-4" data-price="1377.60">
+            <img src="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg" data-name="Standard Tuxedo" alt="Standard Tuxedo" id="productImg10" onclick='openGallery(this)' 
+              data-large="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg"
+              data-color-images='{
+                  "Black light gold": "img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg",
+                  "Green": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg",
+                  "Black grey": "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg",
+                  "Light Champagne": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg",
+                  "Navy": "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg",
+                  "Black": "img/Texido/Tuxedo_2.0/IMG-20250530-WA0007.jpg"
+                }'
+              data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg" alt="Tuxedo green Suit" class="small-img" data-target="productImg10" onclick='openGallery(this)'   
+                data-large="img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg"
+                data-color-images='{
+                  "Green": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg"
+                }'
+                data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg" alt="Tuxedo black grey" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
+                data-large="img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg"
+                data-color-images='{
+                  "Black grey": "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg"
+                }'
+                data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg" alt="Tuxedo light Champagne" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
+                data-large="img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg"
+                data-color-images='{
+                  "Light Champagne": "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg"
+                }'
+                data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg" alt="Tuxedo navy suit" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
+                data-large="img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"
+                data-color-images='{
+                  "Navy": "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"
+                }'
+                data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg" alt="Tuxedo Black light gold Suit" class="small-img" data-target="productImg10" onclick='openGallery(this)' 
+                data-large="img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg"
+                data-color-images='{
+                  "Black light gold": "img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg"
+                }'
+                data-thumbnails='["img/Texido/Tuxedo_2.0/IMG-20250123-WA0016.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0010.jpg", "img/Texido/Tuxedo_2.0/IMG-20250126-WA0509.jpg", "img/Texido/Tuxedo_2.0/IMG-20250415-WA0011.jpg", "img/Texido/Tuxedo_2.0/IMG-20250530-WA0004.jpg"]'></div>
+
+            </div>
+            <p>Tuxedo</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Standard Tuxedo</h3>
+            <!-- Original price -->
+            <h5><del>R1 640</del> <span style="color:red">16% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 377.60</strong></h5>
+            <details id="ProductDesc10" class="ProductDesc" >
+              <select id="size-11">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-11">
+                <option>Select Color</option>
+                <option>Black light gold</option>
+                <option>Green</option>
+                <option>Navy</option>
+                <option>Black grey</option>
+                <option>Light Champagne</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1377.60">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p><strong>A sleek and refined Tuxedo suit designed for the modern gentleman.</strong> <br>Classic black-tie, reloaded. Our Tuxedo breaks free from the ballroom and lands right on the pulse of youth culture. Luxe, clean, and fearless—this is for red carpets, rooftop parties, and moments that deserve a little extra shine.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Premium Tuxedo -->
+          <div class="col-4" data-price="1765.80">
+            <img src="img/Texido/IMG-20250429-WA0038.jpg" data-name="Premium Tuxedo" alt="Premium Tuxedo" id="productImg8" onclick='openGallery(this)' 
+              data-large="img/Texido/IMG-20250429-WA0038.jpg"
+              data-color-images='{
+                  "Floralblack": "img/Texido/IMG-20250429-WA0038.jpg",
+                  "Floralgreen": "img/Texido/IMG-20250429-WA0020.jpg",
+                  "White": "img/Texido/IMG-20250112-WA0041.jpg",
+                  "Floralblue": "img/Texido/IMG-20250112-WA0039.jpg",
+                  "Black": "img/Texido/IMG-20250112-WA0069.jpg"
+                }'
+              data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Texido/IMG-20250429-WA0020.jpg" alt="Tuxedo Floralgreen Suit" class="small-img" data-target="productImg8" onclick='openGallery(this)'   
+                data-large="img/Texido/IMG-20250429-WA0020.jpg"
+                data-color-images='{
+                  "Floralgreen": "img/Texido/IMG-20250429-WA0020.jpg"
+                }'
+                data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/IMG-20250112-WA0041.jpg" alt="Tuxedo white Suit" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
+                data-large="img/Texido/IMG-20250112-WA0041.jpg"
+                data-color-images='{
+                  "White": "img/Texido/IMG-20250112-WA0041.jpg"
+                }'
+                data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/IMG-20250112-WA0039.jpg" alt="Tuxedo Floralblue Suit" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
+                data-large="img/Texido/IMG-20250112-WA0039.jpg"
+                data-color-images='{
+                  "Floralblue": "img/Texido/IMG-20250112-WA0039.jpg"
+                }'
+                data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/IMG-20250112-WA0069.jpg" alt="Tuxedo black suit" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
+                data-large="img/Texido/IMG-20250112-WA0069.jpg"
+                data-color-images='{
+                  "Black": "img/Texido/IMG-20250112-WA0069.jpg"
+                }'
+                data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
+
+              <div class="small-img-col"><img src="img/Texido/IMG-20250429-WA0038.jpg" alt="Tuxedo Floralblack suit" class="small-img" data-target="productImg8" onclick='openGallery(this)' 
+                data-large="img/Texido/IMG-20250429-WA0038.jpg"
+                data-color-images='{
+                  "Floralblack": "img/Texido/IMG-20250429-WA0038.jpg"
+                }'
+                data-thumbnails='["img/Texido/IMG-20250429-WA0020.jpg", "img/Texido/IMG-20250112-WA0069.jpg", "img/Texido/IMG-20250112-WA0041.jpg", "img/Texido/IMG-20250112-WA0039.jpg", "img/Texido/IMG-20250429-WA0038.jpg"]'></div>
+
+            </div>
+            <p>Tuxedo</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Premium Tuxedo</h3>
+            <!-- Original price -->
+            <h5><del>R2 180</del> <span style="color:red">19% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 765.80</strong></h5>
+            <details id="ProductDesc8" class="ProductDesc" >
+              <select id="size-9">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-9">
+                <option>Select Color</option>
+                <option>Floralblack</option>
+                <option>Floralgreen</option>
+                <option>White</option>
+                <option>Floralblue</option>
+                <option>Black</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1765.80">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Elevate your presence with our Premium Tuxedo collection—crafted for those who command attention. Featuring rich velvet textures, royal detailing, and signature accents like gold chains and crown lapel pins, these tuxedos redefine luxury. Ideal for grand entrances and unforgettable occasions.</p>
+            </details>
+          </div>
+
+          <!-- Featured: Chinese Collar Suit -->
+          <div class="col-4" data-price="1487.50">
+            <img class="main-img" src="img/Chinnese-Col/IMG-20250429-WA0054.jpg" data-name="Chinese Collar Suit" alt="Chinese Collar Suit" id="productImg9" onclick='openGallery(this)'
+              data-large="img/Chinnese-Col/IMG-20250429-WA0054.jpg"
+              data-color-images='{
+                  "Grey": "img/Chinnese-Col/IMG-20250429-WA0054.jpg",
+                  "Charcoal black": "img/Chinnese-Col/IMG-20250429-WA0046.jpg",
+                  "Navy blue": "img/Chinnese-Col/IMG-20250429-WA0073.jpg"
+                }'
+              data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'>
+
+            <div class="small-img-row">
+              <div class="small-img-col"><img src="img/Chinnese-Col/IMG-20250429-WA0046.jpg" alt="Chinese Collar Charcoal Suit" class="small-img" data-target="productImg9" onclick='openGallery(this)'
+                data-large="img/Chinnese-Col/IMG-20250429-WA0046.jpg"
+                data-color-images='{
+                  "Charcoal black": "img/Chinnese-Col/IMG-20250429-WA0046.jpg"
+                }'
+                data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'></div>
+              
+              <div class="small-img-col"><img src="img/Chinnese-Col/IMG-20250429-WA0073.jpg" alt="Chinese Collar Navy blue Suit" class="small-img" data-target="productImg9" onclick='openGallery(this)'   
+                data-large="img/Chinnese-Col/IMG-20250429-WA0073.jpg"
+                data-color-images='{
+                  "Navy blue": "img/Chinnese-Col/IMG-20250429-WA0073.jpg"
+                }'
+                data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'></div>
+              
+              <div class="small-img-col"><img src="img/Chinnese-Col/IMG-20250429-WA0054.jpg" alt="Chinese Collar grey Suit" class="small-img" data-target="productImg9" onclick='openGallery(this)' 
+                data-large="img/Chinnese-Col/IMG-20250429-WA0054.jpg"
+                data-color-images='{
+                  "Grey": "img/Chinnese-Col/IMG-20250429-WA0054.jpg"
+                }'
+                data-thumbnails='["img/Chinnese-Col/IMG-20250429-WA0046.jpg", "img/Chinnese-Col/IMG-20250429-WA0073.jpg", "img/Chinnese-Col/IMG-20250429-WA0054.jpg"]'></div>
+
+            </div>
+            <p>Chinese Collar Suit</p>
+            <div class="rating">
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i><i class="fa fa-star"></i>
+              <i class="fa fa-star"></i>
+            </div>
+            <h3>Chinese Collar Suit</h3>
+            <!-- Original price -->
+            <h5><del>R1 750</del> <span style="color:red">15% OFF</span></h5>
+            <!-- Discounted price -->
+            <h5><strong>R1 487.50</strong></h5>
+            <details id="ProductDesc9" class="ProductDesc">
+              <select id="size-10">
+                <option>Select Size</option>
+                <option>26</option>
+                <option>28</option>
+                <option>30</option>
+                <option>32</option>
+                <option>34</option>
+                <option>36</option>
+                <option>38</option>
+                <option>40</option>
+              </select>
+              <select id="color-10">
+                <option>Select Color</option>
+                <option>Charcoal black</option>
+                <option>Navy blue</option>
+                <option>Grey</option>
+              </select>
+              <input type="number" value="1">
+              <button class="add-to-cart" onclick="addToCartFromProduct(this)" data-price="1487.50">Add to Cart</button>
+              <h4>Product Details <i class="fa fa-indent"></i></h4>
+              <p>Minimalist by design, powerful by presence. The Chinese Collar Suit is a statement of calm strength. With its sleek, collarless cut, it’s the go-to for the bold and creative—modern elegance with cultural edge.</p>
+            </details>
+          </div>
+        </section>
+            <!-- Shared Fullscreen Overlay Gallery -->
+          <div id="gallery" class="fullscreen-gallery" onclick="closeGallery()">
+            
+            <span class="close-btn" onclick="closeGallery(event)">&times;</span>
+            <img id="largeImage" src="" alt="Zoomed Image">
+            
+            <div class="zoom-controls" onclick="event.stopPropagation();">
+              <button onclick="zoomImage('in')">+</button>
+              <button onclick="zoomImage('out')">−</button>
+              <!-- Color selector -->
+                <select id="galleryColorSelect" style="margin-top: 10px;">
+                  <option value="">Select Color</option>
+                </select>
+            </div>
+            
+            <div class="small-picture" onclick="event.stopPropagation();">
+              <!-- Thumbnails will be inserted dynamically -->
+              
+
+            </div>
+          </div>
+          <!-- GALLERY MODAL -->
+          <div id="galleryModal" class="modal" style="display: none;">
+            <span class="close" onclick="closeGallery()">&times;</span>
+
+            <div class="modal-content">
+              <img id="galleryMainImage" src="" alt="Gallery Image">
+
+              <div id="galleryThumbnails" class="thumbnail-bar"></div>
+
+              <!-- Color selector -->
+              <select id="galleryColorSelect">
+                <option>Select Color</option>
+                <option value="Black">Black</option>
+                <option value="Blue">Blue</option>
+                <option value="Brown">Brown</option>
+                <option value="Gray">Gray</option>
+              </select>
+            </div>
+          </div>
+
+      
+          <div class="titleCol">
+            <a href="Accessories.html" id="access" class="btn">The Final Touch of Elegance &#8594;</a>
+          </div>
+      
       </div>
-    
-  </div>
-  
-
+    </section>
     <!--  Testimonial  -->
     <div class="testimonial">
       <h2 class="titleCol">Customer Reviews..</h2>
@@ -1246,9 +1311,6 @@
         </div>
       </div>
     </div>
-  <div class="titleCol">
-    <a href="review.html" class="reviewBtn" target="_blank" >Review the page</a>
-  </div>
 
 
     <!--  Footer  -->
@@ -1256,7 +1318,7 @@
       <div class="container">
         <div class="footer-center">
           <div class="footer-logo-section">
-            <img src="img/SutiYam-Logo.0.jpg" loading="lazy" alt="SutiYam Logo" class="footer-logo">
+            <img src="img/SutiYam-Logo.0.jpg" alt="SutiYam Logo" class="footer-logo">
           </div>
 
             <div class="footer-contact">
@@ -1265,7 +1327,7 @@
             <p><i class="fa-solid fa-truck"></i> <a href="delivery-policy.html" target="_blank" >Delivery Policy</a></p>
             <p><i class="fa-solid fa-rotate-left"></i> <a href="returns_policy.html" target="_blank" >Returns & Refunds</a></p>
           </div>
-    
+
           <div class="footer-contact">
             <span>Contact Us</span>
             <p><i class="fa-solid fa-message"></i> <a href="https://wa.me/27794973132" target="_blank">27 79 497 3132</a></p>
@@ -1277,7 +1339,7 @@
               SutiYam partners with selected fashion outlets and suppliers to bring you a curated collection of stylish, affordable formalwear. All items are inspected and quality-assured before delivery to ensure you receive nothing but the best.
             </p>
         </div>
-    
+
             <!-- Footer Slogan -->
           <div class="footer-slogan-wrapper">
             <p class="footer-slogan">Elegance for Every Occasion ✨</p>
@@ -1299,9 +1361,9 @@
     </footer>
 
     <!--  Script  -->
- 
-      <!-- Load Gray-Matter for Markdown/YAML parsing -->
-<script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
-    <script src="WeThrive.js"></script>
+    <!-- Load Gray-Matter for Markdown/YAML parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/gray-matter@4.0.3/dist/gray-matter.min.js"></script>
+    <script src="WeThrive.js" defer></script>
+  </main>
 </body>
 </html>

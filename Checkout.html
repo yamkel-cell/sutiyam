@@ -1,20 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=yes">
-  <title>Checkout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Checkout | SutiYam - Secure Order Form</title>
+  <meta name="description" content="Complete your SutiYam purchase securely. Fast checkout for high-quality fashion products.">
+  <meta name="keywords" content="SutiYam, checkout, secure order, fashion, online shopping, South Africa">
+  <meta name="author" content="SutiYam">
   <link rel="stylesheet" href="ladies.css">
   <link rel="icon" type="image/x-icon" href="img/SutiYam_favicon.jpg">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Open+Sans&display=swap" rel="stylesheet">
   <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
   <script src="https://cdn.auth0.com/js/auth0-spa-js/1.13/auth0-spa-js.production.js"></script>
-  <script src="https://kit.fontawesome.com/19fe5fb4d8.js" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "SutiYam Checkout",
+  "description": "Complete your SutiYam purchase securely. Fast checkout for high-quality fashion products.",
+  "url": "https://sutiyam.online/checkout.html",
+  "inLanguage": "en",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SutiYam",
+    "url": "https://sutiyam.online",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://sutiyam.online/img/SutiYam_favicon.jpg"
+    }
+  }
+}
+</script> <!-- Search Engines to understand the page content better -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "OrderAction",
+  "name": "Place Order - SutiYam",
+  "target": {
+    "@type": "EntryPoint",
+    "urlTemplate": "https://sutiyam.online/checkout.html",
+    "actionPlatform": [
+      "http://schema.org/DesktopWebPlatform",
+      "http://schema.org/MobileWebPlatform"
+    ],
+    "inLanguage": "en"
+  }
+}
+</script> <!-- Search Engines to understand the page content better -->
+
 </head>
 <body>
-  <div class="order-form-container">
-    <h2>Place Your Order</h2>
+  <main class="order-form-container">
+    <h1>Place Your Order</h1>
     <form id="order-form" onsubmit="return sendOrderEmail(event)" data-netlify="true">
     <!-- Honeypot for spam detection -->
     <input type="text" name="honeypot" style="display:none">
@@ -22,15 +60,15 @@
     <!-- Security field -->
     <input type="hidden" name="site_auth" value="sutiyamAUTH_Yams_Matthew_2025_TSHF">
     
-    <input type="text" name="name" placeholder="Full Name" maxlength="50" required>
-    <input type="email" name="email" placeholder="Email Address" maxlength="80" required>
-    <input type="tel" name="phone" placeholder="Phone Number" minlength="10" maxlength="15" required>
+    <input type="text" name="name" aria-label="Full Name" maxlength="50" required>
+    <input type="email" name="email" aria-label="Email Address" maxlength="80" required>
+    <input type="tel" name="phone" aria-label="Phone Number" minlength="10" maxlength="15" required>
     
-    <textarea name="address" placeholder="Shipping Address" maxlength="300" required></textarea>
-    <textarea name="comment" placeholder="Extra Requests (optional)" maxlength="300"></textarea>
+    <textarea name="address" aria-label="Shipping Address" maxlength="300" required></textarea>
+    <textarea name="comment" aria-label="Extra Requests (optional)" maxlength="300"></textarea>
       
     <div class="order-summary">
-      <h3>Order Summary</h3>
+      <h2>Order Summary</h2>
       <div id="order-items"></div>
       <div id="order-total"></div>
     </div>
@@ -39,11 +77,10 @@
     <div data-netlify-recaptcha="true"></div>
     
     <button type="submit" class="btn">Submit Order</button>
-      <a href="OurCollection.html" class="btn" style="text-align: center;">← Continue Shopping</a>
-      <a href="review.html" class="reviewBtn" target="_blank" >Review the page</a>
+      <a href="OurCollection_Updated.html" class="btn" style="text-align: center;">← Continue Shopping</a>
   </form>
 
-  </div>
+  </main>
 
   <script>
     // Initialize EmailJS with your public key
@@ -115,7 +152,7 @@
         alert("Order sent successfully! You’ll receive confirmation shortly.");
         localStorage.removeItem("cartItems");
         form.reset();
-        window.location.href = "https://sutiyam.online/ourcollection.html";
+        window.location.href = "https://sutiyam.online/ourcollection_updated.html";
       })
       .catch(error => {
         console.error("EmailJS Error:", error);
@@ -163,6 +200,6 @@
 
   </script>
 
-  <script src="WeThrive.js"></script>
+  <script src="WeThrive.js" defer></script>
 </body>
 </html>

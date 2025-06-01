@@ -486,118 +486,162 @@ fetch('/content/homepage.md')
     });
 
 // ===== Load Reviews Content from Markdown ====
-async function fetchReviews() {
-  const reviewFolder = '/content/reviews/'; // Adjust if needed
-  const reviewFiles = [
-    'asonele.md',
-    'yams.md',
-    // Add your review filenames here
-  ];
+    async function fetchReviews() {
+    const reviewFolder = '/content/reviews/'; // where .md files are stored in repo
+    const reviewFiles = [
+      'asonele.md',
+      'yams.md',
+      // Add more review filenames here
+    ];
 
-  const container = document.getElementById('reviews-container');
-  if (!container) {
-    console.warn('No #reviews-container found in DOM');
-    return;
-  }
+    const container = document.getElementById('reviews-container');
 
-  for (const file of reviewFiles) {
-    try {
-      const res = await fetch(reviewFolder + file);
-      if (!res.ok) {
-        console.warn(`Failed to fetch ${file}: ${res.status}`);
-        continue;
-      }
+    for (const file of reviewFiles) {
+      const res = await fetch(`${reviewFolder}${file}`);
       const text = await res.text();
 
-      // Extract frontmatter and body using regex
-      const frontmatterMatch = /^---\s*([\s\S]+?)\s*---/.exec(text);
-      if (!frontmatterMatch) {
-        console.warn(`No frontmatter in ${file}`);
-        continue;
-      }
+      // Extract frontmatter using regex
+      const frontmatter = /---\s*([\s\S]*?)\s*---/.exec(text);
+      if (!frontmatter) continue;
 
-      const frontmatterRaw = frontmatterMatch[1];
-      // Parse frontmatter lines to object
-      const data = {};
-      frontmatterRaw.split('\n').forEach(line => {
-        const [key, ...vals] = line.split(':');
-        if (!key) return;
-        data[key.trim()] = vals.join(':').trim().replace(/^"|"$/g, '');
-      });
-
-      // Extract the markdown body after frontmatter
-      const body = text.slice(frontmatterMatch[0].length).trim();
-
-      // Use `body` as the review message if `message` not present in frontmatter
-      const reviewMessage = data.message || body || '(No review message)';
-
-      // Build rating stars (handle rating as integer)
-      const ratingNum = parseInt(data.rating) || 0;
-      const stars = [...Array(5)].map((_, i) =>
-        `<i class="fa fa-star${i < ratingNum ? '' : '-o'}"></i>`
-      ).join('');
+      const data = Object.fromEntries(
+        frontmatter[1].split('\n').map(line => {
+          const [key, ...value] = line.split(':');
+          return [key.trim(), value.join(':').trim().replace(/^"|"$/g, '')];
+        })
+      );
 
       // Create review element
       const reviewEl = document.createElement('div');
       reviewEl.classList.add('col-3');
       reviewEl.innerHTML = `
         <i class="fa fa-quote-left"></i>
-        <p>${reviewMessage}</p>
-        <div class="rating">${stars}</div>
-        ${data.image ? `<img src="${data.image}" alt="${data.name || 'Reviewer'}">` : ''}
-        <h3>${data.name || 'Anonymous'}</h3>
+        <p>${data.message}</p>
+        <div class="rating">
+          ${[...Array(5)].map((_, i) =>
+            `<i class="fa fa-star${i < data.rating ? '' : '-o'}"></i>`
+          ).join('')}
+        </div>
+        ${data.image ? `<img src="${data.image}" alt="${data.name}">` : ''}
+        <h3>${data.name}</h3>
       `;
-
       container.appendChild(reviewEl);
-
-    } catch (err) {
-      console.error(`Error loading review ${file}:`, err);
     }
   }
-}
 
-fetchReviews();
+  fetchReviews();
 
-
-// ===== Load All Products from Markdown ====
-async function loadAllProducts() {
-  const container = document.querySelector('.row');
-  if (!container) return;
-
-  try {
-    const res = await fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/products');
-    const files = await res.json();
-
-    for (let file of files) {
-      if (file.name.endsWith('.md')) {
-        const productRes = await fetch(file.download_url);
-        const md = await productRes.text();
-        const { data } = window.matter(md);
-
-        const thumbnails = JSON.stringify(data.thumbnails || []);
-
-        const productHTML = `
-          <div class="col-3">
-            <br>
-            <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
-                src="${data.image}" 
-                alt="${data.alt || data.title}" 
-                title="Preview Now"
-                onclick='openGallery(this)' 
-                data-large="${data.image}"
-                data-thumbnails='${thumbnails}'>
-            <h4>${data.title}</h4>
-          </div>
-        `;
-        container.insertAdjacentHTML('beforeend', productHTML);
+  async function loadAllProducts() {
+      const container = document.querySelector('.row');
+    
+      // Fetch file list from GitHub API
+      const res = await fetch('https://api.github.com/repos/yamkel-cell/sutiyam/contents/content/products');
+      const files = await res.json();
+    
+      for (let file of files) {
+        if (file.name.endsWith('.md')) {
+          const productRes = await fetch(file.download_url);
+          const md = await productRes.text();
+          const { data } = window.matter(md);
+    
+          const thumbnails = JSON.stringify(data.thumbnails || []);
+    
+          const productHTML = `
+            <div class="col-3">
+              <br>
+              <img class="product-image" style="flex-basis: 15%; width: 250px; height: 330px;"
+                   src="${data.image}" 
+                   alt="${data.alt || data.title}" 
+                   title="Preview Now"
+                   onclick='openGallery(this)' 
+                   data-large="${data.image}"
+                   data-thumbnails='${thumbnails}'>
+              <h4>${data.title}</h4>
+            </div>
+          `;
+          container.insertAdjacentHTML('beforeend', productHTML);
+        }
       }
     }
-  } catch (err) {
-    console.error('Failed to load products:', err);
+    
+    loadAllProducts();
+
+ // ====== RATING SYSTEM ======
+  document.querySelectorAll('.rating').forEach(function (ratingBlock) {
+  const stars = ratingBlock.querySelectorAll('.fa-star');
+  const productId = ratingBlock.getAttribute('data-product-id');
+
+  stars.forEach(function (star) {
+    // Hover effect
+    star.addEventListener('mouseover', function () {
+      const rating = parseInt(this.getAttribute('data-rating'));
+      highlightStars(stars, rating);
+    });
+
+    // Remove hover effect
+    star.addEventListener('mouseout', function () {
+      const selected = parseInt(ratingBlock.getAttribute('data-selected')) || 0;
+      highlightStars(stars, selected);
+    });
+
+    // Click event (select rating)
+    star.addEventListener('click', function () {
+      const rating = parseInt(this.getAttribute('data-rating'));
+
+      if (hasVoted(productId)) {
+        alert("You have already rated this product.");
+        return;
+      }
+
+      ratingBlock.setAttribute('data-selected', rating);
+      highlightStars(stars, rating);
+
+      // Save vote & submit
+      registerVote(productId, rating);
+
+      console.log(`You rated product ${productId} with ${rating} stars`);
+    });
+  });
+
+  // Function to highlight stars
+  function highlightStars(stars, rating) {
+    stars.forEach(function (star) {
+      star.classList.remove('hover', 'selected');
+      if (parseInt(star.getAttribute('data-rating')) <= rating) {
+        star.classList.add('selected');
+      }
+    });
   }
+});
+
+
+  function hasVoted(productId) {
+  return localStorage.getItem(`voted_${productId}`) === 'true';
 }
 
-loadAllProducts();
+function registerVote(productId, rating) {
+  if (hasVoted(productId)) {
+    alert('You have already rated this product.');
+    return;
+  }
+  
+  // Save locally
+  localStorage.setItem(`voted_${productId}`, 'true');
+
+  // Submit via email
+  submitRatingByEmail(productId, rating);
+}
+
+function submitRatingByEmail(productId, rating) {
+  const email = "sutiyam.orders@gmail.com";
+  const subject = `New Rating for Product ID: ${productId}`;
+  const body = `User submitted a rating of ${rating} for product ID: ${productId}.`;
+
+  window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+// ====== END OF RATING SYSTEM ======
+
+
 
 /*
   // convert all URLs to Netlify Image CDN format
