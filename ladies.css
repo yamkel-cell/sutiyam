@@ -59,27 +59,29 @@ header, main, footer, section, nav, article {
 /* === Responsive Product Cards === */
 
 .product-card {
-  flex-basis: 20%;
-  /*flex: 1 1 calc(33.333% - 2rem);*/
-  background-color: #fff;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
+  flex-basis: 50%;
+  max-width: 300px;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  padding: 1rem;
+  transition: transform 0.2s ease;
 }
 
 .col-4 {
-  flex-basis: 20%;
-  /*flex: 1 calc(29.536% - 1rem);*/
-  background-color: #fff;
-  margin: 1rem;
-  padding: 1rem;
-  border-radius: 8px;
+  flex-basis: 25%;
+  max-width: 400px;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   text-align: center;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  padding: 1rem;
+  margin-left: 10px;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
 }
 
 .col-4 img {
@@ -116,11 +118,17 @@ header, main, footer, section, nav, article {
   margin-bottom: 1rem;
 }
 
-@media screen and (max-width: 768px) {
-  .product-card {
-    flex: 1 1 100%;
-  }
+.us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px auto;
+  padding: 10px 10px;
+  height: 672px;
+  max-width: 1200px;
 }
+
+
 /* === Responsive Navigation Bar === */
 
 
@@ -918,6 +926,23 @@ aside {
 /*---- media query  ----*/
 
 @media only screen and (max-width: 800px) {
+  .product-card {
+    flex-basis: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px auto;
+  padding: 5px 5px;
+  height: 520px;
+  max-width: 1000px;
+}
+
   nav ul {
     position: absolute;
     top: 120px;
@@ -938,9 +963,21 @@ nav ul li {
   display: inline-block !important; /* show on screens 800px wide or less */
 }
 
+.col-3 {
+  flex-basis: 50%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.col-4 {
+  flex-basis: 40%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
 .col-3 img {
-  max-width: 170px;
-  max-height: 250px;
+  max-width: 300px;
+  max-height: 450px;
 }
 
 /*  Modal  */
