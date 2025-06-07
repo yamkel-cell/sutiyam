@@ -490,7 +490,7 @@ fetch('/content/homepage.md')
     const reviewFolder = '/content/reviews/'; // where .md files are stored in repo
     const reviewFiles = [
       'asonele.md',
-      'yams.md',
+      'yamkela.md',
       // Add more review filenames here
     ];
 
