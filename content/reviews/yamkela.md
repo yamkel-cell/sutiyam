@@ -1,6 +1,6 @@
 ---
 name: Yamkela
-message: Visiting SutiYam was the best choice ever!
+message: SutiYam’s style, service, and attention to detail truly stand out. I found exactly what I needed - and more!
 rating: 5
 image: /images/uploads/yam.jpg
 ---
