@@ -8,6 +8,8 @@ header, main, footer, section, nav, article {
   display: block;
 }
 
+
+
 .hero {
   display: flex;
   align-items: center;
@@ -1025,6 +1027,10 @@ nav ul li {
   right: 15px;
   font-size: 24px;
   cursor: pointer;
+}
+  
+#reviews-container {
+  flex-basis: 50%;
 }
 
 
