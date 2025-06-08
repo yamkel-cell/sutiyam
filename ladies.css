@@ -8,8 +8,6 @@ header, main, footer, section, nav, article {
   display: block;
 }
 
-
-
 .hero {
   display: flex;
   align-items: center;
@@ -129,6 +127,33 @@ header, main, footer, section, nav, article {
   height: 672px;
   max-width: 1200px;
 }
+
+#reviews-container {
+  display: flex;
+  flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
+  justify-content: center;
+  gap: 1rem; /* Add spacing between cards */
+  padding: 1rem;
+}
+
+.review-card {
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  max-width: 300px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+/* Better spacing on small screens */
+@media (max-width: 480px) {
+  .review-card {
+    margin-bottom: 1rem;
+  }
+}
+
 
 
 /* === Responsive Navigation Bar === */
@@ -1027,12 +1052,6 @@ nav ul li {
   right: 15px;
   font-size: 24px;
   cursor: pointer;
-}
-  
-#reviews-container {
-  justify-content: space-around;
-  margin: 10px auto;
-  padding: 5px 5px;
 }
 
 
