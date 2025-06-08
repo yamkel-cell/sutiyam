@@ -1030,7 +1030,9 @@ nav ul li {
 }
   
 #reviews-container {
-  flex-basis: 50%;
+  justify-content: space-around;
+  margin: 10px auto;
+  padding: 5px 5px;
 }
 
 
