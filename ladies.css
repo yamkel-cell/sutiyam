@@ -129,11 +129,15 @@ header, main, footer, section, nav, article {
 }
 
 #reviews-container {
-  display: flex;
-  flex-wrap: wrap; /* Ensures cards wrap on smaller screens */
-  justify-content: center;
-  gap: 1rem; /* Add spacing between cards */
+  flex-basis: 50%;
+  max-width: 300px;
+  background-color: whitesmoke;
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
   padding: 1rem;
+  transition: transform 0.2s ease;
 }
 
 .review-card {
